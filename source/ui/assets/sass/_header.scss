@@ -1,0 +1,27 @@
+.header {
+    &__content {
+        height: 60px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &__contact {
+            display: flex;
+            gap: 0 44px;
+            font-size: 14px;
+            color: $text-color-1;
+
+            &--item {
+                gap: 0 9px;
+                display: flex;
+                justify-content: space-around;
+                line-height: 17px;
+            }
+        }
+
+        &__action {
+            display: flex;
+            gap: 0 18px;
+        }
+    }
+}

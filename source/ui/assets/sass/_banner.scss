@@ -1,0 +1,33 @@
+.banner {
+    position: relative;
+    &__slider {
+        width: 100%;
+        &__carousel {
+            &__inner {
+                &__item {
+                    position: relative;
+                    img {
+                        height: 500px !important;
+                        object-fit: fill;
+                    }
+                    &__content {
+                        position: absolute;
+                        top: 102px;
+                        left: 20rem;
+
+                        &-text {
+                            margin-top: 28px;
+                            margin-bottom: 20px;
+                            max-width: 500px;
+                            font-size: 16px;
+                            font-weight: $font-normal;
+                            font-style: normal;
+                            line-height: 19px;
+                            color: $text-color;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,50 @@
+.footer {
+    width: 100%;
+    background-color: #209956;
+    height: 208px;
+    &__content {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        grid-gap: 47px;
+        padding-top: 33px;
+        &__inner {
+            width: 400px;
+            margin-right: 15rem;
+            justify-content: space-around;
+            font-size: 14px;
+            font-weight: $font-normal;
+            color: #fff;
+
+            &__one {
+                &__item {
+                    margin-bottom: 12px;
+                }
+            }
+
+            &__two {
+                &__item {
+                    margin-bottom: 12px;
+                    a {
+                        color: $text-color;
+                    }
+                }
+            }
+
+            &__three {
+                &__item {
+                    margin-bottom: 14px;
+
+                    input[type=text] {
+                        padding-left: 4px;
+                        margin-right: 8px;
+                        height: 35px;
+                        width: 291px;
+                        border: 1px solid $info-color;
+                        color: $info-color;
+                        background-color: $primary-color;
+                    }
+                }
+            }
+        }
+    }
+}
