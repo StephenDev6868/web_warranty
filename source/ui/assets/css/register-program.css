@@ -1,0 +1,144 @@
+* {
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+  margin: 0;
+  padding: 0; }
+
+a {
+  text-decoration: none; }
+
+li {
+  list-style-type: none; }
+
+.wrapper .main {
+  max-width: 1180px;
+  margin: 0 auto; }
+
+.wrapper .main {
+  padding-bottom: 70px; }
+  .wrapper .main .register-ctn h2.title {
+    font-size: 32px;
+    text-align: center; }
+  .wrapper .main .register-ctn .timeline {
+    margin-top: 36px; }
+    .wrapper .main .register-ctn .timeline ul {
+      display: flex;
+      margin: 0 auto;
+      justify-content: space-between;
+      width: 815px; }
+      .wrapper .main .register-ctn .timeline ul li {
+        border-radius: 50%;
+        border: 2px solid #75818f;
+        padding: 5px;
+        position: relative; }
+        .wrapper .main .register-ctn .timeline ul li .point {
+          display: block;
+          width: 24px;
+          height: 24px;
+          border-radius: 50%; }
+        .wrapper .main .register-ctn .timeline ul li .text {
+          position: absolute;
+          font-size: 18px;
+          width: 153px;
+          top: calc(100% + 22px);
+          left: 50%;
+          transform: translateX(-50%); }
+        .wrapper .main .register-ctn .timeline ul li.active {
+          border: 2px solid #874d7f; }
+          .wrapper .main .register-ctn .timeline ul li.active .point {
+            background: #874d7f; }
+        .wrapper .main .register-ctn .timeline ul li:not(:last-child):after {
+          content: "";
+          display: block;
+          position: absolute;
+          width: calc((815px - 38px * 3) / 2);
+          height: 9px;
+          background: #f2f4f8;
+          left: calc(100% + 2px);
+          top: 50%;
+          transform: translateY(-50%); }
+  .wrapper .main .register-ctn .form-register {
+    margin-top: 125px; }
+    .wrapper .main .register-ctn .form-register form p.note {
+      font-size: 16px;
+      color: #060728;
+      text-align: center; }
+    .wrapper .main .register-ctn .form-register form .select {
+      margin-top: 16px;
+      text-align: center; }
+      .wrapper .main .register-ctn .form-register form .select select {
+        width: 385px;
+        padding: 18px;
+        font-size: 16px;
+        outline: none;
+        border: 1px solid rgba(117, 129, 143, 0.5);
+        border-radius: 5px; }
+        .wrapper .main .register-ctn .form-register form .select select option {
+          font-size: 16px;
+          padding: 16px;
+          color: rgba(0, 0, 0, 0.5); }
+    .wrapper .main .register-ctn .form-register form .cccd-image {
+      margin: 0 auto;
+      margin-top: 38px;
+      width: 800px;
+      display: flex;
+      justify-content: space-between; }
+      .wrapper .main .register-ctn .form-register form .cccd-image .img-ctn {
+        width: 360px; }
+        .wrapper .main .register-ctn .form-register form .cccd-image .img-ctn .upload-ctn {
+          display: flex;
+          justify-content: space-between;
+          padding: 10px;
+          border: 1px dashed #bdbdbd; }
+          .wrapper .main .register-ctn .form-register form .cccd-image .img-ctn .upload-ctn .right {
+            display: flex;
+            width: 180px;
+            flex-direction: column;
+            justify-content: center; }
+            .wrapper .main .register-ctn .form-register form .cccd-image .img-ctn .upload-ctn .right .description {
+              margin-bottom: 20px; }
+              .wrapper .main .register-ctn .form-register form .cccd-image .img-ctn .upload-ctn .right .description span {
+                color: #874d7f;
+                font-size: 16px;
+                font-weight: 400; }
+            .wrapper .main .register-ctn .form-register form .cccd-image .img-ctn .upload-ctn .right label.upload-btn {
+              display: inline-block;
+              width: 88px;
+              background: #f2f2f2;
+              text-align: center;
+              padding: 6px 0;
+              border-radius: 3px;
+              cursor: pointer; }
+              .wrapper .main .register-ctn .form-register form .cccd-image .img-ctn .upload-ctn .right label.upload-btn span {
+                font-size: 12px; }
+        .wrapper .main .register-ctn .form-register form .cccd-image .img-ctn .btn-camera {
+          margin-top: 22px; }
+          .wrapper .main .register-ctn .form-register form .cccd-image .img-ctn .btn-camera a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 9px 0;
+            margin: 0 auto;
+            width: 202px;
+            color: #fff;
+            background: #209956;
+            border-radius: 5px;
+            cursor: pointer; }
+            .wrapper .main .register-ctn .form-register form .cccd-image .img-ctn .btn-camera a img {
+              width: 20px;
+              margin-right: 7px; }
+            .wrapper .main .register-ctn .form-register form .cccd-image .img-ctn .btn-camera a span {
+              font-size: 14px; }
+    .wrapper .main .register-ctn .form-register form .btn-continue {
+      margin-top: 70px;
+      text-align: center; }
+      .wrapper .main .register-ctn .form-register form .btn-continue .btn-step-1 {
+        width: 220px;
+        height: 50px;
+        font-size: 16px;
+        color: #fff;
+        background: rgba(135, 77, 127, 0.5);
+        border: none;
+        border-radius: 5px; }
+
+/*# sourceMappingURL=register-program.css.map */

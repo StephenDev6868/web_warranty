@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng ký chương trình</title>
+    <link rel="stylesheet" href="./assets/css/register-program.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="header"></div>
+        <div class="main">
+            <div class="register-ctn">
+                <h2 class="title">Đăng ký chương trình</h2>
+                <div class="timeline">
+                    <ul>
+                        <li class="step step-1 active">
+                            <span class="point"></span>
+                            <span class="text">Giấy tờ tuỳ thân</span>
+                        </li>
+                        <li class=" step step-2">
+                            <span class="point"></span>
+                            <span class="text">Ảnh chân dung</span>
+                        </li>
+                        <li class="step step-3">
+                            <span class="point"></span>
+                            <span class="text">Thông tin cá nhân</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="form-register">
+                    <form>
+                        <p class="note">Vui lòng gửi giấy tờ còn hạn, hình gốc không scan hay photocopy.</p>
+                        <div class="select">
+                            <select name="" id="">
+                                <option value="">Căn cước</option>
+                            </select>
+                        </div>
+                        <div class="cccd-image">
+                            <div class="img-ctn before-imge">
+                                <div class="upload-ctn">
+                                    <div class="left">
+                                        <img src="./assets/images/upload-before.png" alt="">
+                                    </div>
+                                    <div class="right">
+                                        <p class="description">Hình chụp <span>MẶT TRƯỚC</span> tài liệu định dạng</p>
+
+                                        <label class="upload-btn" for="before_img">
+                                            <input type="file" hidden id="before_img">
+                                            <img src="./assets/images/upload-img.png" alt="">
+                                            <span>Tải lên</span>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="btn-camera">
+                                    <a>
+                                        <img src="./assets/images/camera.svg" alt="">
+                                        <span>Chụp hình mặt trước</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="img-ctn after-imge">
+                                <div class="upload-ctn">
+                                    <div class="left">
+                                        <img src="./assets/images/upload-after.png" alt="">
+                                    </div>
+                                    <div class="right">
+                                        <p class="description">Hình chụp <span>MẶT SAU</span> tài liệu định dạng</p>
+                                        <label class="upload-btn" for="after_img">
+                                            <input type="file" hidden id="after_img">
+                                            <img src="./assets/images/upload-img.png" alt="">
+                                            <span>Tải lên</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="btn-camera">
+                                    <a>
+                                        <img src="./assets/images/camera.svg" alt="">
+                                        <span>Chụp hình mặt sau</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="btn-continue">
+                            <button class="btn-step-1">Tiếp tục đăng ký</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="footer"></div>
+    </div>
+</body>
+
+</html>
