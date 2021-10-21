@@ -48,6 +48,15 @@
 							.point {
 								background: $secondary-color;
 							}
+							
+						}
+						&.complete {
+							&:after {
+								background: $secondary-color!important;
+							}
+						}
+						&.coming {
+							border: 2px solid $secondary-color;
 						}
 						&:not(:last-child) {
 							&:after {
@@ -73,30 +82,13 @@
 						color: $text-color-1;
 						text-align: center;
 					}
-					.select {
-						margin-top: 16px;
-						text-align: center;
-						select {
-							width: 385px;
-							padding: 18px;
-							font-size: 16px;
-							outline: none;
-							border: 1px solid rgba(117, 129, 143, 0.5);
-							border-radius: 5px;
-							option {
-								font-size: 16px;
-								padding: 16px;
-								color: rgba(0, 0, 0, 0.5);
-							}
-						}
-					}
 
-					.cccd-image {
+					.portrait-image {
 						margin: 0 auto;
 						margin-top: 38px;
 						width: 800px;
 						display: flex;
-						justify-content: space-between;
+						justify-content: center;
 						.img-ctn {
 							width: 360px;
 							.upload-ctn {
@@ -123,11 +115,8 @@
 									justify-content: center;
 									.description {
 										margin-bottom: 20px;
-										span {
-											color: $secondary-color;
-											font-size: 16px;
-											font-weight: 400;
-										}
+										font-size: 14px;
+										color: #828282;
 									}
 									label.upload-btn {
 										display: inline-block;
@@ -166,12 +155,6 @@
 										font-size: 14px;
 									}
 								}
-							}
-						}
-						.before-imge {
-							.left {
-							}
-							.right {
 							}
 						}
 					}

@@ -238,7 +238,7 @@ li {
 .wrapper .main .register-ctn .timeline ul li .text {
   position: absolute;
   font-size: 18px;
-  width: 153px;
+  width: 160px;
   top: calc(100% + 22px);
   left: 50%;
   transform: translateX(-50%);
@@ -300,6 +300,18 @@ li {
   justify-content: space-between;
   padding: 10px;
   border: 1px dashed #bdbdbd;
+}
+.wrapper .main .register-ctn .form-register form .cccd-image .img-ctn .upload-ctn .left {
+  width: 130px;
+  height: 130px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(135, 77, 127, 0.1);
+  border-radius: 4px;
+}
+.wrapper .main .register-ctn .form-register form .cccd-image .img-ctn .upload-ctn .left img {
+  width: 100px;
 }
 .wrapper .main .register-ctn .form-register form .cccd-image .img-ctn .upload-ctn .right {
   display: flex;
