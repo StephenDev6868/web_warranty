@@ -105,3 +105,20 @@ body {
     font-size: 14px;
     font-weight: $font-normal;
 }
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+a {
+	text-decoration: none;
+}
+li {
+	list-style-type: none;
+}
+.wrapper {
+	.main {
+		max-width: 1180px;
+		margin: 0 auto;
+	}
+}
