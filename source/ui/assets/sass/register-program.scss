@@ -48,6 +48,19 @@
 							.point {
 								background: $secondary-color;
 							}
+							
+						}
+						&.complete {
+							border: 2px solid $secondary-color;
+							.point {
+								background: $secondary-color;
+							}
+							&:after {
+								background: $secondary-color!important;
+							}
+						}
+						&.coming {
+							border: 2px solid $secondary-color;
 						}
 						&:not(:last-child) {
 							&:after {
@@ -146,7 +159,7 @@
 								}
 							}
 							.btn-camera {
-								margin-top: 22px;
+								margin-top: 30px;
 								a {
 									display: flex;
 									justify-content: center;
