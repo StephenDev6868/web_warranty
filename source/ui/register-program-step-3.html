@@ -132,60 +132,44 @@
                 </div>
                 <div class="form-register">
                     <form>
-                        <p class="note">Vui lòng gửi giấy tờ còn hạn, hình gốc không scan hay photocopy.</p>
-                        <div class="select">
-                            <select name="" id="">
-                                <option value="">Căn cước</option>
-                            </select>
-                        </div>
-                        <div class="cccd-image">
-                            <div class="img-ctn before-imge">
-                                <div class="upload-ctn">
-                                    <div class="left">
-                                        <img src="./assets/images/cccd-before.png" alt="" id="cccd_before_img">
-                                    </div>
-                                    <div class="right">
-                                        <p class="description">Hình chụp <span>MẶT TRƯỚC</span> tài liệu định dạng</p>
-
-                                        <label class="upload-btn" for="cccd_before">
-                                            <input type="file" hidden id="cccd_before" img-id="cccd_before_img">
-                                            <img src="./assets/images/upload-img.png" alt="">
-                                            <span>Tải lên</span>
-                                        </label>
-                                    </div>
-                                </div>
-
-                                <div class="btn-camera">
-                                    <a>
-                                        <img src="./assets/images/camera.svg" alt="">
-                                        <span>Chụp hình mặt trước</span>
-                                    </a>
-                                </div>
+                        <div class="form-wrap">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Họ và tên (*)" name="fullName">
                             </div>
-                            <div class="img-ctn after-imge">
-                                <div class="upload-ctn">
-                                    <div class="left">
-                                        <img src="./assets/images/cccd-after.png" alt="" id="cccd_after_img">
-                                    </div>
-                                    <div class="right">
-                                        <p class="description">Hình chụp <span>MẶT SAU</span> tài liệu định dạng</p>
-                                        <label class="upload-btn" for="cccd_after">
-                                            <input type="file" hidden id="cccd_after" img-id="cccd_after_img">
-                                            <img src="./assets/images/upload-img.png" alt="" >
-                                            <span>Tải lên</span>
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="btn-camera">
-                                    <a>
-                                        <img src="./assets/images/camera.svg" alt="">
-                                        <span>Chụp hình mặt sau</span>
-                                    </a>
-                                </div>
+                            <div class="form-group d-flex">
+                                <input type="text" class="form-control mr-2" placeholder="Số điện thoại (*)" name="phoneNumber">
+                                <input type="text" class="form-control" placeholder="Nhập email" name="email">
+                            </div>
+                            <div class="form-group d-flex">
+                                <select class="form-control mr-2" name="" id="">
+                                    <option value="">Nam</option>
+                                    <option value="">Nữ</option>
+                                    <option value="">Khác</option>
+                                </select>
+                                <input type="date" class="form-control" name="birthDay" placeholder="Ngày sinh">
+                            </div>
+                            <div class="form-group d-flex">
+                                <input type="text" class="form-control mr-2" placeholder="Số CMND/ CCCD" name="cccd">
+                                <input type="text" class="form-control" placeholder="Số bảo hiểm y tế" name="bhyt">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Số điện thoại của bố/ mẹ  ( dành cho trẻ em dưới 14 tuổi)" name="phoneForChild">
+                            </div>
+                            <div class="form-group">
+                                <input type="checkbox" name="policy" id="policy" class="mr-2">
+                                <label for="policy">Tôi đồng ý với <a href="#">thoả thuận điều kiện</a> tham gia chương trình của Vicscorp</label>
+                            </div>
+                            <div class="form-group">
+                                <input type="file" name="file" id="file" hidden>
+                                <label for="file" class="d-flex justify-content-center align-items-center">
+                                    <img src="./assets/images/upload_file2.svg" alt="" class="mr-2">
+                                    <span>Tải hồ sơ khám chữa bệnh</span>
+                                </label>
                             </div>
                         </div>
+                       
                         <div class="btn-continue">
-                            <button class="btn-step-1" type="button">Tiếp tục đăng ký</button>
+                            <button class="btn-step-1" type="button">Đăng ký chương trình</button>
                         </div>
                     </form>
                 </div>
