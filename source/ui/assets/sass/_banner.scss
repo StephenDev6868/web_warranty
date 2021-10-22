@@ -4,12 +4,12 @@
         width: 100%;
         &__carousel {
             &__inner {
+                img {
+                    height: 500px !important;
+                    object-fit: fill;
+                }
                 &__item {
                     position: relative;
-                    img {
-                        height: 500px !important;
-                        object-fit: fill;
-                    }
                     &__content {
                         position: absolute;
                         top: 102px;

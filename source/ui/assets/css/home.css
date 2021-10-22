@@ -6,14 +6,36 @@ body {
   font-weight: 700;
   font-size: 40px;
 }
-.hd-1-primary {
+.hd-2 {
+  font-weight: 700;
+  font-size: 18px;
+}
+.hd-3 {
+  font-weight: 400;
+  font-size: 18px;
+}
+.hd-4 {
+  font-weight: 700;
+  font-size: 24px;
+}
+.hd-5 {
+  font-weight: 400;
+  font-size: 16px;
+}
+.hd-primary {
   color: #209956;
 }
-.hd-1-secondary {
+.hd-secondary {
   color: #874D7F;
 }
-.hd-1-info {
+.hd-info {
   color: #FFFFFF;
+}
+.hd-intro {
+  color: #060728;
+}
+.hd-dark {
+  color: #000000;
 }
 
 .warpper {
@@ -48,6 +70,11 @@ body {
 }
 .btnc-secondary {
   background-color: #874D7F;
+}
+.btnc-secondary-outline {
+  color: #874D7F;
+  background-color: transparent;
+  border: 1px solid #874D7F;
 }
 .btnc-primary {
   background-color: #209956;
@@ -122,12 +149,12 @@ body {
 .banner__slider {
   width: 100%;
 }
-.banner__slider__carousel__inner__item {
-  position: relative;
-}
-.banner__slider__carousel__inner__item img {
+.banner__slider__carousel__inner img {
   height: 500px !important;
   object-fit: fill;
+}
+.banner__slider__carousel__inner__item {
+  position: relative;
 }
 .banner__slider__carousel__inner__item__content {
   position: absolute;
@@ -184,6 +211,148 @@ body {
   border: 1px solid #FFFFFF;
   color: #FFFFFF;
   background-color: #209956;
+}
+
+.main {
+  margin-top: 77px;
+}
+.main-intro {
+  text-align: center;
+}
+.main-intro h1 {
+  margin-bottom: 56px;
+}
+.main-intro-box {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-gap: 22px 20px;
+}
+.main-intro-box .card {
+  border: none;
+  border-radius: 0;
+  background-color: #f2f4f8;
+}
+.main-intro-box .card-body {
+  padding: 0;
+}
+.main-intro-box .card-title {
+  margin-top: 28px;
+  margin-bottom: 20px;
+}
+.main-intro-box .card-text {
+  width: 428px;
+  height: 62px;
+  text-align: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+.main-intro-box .btnc-secondary-outline {
+  margin-top: 33px;
+  margin-bottom: 28px;
+}
+.main-intro-box .btnc-secondary-outline:hover {
+  background-color: #874D7F;
+  color: #f2f4f8;
+}
+.main-public {
+  margin-top: 83px;
+  text-align: center;
+  width: 100%;
+  height: 439px;
+  background-image: url("./../images/bg-cong-khai-phan-chia.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.main-public h1 {
+  padding-top: 76px;
+  padding-bottom: 8px;
+}
+.main-public h5 {
+  margin-bottom: 55px;
+}
+.main-public-box {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-gap: 0 49px;
+}
+.main-public-box_item {
+  width: 360px;
+  height: 154px;
+  background-color: #FFFFFF;
+  border-radius: 10px;
+}
+.main-public-box_item h3 {
+  padding-top: 34px;
+  padding-bottom: 11px;
+}
+.main-detail {
+  margin-top: 105px;
+  margin-bottom: 92px;
+  text-align: center;
+}
+.main-detail h1 {
+  margin-bottom: 39px;
+}
+.main-detail-content {
+  padding-top: 39px;
+  height: 372px;
+  background-color: #f2f4f8;
+}
+.main-detail-content .carousel-indicators {
+  top: 120%;
+}
+.main-detail-content-slider h3 {
+  margin-bottom: 37px;
+}
+.main-detail-content-slider button {
+  margin-top: 31px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.16);
+}
+.main-detail-content-slider_item {
+  display: flex;
+  justify-content: center;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-gap: 0 77px;
+}
+.main-detail-content-slider_item-box {
+  padding-top: 29px;
+  width: 300px;
+  height: 120px;
+  border-radius: 10px;
+  background-color: #209956;
+}
+.main-detail-content-slider_item-box h2 {
+  margin-top: 10px;
+}
+.main-news {
+  text-align: center;
+  margin-bottom: 86px;
+}
+.main-news-box {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-gap: 0 30px;
+  margin-top: 60px;
+}
+.main-news-box-thumnail {
+  position: relative;
+}
+.main-news-box-thumnail_date {
+  height: 30px;
+  width: 100px;
+  background-color: #874D7F;
+  position: absolute;
+  color: #f2f4f8;
+  text-align: center;
+  align-items: center;
+  line-height: 26px;
+  bottom: 3px;
+}
+.main-news-box .card {
+  border: none;
+  border-radius: 0;
+  background-color: #f2f4f8;
 }
 
 /*# sourceMappingURL=home.css.map */
