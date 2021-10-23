@@ -1,0 +1,205 @@
+@import "variables";
+@import "common";
+@import "header";
+@import "banner";
+@import "footer";
+@import "popupSignin";
+@import "popupOTP";
+
+.main {
+    margin-top: 54px;
+    text-align: center;
+
+    h1 {
+        margin-top: 53px;
+    }
+
+    &-divided {
+        margin-bottom: 102px;
+
+        &-index {
+            max-width: 767px;
+            margin: 0 auto;
+
+            &-search {
+                height: 70px;
+                margin-top: 34px;
+                background-color: $primary-color;
+                padding: 9px 0 8px 11px;
+
+                &-select {
+                    width: 269px !important;
+                    height: 53px !important;
+                }
+            }
+
+            &-result {
+                height: 137px;
+                background-color: $grey-color;
+                display: flex;
+                gap: 0 60px;
+                padding-top: 27px;
+                justify-content: center;
+                margin-bottom: 62px;
+                &-item {
+
+                    p {
+                        margin-top: 7px;
+                    }
+                }
+            }
+        }
+
+        &-tab {
+            h3 {
+                margin-bottom: 60px;
+            }
+
+            ul.nav {
+                display: flex;
+                gap: 0 20px;
+                justify-content: center;
+                align-items: center;
+            }
+    
+            ul.nav > li.nav-item > a.nav-link {
+                width: 380px;
+                height: 90px;
+                border: 1px solid $primary-color;
+                color: $primary-color;
+                padding: 26px 24px;
+                border-radius: 5px;
+            }
+    
+            ul.nav > li.nav-item > a.active {
+                background-color: $primary-color;
+                color: $text-color;
+            }
+        }
+        
+        &-content {
+            &-program {
+                max-width: 100%;
+                padding: 0 !important;
+                &-plan {
+                    margin-top: 39px;
+                    &-filter {
+                        display: flex;
+                        justify-content: start;
+                        gap: 0 13px;
+                        margin-bottom: 34px;
+                        input[type=date] {
+                            width: 251px;
+                            height: 55px;
+                            border-radius: 5px;
+                        }
+
+                        select {
+                            width: 235px;
+                            height: 55px !important;
+                            border-radius: 5px;
+                        }
+                    }
+
+                    &-box {
+                        display: flex;
+                        justify-content: center;
+                        gap: 0 22px;
+
+                        &_item {
+                            width: 580px;
+                            .table-manual {
+                                thead {
+                                    height: 77px;
+                                    background-color: $secondary-color;
+                                    color: $text-color;
+                                }
+        
+                                th {
+                                    padding: 28px 0;
+                                }
+    
+                                td {
+                                    padding: 29px 0;
+                                    background-color: $grey-color;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                &-info {
+                    margin-top: 68px;
+
+                    button:hover {
+                        background-color: $secondary-color;
+                        color: $text-color;
+                    }
+
+                    &-cover {
+                        background-color: $grey-color;
+                        margin-bottom: 60px;
+                        &-list {
+                            border-bottom: 1px solid $line-color;
+                            display: flex;
+                            justify-content: center;
+                            gap: 0 111px;
+                            padding: 24px 0 26px 0;
+    
+                            &_item {
+                                text-align: start;
+                                .title {
+                                    display: flex;
+                                    justify-content: start;
+                                    gap: 0 12px;
+                                    margin-bottom: 9px;
+                                    margin-left: -38px;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                &-chart {
+                    margin-top: 80px; 
+                    &-box {
+                        display: flex;
+                        justify-content: start;
+                        gap: 0 120px;
+                        margin-bottom: 51px;
+    
+                        &_item {
+                            h3 {
+                                margin-bottom: 42px;
+                            }                                
+
+                            .skill-bar {
+                                width: 480px;
+                                margin-bottom: 33px;
+                                &-title {
+                                    display: flex;
+                                    justify-content: space-between;
+                                    margin-bottom: 6px;
+                                }
+                                &-cover {
+                                    width: 100%;
+                                    background-color: $grey-color;
+                                    &-process-1 {
+                                        height: 15px;
+                                        background-color: $secondary-color;
+                                    }
+
+                                    &-process-2 {
+                                        height: 15px;
+                                        background-color: $primary-color;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+}   

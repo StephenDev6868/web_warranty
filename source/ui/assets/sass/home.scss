@@ -1,9 +1,10 @@
 @import "variables";
 @import "common";
 @import "header";
-@import "navigation";
 @import "banner";
 @import "footer";
+@import "popupSignin";
+@import "popupOTP";
 
 .main {
     margin-top: 77px;
@@ -103,6 +104,19 @@
         &-content {
             .carousel-indicators {
                 top: 120%;
+            }
+
+            ul.carousel-indicators > li {
+                width: 12px;
+                height: 12px;
+                border-radius: 50%;
+                border: 1px solid $primary-color;
+                box-sizing: border-box;
+                background-color: $primary-color;
+            }
+
+            ul.carousel-indicators > li.active {
+                background: transparent;
             }
 
             padding-top: 39px;

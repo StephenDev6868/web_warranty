@@ -1,0 +1,255 @@
+@import "variables";
+@import "common";
+@import "header";
+@import "banner";
+@import "footer";
+@import "popupSignin";
+@import "popupOTP";
+
+.main {
+    margin-top: 54px;
+    text-align: center;
+    &-assurances {
+        margin-bottom: 102px;
+
+        &-tab {
+            ul.nav {
+                display: flex;
+                gap: 0 20px;
+                justify-content: center;
+                align-items: center;
+            }
+    
+            ul.nav > li.nav-item > a.nav-link {
+                width: 380px;
+                height: 90px;
+                border: 1px solid $primary-color;
+                color: $primary-color;
+                padding: 26px 24px;
+                border-radius: 5px;
+            }
+    
+            ul.nav > li.nav-item > a.active {
+                background-color: $primary-color;
+                color: $text-color;
+            }
+        }
+        
+        &-content {
+            &-program {
+                max-width: 100%;
+                padding: 0 !important;
+                &-plan {
+                    margin-top: 39px;
+                    &-box {
+                        display: flex;
+                        justify-content: center;
+                        gap: 0 55px;
+
+                        &_item {
+                            width: 580px;
+                            
+                            img {
+                                margin-top: 17px;
+                            }
+    
+                            p {
+                                margin-top: 28px;
+                            }
+    
+                            .table-manual {
+                                margin-top: 64px;
+                                thead {
+                                    height: 77px;
+                                    background-color: $secondary-color;
+                                    color: $text-color;
+                                }
+        
+                                th {
+                                    padding: 28px 0;
+                                }
+    
+                                td {
+                                    padding: 29px 0;
+                                    background-color: $grey-color;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                &-QA {
+                    &_item {
+                        margin-bottom: 30px;
+                        text-align: start;
+                        .title {
+                            margin-bottom: 22px;
+                            &-link {
+                                display: flex;
+                                justify-content: space-between;
+                            }
+                        }
+    
+                        .body {
+                            &-content {
+                                padding-bottom: 32px;
+                                border-bottom: 1px solid #c4c4c4;
+                            }
+                        }
+                    }
+                }
+
+                &-doc {
+                    height: 169px;
+                    background-color: $secondary-color;
+                    padding-top: 27px;
+                    margin-bottom: 69px;
+                   
+                    h3 {
+                        margin-bottom: 23px;
+                    }
+
+                    .doc-show {
+                        display: flex;
+                        justify-content: start;
+                        gap: 0 33px;
+
+                        &_item {
+                            width: 233px;
+                            height: 50px;
+                            border-radius: 5px;
+                            background-color: $info-color;
+                            display: flex;
+                            justify-content: start;
+                            gap: 0 11px;
+                            padding: 14px 34px 14px 35px;
+
+                            img {
+                                height: 22px;
+                                width: 17px;
+                            }
+
+                            p {
+                                line-height: 20px;
+                            }
+                        }
+                    }
+                }
+
+                &-listPeople {
+                    .carousel-indicators {
+                        top: 85%;
+                    }
+                    
+                    h1 {
+                        margin-bottom: 44px;
+                    }
+                    
+                    ul.carousel-indicators > li {
+                        width: 12px;
+                        height: 12px;
+                        border-radius: 50%;
+                        border: 1px solid $primary-color;
+                        box-sizing: border-box;
+                        background-color: $primary-color;
+                    }
+        
+                    ul.carousel-indicators > li.active {
+                        background: transparent;
+                    }
+
+                    &-slider {
+                        height: 372px;
+                        background-color: $grey-color;
+                        h3 {
+                            margin-bottom: 37px;
+                            margin-top: 39px;
+                        }
+                        
+                        button {
+                            margin-top: 31px;
+                            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.16);
+                        }
+        
+                        &_item {
+                            display: flex;
+                            justify-content: center;
+                            grid-template-columns: repeat(3, minmax(0, 1fr));
+                            grid-gap: 0 77px;
+                            &-box {
+                                position: relative;
+                                padding-top: 29px;
+                                width: 300px;
+                                height: 120px;
+                                border-radius: 10px;
+                                background-color: $primary-color;
+        
+                                h2 {
+                                    margin-top: 10px;
+                                }
+        
+                                .icon-bg {
+                                    position: absolute;
+        
+                                    &-calendar {
+                                        left: 0 ;
+                                        top: 10px
+                                    }
+        
+                                    &-bank {
+                                        right: 0;
+                                        top: 10px
+                                    }
+        
+                                    &-cash {
+                                        right: 0;
+                                        top: 10px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            &-why {
+                max-width: 100%;
+            }
+
+            &-QA {
+                &_item {
+                    max-width: 968px;
+                    margin: 0 auto;
+                    margin-bottom: 30px;
+                    text-align: start;
+                    .title {
+                        margin-bottom: 22px;
+                        &-link {
+                            display: flex;
+                            justify-content: space-between;
+                        }
+                    }
+
+                    .body {
+                        &-content {
+                            padding-bottom: 32px;
+                            border-bottom: 1px solid #c4c4c4;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &-banner-register {
+        height: 183px;
+        background-image: url('./../images/banner_register.png');
+        background-position: bottom;
+        background-size: cover;
+
+        p {
+            padding-top: 55px;
+            padding-bottom: 31px;
+        }
+    } 
+}   
