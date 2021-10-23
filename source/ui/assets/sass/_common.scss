@@ -4,9 +4,31 @@ body {
     font-family: 'Inter', sans-serif !important;
 }
 
-.hd-1 {
-    font-weight: $font-medium;
-    font-size: $font-size-heading-1;
+.hd {
+    &-1 {
+        font-weight: $font-medium;
+        font-size: $font-size-heading-1;
+    }
+
+    &-2 {
+        font-weight: $font-medium;
+        font-size: $font-size-heading-2;
+    }
+
+    &-3 {
+        font-weight: $font-normal;
+        font-size: $font-size-heading-2;
+    }
+
+    &-4 {
+        font-weight: $font-medium;
+        font-size: $font-size-heading-4;
+    }
+
+    &-5 {
+        font-weight: $font-normal;
+        font-size: $font-size-heading-3;
+    }
 
     &-primary {
         color: $primary-color;
@@ -18,6 +40,14 @@ body {
 
     &-info {
         color: $info-color;
+    }
+
+    &-intro {
+        color: $intro-color;
+    }
+
+    &-dark {
+        color: $dark-color;
     }
 }
 
@@ -53,6 +83,13 @@ body {
     &-secondary {
         background-color: $secondary-color;
     }
+
+    &-secondary-outline {
+        color: $text-color-3;
+        background-color: transparent;
+        border: 1px solid $secondary-color;
+    }
+
     &-primary {
         background-color: $primary-color;
     }
