@@ -91,6 +91,25 @@ body {
   font-weight: 400;
 }
 
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style-type: none;
+}
+
+.wrapper .main {
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
 .header__content {
   height: 60px;
   display: flex;
