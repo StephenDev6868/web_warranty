@@ -1,4 +1,23 @@
+@import "variables";
+
+.fixed-header {
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: position 10s;
+    -ms-transition: position 10s;
+    -o-transition: position 10s;
+    transition: all 5.5s ease;
+
+    img.logo {
+        height: 60px;
+        width: 60px;
+    }
+}
+
 .header {
+    background-color: $info-color;
     &__content {
         height: 60px;
         display: flex;
@@ -22,6 +41,49 @@
         &__action {
             display: flex;
             gap: 0 18px;
+        }
+    }
+}
+
+.navigation {
+    background-color: $primary-color;
+    &__content {
+        height: 60px;
+        display: flex;
+        justify-content: space-between;
+        &__logo {
+            position: relative;
+            &__item {
+                img {
+                    position: absolute;
+                    z-index: 99;
+                    top: -30px;
+                };
+            }
+        }
+        &__menu {
+            margin-right: 125px;
+            &__list {
+                display: flex;
+                gap: 0 44px;
+
+                &__item {
+                    &__link {
+                        font-weight: $font-normal;
+                        font-size: 16px;
+                        color: $text-color;
+                    }
+
+                    a:hover {
+                        color: $text-color;
+                    }
+
+                    .active {
+                        font-weight: $font-medium;
+                        color: $text-color;
+                    }
+                }
+            }
         }
     }
 }

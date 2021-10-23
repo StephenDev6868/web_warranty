@@ -15,61 +15,67 @@
 </head>
 <body>
     <div class="warpper">
-        <header class="header">
-            <div class="container-custom">
-                <div class="header__content">
-                    <ul class="header__content__contact">
-                        <div class="header__content__contact--item">
-                            <img srcset="./assets/icons/Calling.png 2x" alt="">
-                            <p>1900.988.965 | 0906.060.784</p> 
+        <div class="header-navigation">
+            <header class="header">
+                <div class="container-custom">
+                    <div class="header__content">
+                        <ul class="header__content__contact">
+                            <div class="header__content__contact--item">
+                                <img srcset="./assets/icons/Calling.png 2x" alt="">
+                                <p>1900.988.965 | 0906.060.784</p> 
+                            </div>
+                            <div class="header__content__contact--item">
+                                <img srcset="./assets/icons/Message.png 2x" alt="">
+                                <p>webtuongho@vics.vn</p> 
+                            </div>
+                        </ul>
+                        <div class="header__content__action">
+                            <a href="./register-program.html">
+                                <button class="btn btnc btnc-primary">Đăng ký</button>
+                            </a>
+                            <a href="#">
+                                <button class="btn btnc btnc-secondary" data-toggle="modal" data-target="#signIn">Đăng nhập</button>
+                            </a>
                         </div>
-                        <div class="header__content__contact--item">
-                            <img srcset="./assets/icons/Message.png 2x" alt="">
-                            <p>webtuongho@vics.vn</p> 
-                        </div>
-                    </ul>
-                    <div class="header__content__action">
-                        <button class="btnc btnc-primary">Đăng ký</button>
-                        <button class="btnc btnc-secondary">Đăng nhập</button>
                     </div>
                 </div>
-            </div>
-        </header>
-        <div class="navigation">
-            <div class="container-custom navigation__content">
-                <div class="navigation__content__logo">
-                    <a href="index.html" class="navigation__content__logo__item">
-                        <img srcset="./assets/images/logo.png 1x" alt="">                      
-                    </a>
-                </div>
-                <div class="navigation__content__menu">
-                    <ul class="navigation__content__menu__list">
-                        <li class="navigation__content__menu__list__item">
-                            <a href="" class="navigation__content__menu__list__item__link">
-                                Trang chủ
-                            </a>
-                        </li>
-                        <li class="navigation__content__menu__list__item">
-                            <a href="" class="navigation__content__menu__list__item__link">
-                                Về chúng tôi
-                            </a>
-                        </li>
-                        <li class="navigation__content__menu__list__item">
-                            <a href="" class="navigation__content__menu__list__item__link">
-                                Chương trình bảo hiểm 
-                            </a>
-                        </li>
-                        <li class="navigation__content__menu__list__item">
-                            <a href="" class="navigation__content__menu__list__item__link">
-                                Công khai phân chia
-                            </a>
-                        </li>
-                        <li class="navigation__content__menu__list__item">
-                            <a href="" class="navigation__content__menu__list__item__link">
-                                Hỗ trợ và kiểm soát
-                            </a>
-                        </li>
-                    </ul>
+            </header>
+            <div class="navigation">
+                <div class="container-custom navigation__content">
+                    <div class="navigation__content__logo">
+                        <a href="./home.html" class="navigation__content__logo__item">
+                            <img class="logo" srcset="./assets/images/logo.png 1x" alt="">                      
+                        </a>
+                    </div>
+                    <div class="navigation__content__menu">
+                        <ul class="navigation__content__menu__list">
+                            <li class="navigation__content__menu__list__item">
+                                <a href="./home.html" class="navigation__content__menu__list__item__link home_page" id="home_page">
+                                    Trang chủ
+                                </a>
+                            </li>
+                            <li class="navigation__content__menu__list__item">
+                                <a href="./about.html" class="navigation__content__menu__list__item__link about_page" id="about_page">
+                                    Về chúng tôi
+                                </a>
+                            </li>
+                            <li class="navigation__content__menu__list__item">
+                                <a href="./assurances.html" class="navigation__content__menu__list__item__link" id="assurance_page">
+                                    Chương trình bảo hiểm 
+                                </a>
+                            </li>
+                            <li class="navigation__content__menu__list__item">
+                                <a href="./public-divided.html" class="navigation__content__menu__list__item__link" id="divided_page">
+                                    Công khai phân chia
+                                </a>
+                            </li>
+                            <li class="navigation__content__menu__list__item">
+                                <a href="" class="navigation__content__menu__list__item__link" id="support_control_page">
+                                    Hỗ trợ và kiểm soát
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
@@ -89,7 +95,7 @@
                             <div class="container-custom banner__slider__carousel__inner__item__content">
                                 <h1 class="hd hd-1 hd-info">Cộng đồng hỗ trợ</h1>
                                 <p class="banner__slider__carousel__inner__item__content-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,</p>
-                                <button class="btnc btnc-large btnc-secondary">Tìm hiểu về quỹ</button>
+                                <button class="btn btn btnc btnc-large btnc-secondary">Tìm hiểu về quỹ</button>
                             </div>
                         </div>
                         <div class="carousel-item">
@@ -97,7 +103,7 @@
                             <div class="container-custom banner__slider__carousel__inner__item__content">
                                 <h1 class="hd hd-1 hd-info">Cộng đồng hỗ trợ</h1>
                                 <p class="banner__slider__carousel__inner__item__content-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,</p>
-                                <button class="btnc btnc-large btnc-secondary">Tìm hiểu về quỹ</button>
+                                <button class="btn btnc btnc-large btnc-secondary">Tìm hiểu về quỹ</button>
                             </div>
                         </div>
                         <div class="carousel-item">
@@ -105,7 +111,7 @@
                                 <div class="container-custom banner__slider__carousel__inner__item__content">
                                 <h1 class="hd hd-1 hd-info">Cộng đồng hỗ trợ</h1>
                                 <p class="banner__slider__carousel__inner__item__content-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,</p>
-                                <button class="btnc btnc-large btnc-secondary">Tìm hiểu về quỹ</button>
+                                <button class="btn btnc btnc-large btnc-secondary">Tìm hiểu về quỹ</button>
                             </div>
                         </div>
                     </div>  
@@ -121,10 +127,10 @@
                         <div class="card" style="width: 580px;">
                             <img class="card-img-top" srcset="./assets/images/chuong_trinh_1.png 2x" alt="Card image cap">
                             <div class="card-body">
-                                <h5 class="card-title hd-2">Kế hoạch hỗ trợ bệnh nặng</h5>
+                                <h5 class="card-title hd-4">Kế hoạch hỗ trợ bệnh nặng</h5>
                                 <p class="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, </p>
                                 <a href="#" >
-                                    <button class="btnc btnc-large btnc-secondary-outline">
+                                    <button class="btn btnc btnc-large btnc-secondary-outline">
                                         Xem chi tiết
                                     </button> 
                                 </a>
@@ -133,10 +139,10 @@
                         <div class="card" style="width: 580px;">
                             <img class="card-img-top" srcset="./assets/images/chuong_trinh_2.png 2x" alt="Card image cap">
                             <div class="card-body">
-                                <h5 class="card-title hd-2">Kế hoạch chống ung thư cho người cao tuổi</h5>
+                                <h5 class="card-title hd-4">Kế hoạch chống ung thư cho người cao tuổi</h5>
                                 <p class="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, </p>
                                 <a href="#">
-                                    <button class="btnc btnc-large btnc-secondary-outline">
+                                    <button class="btn btnc btnc-large btnc-secondary-outline">
                                         Xem chi tiết
                                     </button> 
                                 </a>
@@ -145,22 +151,22 @@
                         <div class="card" style="width: 580px;">
                             <img class="card-img-top" srcset="./assets/images/chuong_trinh_3.png 2x" alt="Card image cap">
                             <div class="card-body">
-                                <h5 class="card-title hd-2">Kế hoạch chống ung thư cho người mắc bệnh mãn tính</h5>
+                                <h5 class="card-title hd-4">Kế hoạch chống ung thư cho người mắc bệnh mãn tính</h5>
                                 <p class="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, </p>
                                 <a href="#">
-                                    <button class="btnc btnc-large btnc-secondary-outline">
+                                    <button class="btn btnc btnc-large btnc-secondary-outline">
                                         Xem chi tiết
                                     </button> 
                                 </a>
                             </div>
                         </div>
                         <div class="card" style="width: 580px;">
-                            <img class="card-img-top hd-2" srcset="./assets/images/chuong_trinh_4.png 2x" alt="Card image cap">
+                            <img class="card-img-top" srcset="./assets/images/chuong_trinh_4.png 2x" alt="Card image cap">
                             <div class="card-body">
-                                <h5 class="card-title hd-2">Kế hoạch hỗ trợ trong trường hợp về sự cố giao thông</h5>
+                                <h5 class="card-title hd-4">Kế hoạch hỗ trợ trong trường hợp về sự cố giao thông</h5>
                                 <p class="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, </p>
                                 <a href="#">
-                                    <button class="btnc btnc-large btnc-secondary-outline">
+                                    <button class="btn btnc btnc-large btnc-secondary-outline">
                                         Xem chi tiết
                                     </button> 
                                 </a>
@@ -173,19 +179,19 @@
             <div class="main-public">
                 <div class="container-custom">
                     <h1 class="hd hd-info hd-1">Công khai phân chia</h1>
-                    <h5 class="hd hd-2 hd-info">Tính đến Kỳ 2 tháng 8 năm 2021</h5>
+                    <h5 class="hd hd-4 hd-info">Tính đến Kỳ 2 tháng 8 năm 2021</h5>
                     <div class="main-public-box">
                         <div class="main-public-box_item">
                             <h3 class="hd hd-1 hd-primary">4027</h3>
-                            <p class="hd hd-3 hd-dark">Số người được hỗ trợ</p>
+                            <p class="hd hd-4 hd-dark">Số người được hỗ trợ</p>
                         </div>
                         <div class="main-public-box_item">
                             <h3 class="hd hd-1 hd-primary">8247.6</h3>
-                            <p class="hd hd-3 hd-dark">Tổng số người phân chia, hỗ trợ</p>
+                            <p class="hd hd-4 hd-dark">Tổng số người phân chia, hỗ trợ</p>
                         </div>
                         <div class="main-public-box_item">
                             <h3 class="hd hd-1 hd-primary">3.750.888</h3>
-                            <p class="hd hd-3 hd-dark">Tổng số tiền phân chia, hỗ trợ</p>
+                            <p class="hd hd-4 hd-dark">Tổng số tiền phân chia, hỗ trợ</p>
                         </div>
                     </div>
                 </div>
@@ -204,69 +210,69 @@
                             </ul>
                             <div class="main-detail-content-slider carousel-inner">
                                 <div class="carousel-item active">
-                                    <h3 class="hd hd-2 hd-secondary">Chị Phạm Thanh Hoa - 59 tuổi - bệnh máu trắng</h3>
+                                    <h3 class="hd hd-4 hd-secondary">Chị Phạm Thanh Hoa - 59 tuổi - bệnh máu trắng</h3>
                                     <div class="main-detail-content-slider_item">
                                         <div class="main-detail-content-slider_item-box">
                                             <img src="./assets/icons/calendar.svg" class="icon-bg icon-bg-calendar" alt="">
                                             <h5 class="hd hd-info hd-5">Ngày tham gia</h5>
-                                            <h2 class="hd hd-info hd-4">10/11/2019</h2>
+                                            <h2 class="hd hd-info hd-3">10/11/2019</h2>
                                         </div>
                                         <div class="main-detail-content-slider_item-box">
                                             <img src="./assets/icons/piggy-bank.svg" class="icon-bg icon-bg-bank" alt="">
                                             <h5 class="hd hd-info hd-5">Số tiền đã phân chia</h5>
-                                            <h2 class="hd hd-info hd-4">500.000.000đ</h2>
+                                            <h2 class="hd hd-info hd-3">500.000.000đ</h2>
                                         </div>
                                         <div class="main-detail-content-slider_item-box">
                                             <img src="./assets/icons/cash.svg" class="icon-bg icon-bg-cash" alt="">
                                             <h5 class="hd hd-info hd-5">Đã nhận hỗ trợ</h5>
-                                            <h2 class="hd hd-info hd-4">50.000.000đ</h2>
+                                            <h2 class="hd hd-info hd-3">50.000.000đ</h2>
                                         </div>
                                     </div>
-                                    <button class="btnc btnc-large btnc-secondary">Xem chi tiết</button>
+                                    <button class="btn btnc btnc-large btnc-secondary">Xem chi tiết</button>
                                 </div>
 
                                 <div class="carousel-item">
-                                    <h3 class="hd hd-2 hd-secondary">Chị Phạm Thanh Hoa - 59 tuổi - bệnh máu trắng</h3>
+                                    <h3 class="hd hd-4 hd-secondary">Chị Phạm Thanh Hoa - 59 tuổi - bệnh máu trắng</h3>
                                     <div class="main-detail-content-slider_item">
                                         <div class="main-detail-content-slider_item-box">
                                             <img src="./assets/icons/calendar.svg" class="icon-bg icon-bg-calendar" alt="">
                                             <h5 class="hd hd-info hd-5">Ngày tham gia</h5>
-                                            <h2 class="hd hd-info hd-4">10/11/2019</h2>
+                                            <h2 class="hd hd-info hd-3">10/11/2019</h2>
                                         </div>
                                         <div class="main-detail-content-slider_item-box">
                                             <img src="./assets/icons/piggy-bank.svg" class="icon-bg icon-bg-bank" alt="">
                                             <h5 class="hd hd-info hd-5">Số tiền đã phân chia</h5>
-                                            <h2 class="hd hd-info hd-4">500.000.000đ</h2>
+                                            <h2 class="hd hd-info hd-3">500.000.000đ</h2>
                                         </div>
                                         <div class="main-detail-content-slider_item-box">
                                             <img src="./assets/icons/cash.svg" class="icon-bg icon-bg-cash" alt="">
                                             <h5 class="hd hd-info hd-5">Đã nhận hỗ trợ</h5>
-                                            <h2 class="hd hd-info hd-4">50.000.000đ</h2>
+                                            <h2 class="hd hd-info hd-3">50.000.000đ</h2>
                                         </div>
                                     </div>
-                                    <button class="btnc btnc-large btnc-secondary">Xem chi tiết</button>
+                                    <button class="btn btnc btnc-large btnc-secondary">Xem chi tiết</button>
                                 </div>
 
                                 <div class="carousel-item">
-                                    <h3 class="hd hd-2 hd-secondary">Chị Phạm Thanh Hoa - 59 tuổi - bệnh máu trắng</h3>
+                                    <h3 class="hd hd-4 hd-secondary">Chị Phạm Thanh Hoa - 59 tuổi - bệnh máu trắng</h3>
                                     <div class="main-detail-content-slider_item">
                                         <div class="main-detail-content-slider_item-box">
                                             <img src="./assets/icons/calendar.svg" class="icon-bg icon-bg-calendar" alt="">
                                             <h5 class="hd hd-info hd-5">Ngày tham gia</h5>
-                                            <h2 class="hd hd-info hd-4">10/11/2019</h2>
+                                            <h2 class="hd hd-info hd-3">10/11/2019</h2>
                                         </div>
                                         <div class="main-detail-content-slider_item-box">
                                             <img src="./assets/icons/piggy-bank.svg" class="icon-bg icon-bg-bank" alt="">
                                             <h5 class="hd hd-info hd-5">Số tiền đã phân chia</h5>
-                                            <h2 class="hd hd-info hd-4">500.000.000đ</h2>
+                                            <h2 class="hd hd-info hd-3">500.000.000đ</h2>
                                         </div>
                                         <div class="main-detail-content-slider_item-box">
                                             <img src="./assets/icons/cash.svg" class="icon-bg icon-bg-cash" alt="">
                                             <h5 class="hd hd-info hd-5">Đã nhận hỗ trợ</h5>
-                                            <h2 class="hd hd-info hd-4">50.000.000đ</h2>
+                                            <h2 class="hd hd-info hd-3">50.000.000đ</h2>
                                         </div>
                                     </div>
-                                    <button class="btnc btnc-large btnc-secondary">Xem chi tiết</button>
+                                    <button class="btn btnc btnc-large btnc-secondary">Xem chi tiết</button>
                                 </div>
                             </div> 
                         </div>
@@ -286,7 +292,7 @@
                                 </div>
                             </div>
                             <div class="card-body">
-                                <h5 class="card-title text-left hd-2">Bảo hiểm là gì? Các thuật ngữ cơ bản nhất trong bảo hiểm bạn nên biết</h5>
+                                <h5 class="card-title text-left hd-4">Bảo hiểm là gì? Các thuật ngữ cơ bản nhất trong bảo hiểm bạn nên biết</h5>
                                 <p class="card-text hd-5 text-left" style="width: 346px;">Bảo hiểm là một hoạt động qua đó một cá nhân có quyền được hưởng trợ cấp bảo hiểm nhờ vào một khoản đóng góp cho mình hoặc cho người thứ 3 trong trường hợp xảy ra...</p>
                             </div>
                         </div>
@@ -298,7 +304,7 @@
                                 </div>
                             </div>
                             <div class="card-body">
-                                <h5 class="card-title text-left hd-2">Bảo hiểm là gì? Các thuật ngữ cơ bản nhất trong bảo hiểm bạn nên biết</h5>
+                                <h5 class="card-title text-left hd-4">Bảo hiểm là gì? Các thuật ngữ cơ bản nhất trong bảo hiểm bạn nên biết</h5>
                                 <p class="card-text hd-5 text-left" style="width: 346px;">Bảo hiểm là một hoạt động qua đó một cá nhân có quyền được hưởng trợ cấp bảo hiểm nhờ vào một khoản đóng góp cho mình hoặc cho người thứ 3 trong trường hợp xảy ra...</p>
                             </div>
                         </div>
@@ -310,7 +316,7 @@
                                 </div>
                             </div>
                             <div class="card-body">
-                                <h5 class="card-title text-left hd-2">Bảo hiểm là gì? Các thuật ngữ cơ bản nhất trong bảo hiểm bạn nên biết</h5>
+                                <h5 class="card-title text-left hd-4">Bảo hiểm là gì? Các thuật ngữ cơ bản nhất trong bảo hiểm bạn nên biết</h5>
                                 <p class="card-text hd-5 text-left"  style="width: 346px;">Bảo hiểm là một hoạt động qua đó một cá nhân có quyền được hưởng trợ cấp bảo hiểm nhờ vào một khoản đóng góp cho mình hoặc cho người thứ 3 trong trường hợp xảy ra...</p>
                             </div>
                         </div>
@@ -367,14 +373,73 @@
                         </li>
                         <li class="footer__content__inner__three__item">
                             <input type="text" class="footer__content__inner__three__item-input" name="" id=""  value="" placeholder="email">
-                            <button class="btnc btnc-small btnc-info text-green">Gửi</button>
+                            <button class="btn btnc btnc-small btnc-info text-green">Gửi</button>
                         </li>
                     </ul>
                 </div>
             </div>
         </footer>
+
+        <!-- The Modal -->
+        <div class="popup1 modal fade" id="signIn">
+            <div class="popup1-dialog modal-dialog">
+                <div class="popup1-dialog-content modal-content">
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">
+                            <img src="./assets/icons/close.svg" alt="">
+                        </button>
+                    </div>
+
+                    <div class="modal-body">
+                        <h1 class="hd hd-1 hd-secondary">Đăng nhập</h1>
+                        <input type="text" class="form-control" placeholder="Nhập số điện thoại" maxlength="11">
+                        <button class="btn btnc btnc-large btnc-secondary btnc-sign">Đăng nhập</button>
+                        <hr>
+                        <div class="popup1-dialog-content-signup">
+                            <p class="hd hd-5 text-muted">Bạn chưa có tài khoản?</p>
+                            <a href="./register-program.html" class="hd hd-5 hd-secondary">Đăng ký với chúng tôi</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="popup2 modal fade" id="confirmOTP">
+            <div class="popup2-dialog modal-dialog">
+                <div class="popup2-dialog-content modal-content">
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">
+                            <img src="./assets/icons/close.svg" alt="">
+                        </button>
+                    </div>
+
+                    <div class="modal-body">
+                        <h1 class="hd hd-1 hd-secondary">Nhập OTP</h1>
+                        <p class="hd hd-5 text-muted text-confirm">Nhập số OTP được gửi vào sđt của bạn để đăng nhập</p>
+                        <div class="popup2-dialog-content-inputNumber">
+                            <input type="text" class="form-control" name="" id="" maxlength="1">
+                            <input type="text" class="form-control" name="" id="" maxlength="1">
+                            <input type="text" class="form-control" name="" id="" maxlength="1">
+                            <input type="text" class="form-control" name="" id="" maxlength="1">
+                            <input type="text" class="form-control" name="" id="" maxlength="1">
+                            <input type="text" class="form-control" name="" id="" maxlength="1">
+                        </div>
+                        <button class="btn btnc btnc-large btnc-secondary btnc-sign-2">Đăng nhập</button>
+                        <hr>
+                        <div class="popup2-dialog-content-confirm">
+                            <p class="hd hd-5 text-muted">Chưa nhận được OTP?</p>
+                            <p class="hd hd-5 hd-secondary">Gửi lại (59s)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     
-    <script src="./assets/common/js/jquery-3.6.0.min.js"></script>
+    <!-- <script src="./assets/common/js/jquery-3.6.0.min.js"></script> -->
+    <script src="./assets/js/header.js"></script>
+    <script src="./assets/js/popup.js"></script>
 </body>
 </html>

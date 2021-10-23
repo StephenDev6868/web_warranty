@@ -16,8 +16,8 @@ body {
     }
 
     &-3 {
-        font-weight: $font-normal;
-        font-size: $font-size-heading-2;
+        font-weight: $font-medium;
+        font-size: $font-size-heading-3;
     }
 
     &-4 {
@@ -27,7 +27,17 @@ body {
 
     &-5 {
         font-weight: $font-normal;
-        font-size: $font-size-heading-3;
+        font-size: $font-size-heading-5;
+    }
+
+    &-5-bold {
+        font-weight: $font-medium;
+        font-size: $font-size-heading-5;
+    }
+
+    &-28 {
+        font-weight: $font-normal;
+        font-size: $font-size-heading-28;
     }
 
     &-primary {
@@ -47,6 +57,7 @@ body {
     }
 
     &-dark {
+        font-weight: $font-normal !important;
         color: $dark-color;
     }
 }
@@ -76,10 +87,25 @@ body {
         width: 81px !important;
         height: 35px !important;
     }
+
+    &-medium {
+        width: 269px !important;
+        height: 50px !important;
+    }
+
     &-large {
         width: 186px !important;
         height: 50px !important;
-    }    
+    }
+    
+    &-banner {
+        width: 342px !important;
+        height: 50px !important;
+        color: $secondary-color;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.16);
+        border-radius: 5px;
+    }
+    
     &-secondary {
         background-color: $secondary-color;
     }
@@ -110,9 +136,11 @@ body {
 	margin: 0;
 	padding: 0;
 }
-a {
+a,
+a:hover {
 	text-decoration: none;
 }
+
 li {
 	list-style-type: none;
 }
