@@ -1,0 +1,75 @@
+@import "variables";
+@import "common";
+@import "header";
+@import "navigation";
+@import "banner";
+@import "footer";
+.wrapper {
+	.main {
+		max-width: 100%;
+		padding: 64px 0 150px;
+		.title {
+			text-align: center;
+			font-size: 24px;
+			font-weight: bold;
+		}
+		.list-data {
+			max-width: 780px;
+			margin: 0 auto;
+			margin-top: 56px;
+			.item-data {
+                margin-top: 36px;
+                border-bottom: 1px solid rgba(196, 196, 196, 0.5);;
+				.row-data {
+					margin-bottom: 15px;
+					padding: 0 15px;
+					&.row-data-1 {
+						padding: 15px;
+						background: $bg-card-color;
+						a {
+                            width: 100%;
+							display: flex;
+                            justify-content: space-between;
+							.left {
+								font-weight: bold;
+								font-size: 18px;
+								line-height: 22px;
+								color: #000;
+							}
+							&:hover {
+								text-decoration: none;
+								opacity: 0.6;
+							}
+                            .right {
+                                img {
+                                    width: 11px;
+                                }
+                            }
+						}
+					}
+					display: flex;
+					justify-content: space-between;
+					.left {
+						font-size: 16px;
+						color: rgba(0, 0, 0, 0.5);
+					}
+					.right {
+						font-size: 16px;
+						&.mount {
+							font-weight: bold;
+						}
+						&.success {
+							color: $primary-color;
+						}
+						&.aproved {
+							color: $secondary-color;
+						}
+						&.reject {
+							color: #af3914;
+						}
+					}
+				}
+			}
+		}
+	}
+}
