@@ -1,0 +1,48 @@
+@import "variables";
+@import "common";
+
+.main-intro {
+    text-align: center;
+    h1 {
+        margin-bottom: 56px;
+    }
+
+    &-box {
+        display: grid;
+        grid-template-columns: repeat(2,  minmax(0, 1fr));
+        grid-gap: 22px 20px;
+
+        .card {
+            border: none;
+            border-radius: 0;
+            background-color: $bg-card-color;
+        }
+
+        .card-body {
+            padding: 0;
+        }
+
+        .card-title {
+            margin-top: 28px;
+            margin-bottom: 20px;
+        }
+
+        .card-text {
+            width: 428px;
+            height: 62px;
+            text-align: center;
+            justify-content: center;
+            margin: 0 auto;
+        }
+
+        .btnc-secondary-outline {
+            margin-top: 33px;
+            margin-bottom: 28px;
+        }
+
+        .btnc-secondary-outline:hover {
+            background-color: $secondary-color;
+            color: $text-color;
+        }
+    }
+}
