@@ -15,9 +15,9 @@ $(document).ready(function () {
         $('#about_page').addClass('active');
     } else if (pathName.indexOf('assurance') > 0) {
         $('#assurance_page').addClass('active');
-    } else if (pathName.indexOf('divided') > 0) {
-        $('#divided_page').addClass('active');
-    } else {
+    } else if (pathName.indexOf('support') > 0) {
         $('#support_control_page').addClass('active');
+    } else {
+        $('#divided_page').addClass('active');
     }
 })
