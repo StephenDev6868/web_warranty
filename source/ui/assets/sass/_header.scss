@@ -42,6 +42,76 @@
             display: flex;
             gap: 0 18px;
         }
+
+        &__user {
+            display: flex;
+            justify-content: right;
+            gap: 0 10px;
+
+            &-page {
+                margin-top: 5px;
+                .dropdown-menu {
+                    padding: 0;
+                    border: none;
+                    border-radius: 5px;
+                    transform: translate3d(-200px, 35px, 0px) !important;
+                    width: 216px;
+                }
+
+                .dropdown-item {
+                    padding: 20px 31px !important;
+                }
+            }
+
+            &-name {
+                display: flex;
+                justify-content: center;
+                gap: 0 12px;
+
+                .avatar {
+                    height: 34px;
+                    width: 34px;
+                    background-color: $secondary-color;
+                    border-radius: 50%;
+                    color: $text-color;
+                    
+                    p {
+                        line-height: 32px;
+                    }
+                }
+
+                .money {
+                    margin-top: 5px;
+                    &-cash {
+                        display: flex;
+                        justify-content: right;
+                        gap: 0 6px
+                    }
+                }
+            }
+
+            &-notification {
+                margin-right: 70px;
+                margin-top: 5px;
+                .dropdown-menu {
+                    padding: 0;
+                    border: 1px solid #c4c4c4;
+                    border-radius: 5px;
+                    transform: translate3d(-330px, 35px, 0px) !important;
+                    width: 445px;
+                }
+
+                .dropdown-item {
+                    padding: 11px 24px 11px 25px !important;
+                    white-space: inherit;
+                    p.text-notify {
+                        width: 379px;
+                        border-bottom: 1px solid #c4c4c4;
+                        padding-bottom: 11px;
+                    }
+                }
+            }
+        }
     }
 }
 

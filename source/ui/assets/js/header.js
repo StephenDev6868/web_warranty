@@ -20,4 +20,18 @@ $(document).ready(function () {
     } else {
         $('#divided_page').addClass('active');
     }
+
+    // Set info user if sign in
+    if (localStorage.getItem('login')) {
+        $('.header__content__action').addClass('d-none');
+        $('.header__content__user').removeClass('d-none');
+    } else {
+        $('.header__content__action').removeClass('d-none');
+        $('.header__content__user').addClass('d-none');
+    }
+    // Sign out
+    $('#signOut').click(function() {
+        localStorage.removeItem('login');
+        location.reload();
+    })
 })
