@@ -142,3 +142,143 @@
 		}
 	}
 }
+
+@media only screen and (max-width: 1024px) {
+	.wrapper {
+		.main {
+			padding-bottom: 70px;
+			.register-ctn {
+				width: 96%;
+				margin: 0 auto;
+				h2.title {
+					margin-top: 70px;
+					font-size: 24px;
+				}
+				.timeline {
+					margin-top: 36px;
+					ul {
+						width: 80%;
+						display: flex;
+						margin: 0 auto;
+						justify-content: space-between;
+						flex-direction: column;
+						li {
+							width: 32px;
+							border-radius: 50%;
+							border: 2px solid $text-color-2;
+							padding: 5px;
+							position: relative;
+							&:not(:first-child) {
+								margin-top: 60px;
+							}
+							.point {
+								display: block;
+								width: 18px;
+								height: 18px;
+								border-radius: 50%;
+							}
+							.text {
+								position: absolute;
+								font-size: 14px;
+								width: 160px;
+								left: 100%;
+								top: 50%;
+								transform: translateY(-50%);
+								text-align: center;
+							}
+							&.active {
+							}
+							&.complete {
+								&:after {
+									background: $secondary-color!important;
+								}
+							}
+							&.coming {
+								border: 2px solid $secondary-color;
+							}
+							&:not(:last-child) {
+								&:after {
+									content: "";
+									display: block;
+									position: absolute;
+									width: 8px;
+									height: 61px;
+									background: $text-color;
+									left: 50%;
+									top: calc(100% + 2px);
+									transform: translateX(-50%);
+								}
+							}
+						}
+					}
+				}
+				.form-register {
+					margin-top: 80px;
+					form {
+						.form-wrap {
+							width: 100%;
+							margin: 0 auto;
+							padding: 42px 10px;
+							.form-group {
+								margin-bottom: 0;
+								flex-direction: column;
+								&.policy-checkbox {
+									flex-direction: row;
+									display: flex;
+									align-items: center;
+									justify-content: center;
+									margin-top: 20px;
+									input {
+										width: unset;
+										margin-top: 0;
+
+									}
+									label {
+										display: inline-block;
+										margin-left: 10px;
+									}
+								}
+								input {
+									width: 100%;
+									font-size: 14px;
+									margin-right: 0!important;
+									margin-top: 20px;
+									&::placeholder {
+										font-size: 14px;
+									}
+								}
+								select {
+									font-size: 14px;
+									margin-top: 20px;
+								}
+								label {
+									font-size: 14px;
+									&[for="file"] {
+										width: 300px;
+										margin: 0 auto;
+										padding: 10px;
+										border-radius: 3px;
+										margin-top: 30px;
+										cursor: pointer;
+										&:hover {
+											opacity: 1;
+										}
+									}
+								}
+							}
+						}
+						.btn-continue {
+							margin-top: 70px;
+							text-align: center;
+							.btn-step-1 {
+								width: 220px;
+								height: 50px;
+								font-size: 14px;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+} 

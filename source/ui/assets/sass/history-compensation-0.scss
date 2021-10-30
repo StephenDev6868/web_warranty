@@ -74,3 +74,45 @@
 		}
 	}
 }
+
+@media only screen and (max-width: 1024px) {
+	.wrapper {
+		.main {
+			max-width: 100%;
+			padding: 44px 0 100px;
+			.title {
+				font-size: 22px;
+			}
+			.list-data {
+				max-width: 96%;
+				margin: 0 auto;
+				margin-top: 46px;
+				.item-data {
+					margin-top: 36px;
+					.row-data {
+						font-size: 14px;
+						&.row-data-1 {
+							a {
+								width: 100%;
+								.left {
+									font-size: 16px;
+								}
+								&:hover {
+									opacity: 1;
+								}
+								.right {
+								}
+							}
+						}
+						.left {
+							font-size: 14px;
+						}
+						.right {
+							font-size: 14px;
+						}
+					}
+				}
+			}
+		}
+	}
+} 

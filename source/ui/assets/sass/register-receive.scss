@@ -112,3 +112,85 @@
 		}
 	}
 }
+
+@media only screen and (max-width: 1024px) {
+	.wrapper {
+		.main {
+			padding-top: 64px;
+			.title {
+				font-size: 22px;
+			}
+			.register-form-wrap {
+				form {
+					.wrap-input {
+						width: 96%;
+						max-width: 820px;
+						margin: 44px auto 0;
+						padding: 10px 0 34px;
+						.form-section {
+							max-width: 600px;
+							margin: 0 auto 0;
+							padding: 25px 15px 0;
+							p.label {
+								font-size: 14px;
+							
+							}
+							p.input {
+								margin-top: 10px;
+								select,
+								input {
+									width: 100%;
+									padding: 12px 8px;
+									box-sizing: border-box;
+									border-radius: 5px;
+									outline: none;
+									font-size: 14px;
+									option {
+									}
+								}
+								input {
+								}
+								.upload-btn {
+									width: 300px;
+									display: block;
+									padding: 15px 0;
+									margin: 0 auto;
+									font-size: 14px;
+									&:hover {
+										opacity: 1;
+									}
+								}
+								.file-description {
+									display: block;
+									margin-top: 20px;
+									.file-name {
+										display: inline-flex;
+										/* justify-content: center; */
+										padding: 10px;
+										border-radius: 5px;
+										font-size: 14px;
+										img {
+											margin-right: 10px;
+										}
+									}
+								}
+							}
+						}
+					}
+					.btn-submit-cnt {
+						margin-top: 38px;
+						padding-bottom: 120px;
+						.btn-submit {
+							width: 300px;
+							padding: 16px 0;
+							font-size: 14px;
+							&:hover {
+								opacity: 1;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+} 
