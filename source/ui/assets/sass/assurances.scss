@@ -15,7 +15,7 @@
         &-tab {
             ul.nav {
                 display: flex;
-                gap: 0 20px;
+                gap: 10px 20px;
                 justify-content: center;
                 align-items: center;
             }
@@ -175,7 +175,7 @@
                             display: flex;
                             justify-content: center;
                             grid-template-columns: repeat(3, minmax(0, 1fr));
-                            grid-gap: 0 77px;
+                            grid-gap: 5px 77px;
                             &-box {
                                 position: relative;
                                 padding-top: 29px;
@@ -252,4 +252,86 @@
             padding-bottom: 31px;
         }
     } 
-}   
+}
+
+@media screen and (max-width: 1024px) {
+    .main {
+        &-assurances {
+            &-content { 
+                &-program {
+                    &-plan {
+                        &-box {
+                            flex-wrap: wrap;
+                        }
+                    }
+
+                    &-doc {
+                        height: 250px;
+                        .doc-show {
+                            flex-wrap: wrap;
+                        }
+                    }
+
+                    &-listPeople {
+                        &-slider {
+                            &_item {
+                                
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .main {
+        &-assurances {
+            &-content { 
+                &-program {
+                    &-plan {
+                        &-box {
+                            &_item {
+                                width: 100%;
+
+                                img {
+                                    width: 100%;
+                                }
+                            }
+                        }
+                    }
+
+                    &-doc {
+                    }
+
+                    &-listPeople {
+                        &-slider {
+                            height: 540px;
+                            &_item {
+                                flex-wrap: wrap;
+
+                                &-box {
+                                    padding-top: 15px;
+                                    height: 80px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            &-tab {
+                ul.nav {
+                }
+        
+                ul.nav > li.nav-item > a.nav-link {
+                    width: 100%;
+        
+                    ul.nav > li.nav-item > a.active {
+                    }
+                }
+            }
+        }
+    }
+}

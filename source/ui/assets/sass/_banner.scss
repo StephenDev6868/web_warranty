@@ -18,15 +18,14 @@
 
             &__inner {
                 img {
-                    height: 500px !important;
+                    height: 500px;
                     object-fit: fill;
                 }
                 &__item {
                     position: relative;
                     &__content {
-                        position: absolute;
-                        top: 102px;
-                        left: 20rem;
+                        margin-top: -234px !important;
+                        transform: translate3d(10px, -140px, 10px);
 
                         &-text {
                             margin-top: 28px;
@@ -37,6 +36,67 @@
                             font-style: normal;
                             line-height: 19px;
                             color: $text-color;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1245px) {
+    .banner {
+        &__slider {
+            &__carousel {
+                &__inner {
+                    &__item {
+                        &__content {
+                            transform: translate3d(10px, -90px, 10px);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .banner {
+        &__slider {
+            &__carousel {
+                ul.carousel-indicators {
+                    bottom: 5px;
+                }
+                // ul.carousel-indicators > li {
+                // }
+    
+                // ul.carousel-indicators > li.active {
+                // }
+    
+                &__inner {
+                    img {
+                        height: 250px;
+                    }
+
+                    &__item {
+                        &__content {
+                            transform: translate3d(10px, 10px, 10px) !important;
+
+                            h1 {
+                                font-size: 20px;
+                            }
+
+                            p {
+                                font-size: 11px;
+                                margin-top: 10px;
+                            }
+
+                            button.btnc-large {
+                                font-size: 11px;
+                                height: 40px !important;
+                                width: 105px !important;
+                                margin-bottom: 30px;
+                            }
                         }
                     }
                 }
