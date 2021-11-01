@@ -19,6 +19,11 @@
                 &__item {
                     margin-bottom: 12px;
                 }
+
+                &__item:first-child {
+                    font-size: 18px;
+                    font-weight: 700;
+                }
             }
 
             &__two {
@@ -45,6 +50,19 @@
                     }
                 }
             }
+        }
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .footer {
+        width: 100%;
+        background-color: #209956;
+        height: auto;
+        &__content {
+            display: grid;
+            grid-template-columns: repeat(1, minmax(0, 1fr));
+            grid-gap: 27px;
         }
     }
 }

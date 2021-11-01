@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Về chúng tôi</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./assets/common/css/bootstrap.min.css">
     <link rel="stylesheet" href="./assets/css/about.css">
@@ -92,6 +93,7 @@
                             <img class="logo" srcset="./assets/images/logo.png 1x" alt="">                      
                         </a>
                     </div>
+
                     <div class="navigation__content__menu">
                         <ul class="navigation__content__menu__list">
                             <li class="navigation__content__menu__list__item">
@@ -121,6 +123,41 @@
                             </li>
                         </ul>
                     </div>
+
+                    <div class="navigation__content__openNavbar">
+                        <i class="fa fa-bars" class="" id="open_navbar"></i>
+                    </div> 
+
+                    <div class="navigation__content__navbarR">
+                        <ul class="navigation__content__navbarR__list">
+                            <li class="navigation__content__navbarR__list__item" id="home_nav">
+                                <i class="fa fa-close" id="close_page"></i>
+                                <a href="./home.html" class="navigation__content__navbarR__list__item__link home_page" id="home_pageR">
+                                    Trang chủ
+                                </a>
+                            </li>
+                            <li class="navigation__content__navbarR__list__item">
+                                <a href="./about.html" class="navigation__content__navbarR__list__item__link about_page" id="about_pageR">
+                                    Về chúng tôi
+                                </a>
+                            </li>
+                            <li class="navigation__content__navbarR__list__item">
+                                <a href="./assurances.html" class="navigation__content__navbarR__list__item__link" id="assurance_pageR">
+                                    Chương trình bảo hiểm 
+                                </a>
+                            </li>
+                            <li class="navigation__content__navbarR__list__item">
+                                <a href="./public-divided.html" class="navigation__content__navbarR__list__item__link" id="divided_pageR">
+                                    Công khai phân chia
+                                </a>
+                            </li>
+                            <li class="navigation__content__navbarR__list__item">
+                                <a href="./support.html" class="navigation__content__navbarR__list__item__link" id="support_control_pageR">
+                                    Hỗ trợ và kiểm soát
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
@@ -139,7 +176,7 @@
                             <img class="d-block w-100" src="./assets/images/banner_1.png" alt="Los Angeles">
                             <div class="container-custom banner__slider__carousel__inner__item__content">
                                 <h1 class="hd hd-1 hd-info">Cộng đồng hỗ trợ</h1>
-                                <p class="banner__slider__carousel__inner__item__content-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,</p>
+                                <p class="hd hd-5 hd-info banner__slider__carousel__inner__item__content-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,</p>
                                 <button class="btn btnc btnc-large btnc-secondary">Tìm hiểu về quỹ</button>
                             </div>
                         </div>
@@ -147,7 +184,7 @@
                             <img class="d-block w-100" src="./assets/images/banner_1.png" alt="Chicago">
                             <div class="container-custom banner__slider__carousel__inner__item__content">
                                 <h1 class="hd hd-1 hd-info">Cộng đồng hỗ trợ</h1>
-                                <p class="banner__slider__carousel__inner__item__content-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,</p>
+                                <p class="hd hd-5 hd-info banner__slider__carousel__inner__item__content-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,</p>
                                 <button class="btn btnc btnc-large btnc-secondary">Tìm hiểu về quỹ</button>
                             </div>
                         </div>
@@ -155,7 +192,7 @@
                             <img class="d-block w-100" src="./assets/images/banner_1.png" alt="New York">
                                 <div class="container-custom banner__slider__carousel__inner__item__content">
                                 <h1 class="hd hd-1 hd-info">Cộng đồng hỗ trợ</h1>
-                                <p class="banner__slider__carousel__inner__item__content-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,</p>
+                                <p class="hd hd-5 hd-info banner__slider__carousel__inner__item__content-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,</p>
                                 <button class="btn btnc btnc-large btnc-secondary">Tìm hiểu về quỹ</button>
                             </div>
                         </div>
@@ -227,7 +264,7 @@
                                         <div class="card-body">
                                             <h5 class="card-title hd-4">Kế hoạch hỗ trợ bệnh nặng</h5>
                                             <p class="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, </p>
-                                            <a href="#" >
+                                            <a href="./assurances.html" >
                                                 <button class="btn btnc btnc-large btnc-secondary-outline">
                                                     Xem chi tiết
                                                 </button> 
@@ -239,7 +276,7 @@
                                         <div class="card-body">
                                             <h5 class="card-title hd-4">Kế hoạch chống ung thư cho người cao tuổi</h5>
                                             <p class="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, </p>
-                                            <a href="#">
+                                            <a href="./assurances.html">
                                                 <button class="btn btnc btnc-large btnc-secondary-outline">
                                                     Xem chi tiết
                                                 </button> 
@@ -251,7 +288,7 @@
                                         <div class="card-body">
                                             <h5 class="card-title hd-4">Kế hoạch chống ung thư cho người mắc bệnh mãn tính</h5>
                                             <p class="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, </p>
-                                            <a href="#">
+                                            <a href="./assurances.html">
                                                 <button class="btn btnc btnc-large btnc-secondary-outline">
                                                     Xem chi tiết
                                                 </button> 
@@ -263,7 +300,7 @@
                                         <div class="card-body">
                                             <h5 class="card-title hd-4">Kế hoạch hỗ trợ trong trường hợp về sự cố giao thông</h5>
                                             <p class="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, </p>
-                                            <a href="#">
+                                            <a href="./assurances.html">
                                                 <button class="btn btnc btnc-large btnc-secondary-outline">
                                                     Xem chi tiết
                                                 </button> 
@@ -313,7 +350,7 @@
                                     </a>
                                     
                                 </div>
-                                <div id="collapse2" class="body collapse">
+                                <div id="collapse2" class="body collapse show">
                                     <div class="body-content hd hd-5 hd-intro">
                                         Số lượng người tham gia phân chia quỹ hỗ trợ lẫn nhau trong mỗi kỳ sẽ bị khoá một ngày trước khi công bố. Nếu bạn rút khỏi kế hoạch hỗ trợ vào ngày công khai và sau ngày công khai, bạn vẫn cần tham gia phân chia hỗ trợ tại kỳ hiện tại và phí phân bố sẽ được Alipay khấu trừ vào ngày phân chia. Bạn cũng sẽ không cần tham gia phân chia vào kỳ đầu của kỳ tiếp theo
                                     </div>
@@ -327,7 +364,7 @@
                                     </a>
                                     
                                 </div>
-                                <div id="collapse3" class="body collapse">
+                                <div id="collapse3" class="body collapse show">
                                     <div class="body-content hd hd-5 hd-intro">
                                         Đáp ứng các yêu cầu về sức khoẻ hoặc quy tắc hỗ trợ khi bị tai nạn giao thông công cộng, về bệnh tật hoặc thương tật do tai nạn nằm trong phạm vi hỗ trợ. Các loại bệnh hoặc là bị thương do tai nạn có trong phạm vi bảo vệ sẽ có hiệu lực. Bạn có thể đăng ký hỗ trợ sau khi kiểm tra sức khoẻ hoặc bị trấn thương do tai nạn. 
                                     </div>
@@ -341,7 +378,7 @@
                                     </a>
                                     
                                 </div>
-                                <div id="collapse4" class="body collapse">
+                                <div id="collapse4" class="body collapse show">
                                     <div class="body-content hd hd-5 hd-intro">
                                         Phạm vi hỗ trợ của chương trình đối với các bệnh nặng, nghiêm trọng với 99 bệnh hiểm nghèo + khối u ác tính + các bệnh hiếm gặp cụ thể, hỗ trợ tối đa là 30 vạn nhân dân tệ. Phạm vi hỗ trợ đối với chương trình chống ung thư dành cho người mắc bệnh mãn tính và chống ung thư cho người già tối đa nhận được 10 vạn tệ. Tử vong và tàn tật do tai nạn khi di chuyển bằng phương tiện đang vận hành liên quan đến nước Việt Nam bao gồm: máy bay hàng không dân dụng, tàu khách, phương tiện vận tải đường sắt (tàu điện ngầm, đường sắt), phương tiện chở khách (xe bus, xe bus đường dài, xe điện, taxi, nền tảng và các dịch vụ gọi xe trực tuyến) đã được chính phủ đăng ký và phê duyệt cho mục đích hoạt động, hỗ trợ cao nhất lên tới 100 vạn nhân dân. 
                                     </div>
@@ -355,7 +392,7 @@
                                     </a>
                                     
                                 </div>
-                                <div id="collapse5" class="body collapse">
+                                <div id="collapse5" class="body collapse show">
                                     <div class="body-content hd hd-5 hd-intro">
                                         Đáp ứng các yêu cầu về sức khoẻ hoặc quy tắc hỗ trợ khi bị tai nạn giao thông công cộng, về bệnh tật hoặc thương tật do tai nạn nằm trong phạm vi hỗ trợ. Các loại bệnh hoặc là bị thương do tai nạn có trong phạm vi bảo vệ sẽ có hiệu lực. Bạn có thể đăng ký hỗ trợ sau khi kiểm tra sức khoẻ hoặc bị trấn thương do tai nạn. 
                                     </div>

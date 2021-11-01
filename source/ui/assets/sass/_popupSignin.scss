@@ -47,3 +47,20 @@
         }
     }
 }
+
+@media screen and (max-width: 700px) {
+    .popup1 {
+        &-dialog {
+            margin: 180px 5px;
+            &-content {
+                width: 100%;
+                .modal-body {  
+                    padding: 11px 10px !important;
+                    input[type=text] {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}

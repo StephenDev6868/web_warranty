@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chương trình của tôi</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="./assets/common/css/bootstrap.min.css">
@@ -18,115 +19,7 @@
 
 <body>
     <div class="wrapper">
-        <div class="header-navigation">
-            <header class="header">
-                <div class="container-custom">
-                    <div class="header__content">
-                        <ul class="header__content__contact">
-                            <div class="header__content__contact--item">
-                                <img srcset="./assets/icons/Calling.png 2x" alt="">
-                                <p>1900.988.965 | 0906.060.784</p> 
-                            </div>
-                            <div class="header__content__contact--item">
-                                <img srcset="./assets/icons/Message.png 2x" alt="">
-                                <p>webtuongho@vics.vn</p> 
-                            </div>
-                        </ul>
-                        <div class="header__content__action">
-                            <a href="./register-program.html">
-                                <button class="btn btnc btnc-primary">Đăng ký</button>
-                            </a>
-                            <a href="#">
-                                <button class="btn btnc btnc-secondary" data-toggle="modal" data-target="#signIn">Đăng nhập</button>
-                            </a>
-                        </div>
-                        <div class="header__content__user d-none">
-                            <div class="header__content__user-notification dropdown">
-                                <img src="./assets/icons/notification.svg" class="dropdown-toggle" data-toggle="dropdown" alt="">
-                                <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="#">
-                                        <p class="hd hd-5 hd-intro text-notify">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s </p>
-                                    </a>
-                                    <a class="dropdown-item" href="#">
-                                        <p class="hd hd-5 hd-intro text-notify">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s </p>
-                                    </a>
-                                    <a class="dropdown-item" href="#">
-                                        <p class="hd hd-5 hd-intro text-notify">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s </p>
-                                    </a>
-                                    <a class="dropdown-item" href="#">
-                                        <p class="hd hd-5 hd-intro text-notify">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s </p>
-                                    </a>
-                                    <a class="dropdown-item" href="#">
-                                        <p class="hd hd-5 hd-intro text-notify">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s </p>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="header__content__user-name">
-                                <div class="money text-right">
-                                    <p class="hd hd-5 hd-intro">Xin chào, Hạnh Lê</p>
-                                    <div class="money-cash">
-                                        <img src="./assets/icons/dolar.svg" alt="">
-                                        <p class="hd hd-5-bold hd-gold">30.000 xu</p>
-                                    </div>
-                                </div>
-                                <div class="avatar">
-                                    <p class="text-center">H</p>
-                                </div>   
-                            </div>
-                            <div class="header__content__user-page dropdown">
-                                <img src="./assets/icons/arrow_qa.svg" class="dropdown-toggle" data-toggle="dropdown" alt="">
-                                <div class="dropdown-menu">
-                                    <a class="hd hd-5 hd-intro dropdown-item" href="./my-program.html">Chương trình của tôi</a>
-                                    <a class="hd hd-5 hd-intro dropdown-item" href="./my-wallet.html">Ví của tôi</a>
-                                    <a class="hd hd-5 hd-intro dropdown-item" href="./devide-user.html">Công khai phân chia</a>
-                                    <a class="hd hd-5 hd-intro dropdown-item" href="./register-receive.html">Đăng ký nhận hỗ trợ</a>
-                                    <a class="hd hd-5 hd-intro dropdown-item" href="./history-compensation-0.html">Quyền lợi</a>
-                                    <a class="hd hd-5 hd-secondary dropdown-item" href="" id="signOut">Đăng xuất</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </header>
-            <div class="navigation">
-                <div class="container-custom navigation__content">
-                    <div class="navigation__content__logo">
-                        <a href="./home.html" class="navigation__content__logo__item">
-                            <img class="logo" srcset="./assets/images/logo.png 1x" alt="">                      
-                        </a>
-                    </div>
-                    <div class="navigation__content__menu">
-                        <ul class="navigation__content__menu__list">
-                            <li class="navigation__content__menu__list__item">
-                                <a href="./home.html" class="navigation__content__menu__list__item__link home_page" id="home_page">
-                                    Trang chủ
-                                </a>
-                            </li>
-                            <li class="navigation__content__menu__list__item">
-                                <a href="./about.html" class="navigation__content__menu__list__item__link about_page" id="about_page">
-                                    Về chúng tôi
-                                </a>
-                            </li>
-                            <li class="navigation__content__menu__list__item">
-                                <a href="./assurances.html" class="navigation__content__menu__list__item__link" id="assurance_page">
-                                    Chương trình bảo hiểm 
-                                </a>
-                            </li>
-                            <li class="navigation__content__menu__list__item">
-                                <a href="./public-divided.html" class="navigation__content__menu__list__item__link" id="divided_page">
-                                    Công khai phân chia
-                                </a>
-                            </li>
-                            <li class="navigation__content__menu__list__item">
-                                <a href="./support.html" class="navigation__content__menu__list__item__link" id="support_control_page">
-                                    Hỗ trợ và kiểm soát
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
         <div class="banner">
             <div class="banner__slider">
@@ -142,7 +35,7 @@
                             <img class="d-block w-100" src="./assets/images/banner_1.png" alt="Los Angeles">
                             <div class="container-custom banner__slider__carousel__inner__item__content">
                                 <h1 class="hd hd-1 hd-info">Cộng đồng hỗ trợ</h1>
-                                <p class="banner__slider__carousel__inner__item__content-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,</p>
+                                <p class="hd hd-5 hd-intro banner__slider__carousel__inner__item__content-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,</p>
                                 <button class="btn btn btnc btnc-large btnc-secondary">Tìm hiểu về quỹ</button>
                             </div>
                         </div>
@@ -150,7 +43,7 @@
                             <img class="d-block w-100" src="./assets/images/banner_1.png" alt="Chicago">
                             <div class="container-custom banner__slider__carousel__inner__item__content">
                                 <h1 class="hd hd-1 hd-info">Cộng đồng hỗ trợ</h1>
-                                <p class="banner__slider__carousel__inner__item__content-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,</p>
+                                <p class="hd hd-5 hd-intro banner__slider__carousel__inner__item__content-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,</p>
                                 <button class="btn btnc btnc-large btnc-secondary">Tìm hiểu về quỹ</button>
                             </div>
                         </div>
@@ -158,7 +51,7 @@
                             <img class="d-block w-100" src="./assets/images/banner_1.png" alt="New York">
                                 <div class="container-custom banner__slider__carousel__inner__item__content">
                                 <h1 class="hd hd-1 hd-info">Cộng đồng hỗ trợ</h1>
-                                <p class="banner__slider__carousel__inner__item__content-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,</p>
+                                <p class="hd hd-5 hd-intro banner__slider__carousel__inner__item__content-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,</p>
                                 <button class="btn btnc btnc-large btnc-secondary">Tìm hiểu về quỹ</button>
                             </div>
                         </div>
