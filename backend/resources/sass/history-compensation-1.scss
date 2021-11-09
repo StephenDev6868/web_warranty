@@ -1,0 +1,137 @@
+@import "variables";
+@import "common";
+@import "header";
+@import "banner";
+@import "footer";
+@import "popupSignin";
+@import "popupOTP";
+.wrapper {
+	.main {
+		max-width: 100%;
+		padding: 64px 0 90px;
+		.title {
+			text-align: center;
+			font-size: 24px;
+			font-weight: bold;
+		}
+		.menu-select {
+			margin: 0 auto;
+			margin-top: 37px;
+			justify-content: center;
+			.menu-item {
+				max-width: 380px;
+				flex-basis: 0;
+				flex-grow: 1;
+				&:not(:last-child) {
+					margin-right: 20px;
+				}
+				&:hover {
+					opacity: 0.6;
+				}
+				&.active {
+					a {
+						background: $primary-color;
+						color: #fff;
+					}
+				}
+				a {
+					display: block;
+					padding: 11px 0;
+					font-size: 18px;
+					text-align: center;
+					background: #fff;
+					color: $primary-color;
+					border: 1px solid $primary-color;
+					&:hover {
+						text-decoration: none;
+					}
+				}
+			}
+		}
+		.info {
+			width: 714px;
+			margin: 0 auto;
+            margin-top: 55px;
+            padding: 50px 0 70px;
+			background: $bg-card-color;
+			border-radius: 5px;
+			.row-info {
+				display: flex;
+                justify-content: space-between;
+                padding: 12px 60px;
+				.label {
+					font-weight: bold;
+					font-size: 18px;
+					color: $intro-color;
+				}
+				.description {
+					font-weight: 500;
+					font-size: 18px;
+				}
+			}
+		}
+	}
+}
+
+
+@media only screen and (max-width: 1024px) {
+	.wrapper {
+		.main {
+			max-width: 100%;
+			padding: 44px 0 60px;
+			.title {
+				font-size: 22px;
+			}
+			.menu-select {
+				width: 100%;
+				margin: 0 auto;
+				margin-top: 37px;
+				justify-content: center;
+				flex-direction: column;
+				align-items: center;
+				.menu-item {
+					width: 80%;
+					max-width: 80%;
+					flex-basis: 0;
+					flex-grow: 1;
+					&:not(:last-child) {
+						margin-right: unset;
+					}
+					&:not(:first-child) {
+						margin-top: 20px;
+					}
+					&:hover {
+						opacity: 1;
+					}
+					&.active {
+					}
+					a {
+						display: block;
+						padding: 11px 0;
+						font-size: 16px;
+						&:hover {
+							text-decoration: none;
+						}
+					}
+				}
+			}
+			.info {
+				width: 100%;
+				margin-top: 55px;
+				padding: 50px 0 70px;
+				.row-info {
+					display: flex;
+					justify-content: space-between;
+					padding: 10px 15px;
+					.label {
+						font-weight: bold;
+						font-size: 16px;
+					}
+					.description {
+						font-size: 16px;
+					}
+				}
+			}
+		}
+	}
+} 
