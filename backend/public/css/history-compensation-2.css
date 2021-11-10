@@ -152,6 +152,11 @@ li {
     overflow-x: hidden;
   }
 
+  .wrapper {
+    width: 100%;
+    overflow-x: hidden;
+  }
+
   .hd-1 {
     font-size: 38px;
   }
