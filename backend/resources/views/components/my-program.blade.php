@@ -25,13 +25,13 @@ $name = 'wrapper';
         <div class="program-time">
             <p class="date-time-ctn">
                 <span class="calendar-icon">
-                    <img src="{{ asset('images/calendar.png') }}" alt="">
+                    <img src="{{ asset('images/calendar.svg') }}" alt="">
                 </span>
                 <span class="date-time">Thời gian bắt đầu: 0:00h ngày 12/11/2020</span>
             </p>
             <p class="date-time-ctn">
                 <span class="calendar-icon">
-                    <img src="{{ asset('images/calendar.png') }}" alt="">
+                    <img src="{{ asset('images/calendar.svg') }}" alt="">
                 </span>
                 <span class="date-time">Thời gian kết thúc: 23h59’ ngày 12/11/2021</span>
             </p>

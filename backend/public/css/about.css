@@ -146,6 +146,25 @@ li {
   margin: 0 auto;
 }
 
+.social-media {
+  position: relative;
+}
+.social-media-item img {
+  position: fixed;
+}
+.social-media-item img.meseager {
+  top: 85%;
+  left: 1%;
+}
+.social-media-item img.calling_phone {
+  top: 92%;
+  left: 1%;
+}
+.social-media-item img.charge_money {
+  top: 90%;
+  right: 1%;
+}
+
 @media screen and (max-width: 1245px) {
   .warpper {
     width: 100%;
@@ -739,6 +758,25 @@ li {
 .wrapper .main {
   max-width: 1180px;
   margin: 0 auto;
+}
+
+.social-media {
+  position: relative;
+}
+.social-media-item img {
+  position: fixed;
+}
+.social-media-item img.meseager {
+  top: 85%;
+  left: 1%;
+}
+.social-media-item img.calling_phone {
+  top: 92%;
+  left: 1%;
+}
+.social-media-item img.charge_money {
+  top: 90%;
+  right: 1%;
 }
 
 @media screen and (max-width: 1245px) {

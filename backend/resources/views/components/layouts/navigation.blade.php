@@ -1,7 +1,7 @@
 <div class="navigation">
     <div class="container-custom navigation__content">
         <div class="navigation__content__logo">
-            <a href="./home.html" class="navigation__content__logo__item">
+            <a href="{{ route('home') }}" class="navigation__content__logo__item">
                 <img class="logo" srcset="{{asset('images/logo.png')}} 1x" alt="">                      
             </a>
         </div>
@@ -44,27 +44,27 @@
             <ul class="navigation__content__navbarR__list">
                 <li class="navigation__content__navbarR__list__item" id="home_nav">
                     <i class="fa fa-close" id="close_page"></i>
-                    <a href="./home.html" class="navigation__content__navbarR__list__item__link home_page" id="home_pageR">
+                    <a href="{{ route('home') }}" class="navigation__content__navbarR__list__item__link home_page" id="home_pageR">
                         Trang chủ
                     </a>
                 </li>
                 <li class="navigation__content__navbarR__list__item">
-                    <a href="./about.html" class="navigation__content__navbarR__list__item__link about_page" id="about_pageR">
+                    <a href="{{ route('about') }}" class="navigation__content__navbarR__list__item__link about_page" id="about_pageR">
                         Về chúng tôi
                     </a>
                 </li>
                 <li class="navigation__content__navbarR__list__item">
-                    <a href="./assurances.html" class="navigation__content__navbarR__list__item__link" id="assurance_pageR">
+                    <a href="{{ route('assurance') }}" class="navigation__content__navbarR__list__item__link" id="assurance_pageR">
                         Chương trình bảo hiểm 
                     </a>
                 </li>
                 <li class="navigation__content__navbarR__list__item">
-                    <a href="./public-divided.html" class="navigation__content__navbarR__list__item__link" id="divided_pageR">
+                    <a href="{{ route('public-divided') }}" class="navigation__content__navbarR__list__item__link" id="divided_pageR">
                         Công khai phân chia
                     </a>
                 </li>
                 <li class="navigation__content__navbarR__list__item">
-                    <a href="./support.html" class="navigation__content__navbarR__list__item__link" id="support_control_pageR">
+                    <a href="{{ route('supporter') }}" class="navigation__content__navbarR__list__item__link" id="support_control_pageR">
                         Hỗ trợ và kiểm soát
                     </a>
                 </li>

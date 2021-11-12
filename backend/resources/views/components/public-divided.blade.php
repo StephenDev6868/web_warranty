@@ -87,8 +87,8 @@ $name = 'warpper';
                                         <h4 class="hd hd-4 hd-secondary text-left">Nguyễn Ngọc Hà </h4>
                                     </a>
                                     <span class="hd hd-5 hd-intro">
-                                        59 tuổi, 
-                                        ngày tham gia 18/10/20201, 
+                                        59 tuổi,
+                                        ngày tham gia 18/10/20201,
                                         đã chia sẻ: 108.000.000 đ
                                     </span>
                                 </div>
@@ -98,32 +98,8 @@ $name = 'warpper';
                                         <h4 class="hd hd-4 hd-secondary text-left">Nguyễn Ngọc Hà </h4>
                                     </a>
                                     <span class="hd hd-5 hd-intro">
-                                        59 tuổi, 
-                                        ngày tham gia 18/10/20201, 
-                                        đã chia sẻ: 108.000.000 đ
-                                    </span>
-                                </div>
-                            </div>
-                            <div class="main-divided-content-program-info-cover-list">
-                                <div class="main-divided-content-program-info-cover-list_item">
-                                    <a href="{{ route('public-divided-detail') }}" class="title">
-                                        <img src="./assets/icons/Profile.svg" alt="">
-                                        <h4 class="hd hd-4 hd-secondary text-left">Nguyễn Ngọc Hà </h4>
-                                    </a>
-                                    <span class="hd hd-5 hd-intro">
-                                        59 tuổi, 
-                                        ngày tham gia 18/10/20201, 
-                                        đã chia sẻ: 108.000.000 đ
-                                    </span>
-                                </div>
-                                <div class="main-divided-content-program-info-cover-list_item">
-                                    <a href="{{ route('public-divided-detail') }}" class="title">
-                                        <img src="./assets/icons/Profile.svg" alt="">
-                                        <h4 class="hd hd-4 hd-secondary text-left">Nguyễn Ngọc Hà </h4>
-                                    </a>
-                                    <span class="hd hd-5 hd-intro">
-                                        59 tuổi, 
-                                        ngày tham gia 18/10/20201, 
+                                        59 tuổi,
+                                        ngày tham gia 18/10/20201,
                                         đã chia sẻ: 108.000.000 đ
                                     </span>
                                 </div>
@@ -135,8 +111,8 @@ $name = 'warpper';
                                         <h4 class="hd hd-4 hd-secondary text-left">Nguyễn Ngọc Hà </h4>
                                     </a>
                                     <span class="hd hd-5 hd-intro">
-                                        59 tuổi, 
-                                        ngày tham gia 18/10/20201, 
+                                        59 tuổi,
+                                        ngày tham gia 18/10/20201,
                                         đã chia sẻ: 108.000.000 đ
                                     </span>
                                 </div>
@@ -146,32 +122,8 @@ $name = 'warpper';
                                         <h4 class="hd hd-4 hd-secondary text-left">Nguyễn Ngọc Hà </h4>
                                     </a>
                                     <span class="hd hd-5 hd-intro">
-                                        59 tuổi, 
-                                        ngày tham gia 18/10/20201, 
-                                        đã chia sẻ: 108.000.000 đ
-                                    </span>
-                                </div>
-                            </div>
-                            <div class="main-divided-content-program-info-cover-list">
-                                <div class="main-divided-content-program-info-cover-list_item">
-                                    <a href="{{ route('public-divided-detail') }}" class="title">
-                                        <img src="./assets/icons/Profile.svg" alt="">
-                                        <h4 class="hd hd-4 hd-secondary text-left">Nguyễn Ngọc Hà </h4>
-                                    </a>
-                                    <span class="hd hd-5 hd-intro">
-                                        59 tuổi, 
-                                        ngày tham gia 18/10/20201, 
-                                        đã chia sẻ: 108.000.000 đ
-                                    </span>
-                                </div>
-                                <div class="main-divided-content-program-info-cover-list_item">
-                                    <a href="{{ route('public-divided-detail') }}" class="title">
-                                        <img src="./assets/icons/Profile.svg" alt="">
-                                        <h4 class="hd hd-4 hd-secondary text-left">Nguyễn Ngọc Hà </h4>
-                                    </a>
-                                    <span class="hd hd-5 hd-intro">
-                                        59 tuổi, 
-                                        ngày tham gia 18/10/20201, 
+                                        59 tuổi,
+                                        ngày tham gia 18/10/20201,
                                         đã chia sẻ: 108.000.000 đ
                                     </span>
                                 </div>
@@ -183,8 +135,8 @@ $name = 'warpper';
                                         <h4 class="hd hd-4 hd-secondary text-left">Nguyễn Ngọc Hà </h4>
                                     </a>
                                     <span class="hd hd-5 hd-intro">
-                                        59 tuổi, 
-                                        ngày tham gia 18/10/20201, 
+                                        59 tuổi,
+                                        ngày tham gia 18/10/20201,
                                         đã chia sẻ: 108.000.000 đ
                                     </span>
                                 </div>
@@ -194,8 +146,56 @@ $name = 'warpper';
                                         <h4 class="hd hd-4 hd-secondary text-left">Nguyễn Ngọc Hà </h4>
                                     </a>
                                     <span class="hd hd-5 hd-intro">
-                                        59 tuổi, 
-                                        ngày tham gia 18/10/20201, 
+                                        59 tuổi,
+                                        ngày tham gia 18/10/20201,
+                                        đã chia sẻ: 108.000.000 đ
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="main-divided-content-program-info-cover-list">
+                                <div class="main-divided-content-program-info-cover-list_item">
+                                    <a href="{{ route('public-divided-detail') }}" class="title">
+                                        <img src="./assets/icons/Profile.svg" alt="">
+                                        <h4 class="hd hd-4 hd-secondary text-left">Nguyễn Ngọc Hà </h4>
+                                    </a>
+                                    <span class="hd hd-5 hd-intro">
+                                        59 tuổi,
+                                        ngày tham gia 18/10/20201,
+                                        đã chia sẻ: 108.000.000 đ
+                                    </span>
+                                </div>
+                                <div class="main-divided-content-program-info-cover-list_item">
+                                    <a href="{{ route('public-divided-detail') }}" class="title">
+                                        <img src="./assets/icons/Profile.svg" alt="">
+                                        <h4 class="hd hd-4 hd-secondary text-left">Nguyễn Ngọc Hà </h4>
+                                    </a>
+                                    <span class="hd hd-5 hd-intro">
+                                        59 tuổi,
+                                        ngày tham gia 18/10/20201,
+                                        đã chia sẻ: 108.000.000 đ
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="main-divided-content-program-info-cover-list">
+                                <div class="main-divided-content-program-info-cover-list_item">
+                                    <a href="{{ route('public-divided-detail') }}" class="title">
+                                        <img src="./assets/icons/Profile.svg" alt="">
+                                        <h4 class="hd hd-4 hd-secondary text-left">Nguyễn Ngọc Hà </h4>
+                                    </a>
+                                    <span class="hd hd-5 hd-intro">
+                                        59 tuổi,
+                                        ngày tham gia 18/10/20201,
+                                        đã chia sẻ: 108.000.000 đ
+                                    </span>
+                                </div>
+                                <div class="main-divided-content-program-info-cover-list_item">
+                                    <a href="{{ route('public-divided-detail') }}" class="title">
+                                        <img src="./assets/icons/Profile.svg" alt="">
+                                        <h4 class="hd hd-4 hd-secondary text-left">Nguyễn Ngọc Hà </h4>
+                                    </a>
+                                    <span class="hd hd-5 hd-intro">
+                                        59 tuổi,
+                                        ngày tham gia 18/10/20201,
                                         đã chia sẻ: 108.000.000 đ
                                     </span>
                                 </div>
@@ -302,7 +302,7 @@ $name = 'warpper';
                             <p class="hd hd-5 hd-intro text-left">
                                 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, <br> <br>
                                 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,
-                            </p>    
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -347,8 +347,8 @@ $name = 'warpper';
                                         <h4 class="hd hd-4 hd-secondary text-left">Nguyễn Ngọc Hà </h4>
                                     </a>
                                     <span class="hd hd-5 hd-intro">
-                                        59 tuổi, 
-                                        ngày tham gia 18/10/20201, 
+                                        59 tuổi,
+                                        ngày tham gia 18/10/20201,
                                         đã chia sẻ: 108.000.000 đ
                                     </span>
                                 </div>
@@ -358,32 +358,8 @@ $name = 'warpper';
                                         <h4 class="hd hd-4 hd-secondary text-left">Nguyễn Ngọc Hà </h4>
                                     </a>
                                     <span class="hd hd-5 hd-intro">
-                                        59 tuổi, 
-                                        ngày tham gia 18/10/20201, 
-                                        đã chia sẻ: 108.000.000 đ
-                                    </span>
-                                </div>
-                            </div>
-                            <div class="main-divided-content-program-info-cover-list">
-                                <div class="main-divided-content-program-info-cover-list_item">
-                                    <a href="{{ route('public-divided-detail') }}" class="title">
-                                        <img src="./assets/icons/Profile.svg" alt="">
-                                        <h4 class="hd hd-4 hd-secondary text-left">Nguyễn Ngọc Hà </h4>
-                                    </a>
-                                    <span class="hd hd-5 hd-intro">
-                                        59 tuổi, 
-                                        ngày tham gia 18/10/20201, 
-                                        đã chia sẻ: 108.000.000 đ
-                                    </span>
-                                </div>
-                                <div class="main-divided-content-program-info-cover-list_item">
-                                    <a href="{{ route('public-divided-detail') }}" class="title">
-                                        <img src="./assets/icons/Profile.svg" alt="">
-                                        <h4 class="hd hd-4 hd-secondary text-left">Nguyễn Ngọc Hà </h4>
-                                    </a>
-                                    <span class="hd hd-5 hd-intro">
-                                        59 tuổi, 
-                                        ngày tham gia 18/10/20201, 
+                                        59 tuổi,
+                                        ngày tham gia 18/10/20201,
                                         đã chia sẻ: 108.000.000 đ
                                     </span>
                                 </div>
@@ -395,8 +371,8 @@ $name = 'warpper';
                                         <h4 class="hd hd-4 hd-secondary text-left">Nguyễn Ngọc Hà </h4>
                                     </a>
                                     <span class="hd hd-5 hd-intro">
-                                        59 tuổi, 
-                                        ngày tham gia 18/10/20201, 
+                                        59 tuổi,
+                                        ngày tham gia 18/10/20201,
                                         đã chia sẻ: 108.000.000 đ
                                     </span>
                                 </div>
@@ -406,32 +382,8 @@ $name = 'warpper';
                                         <h4 class="hd hd-4 hd-secondary text-left">Nguyễn Ngọc Hà </h4>
                                     </a>
                                     <span class="hd hd-5 hd-intro">
-                                        59 tuổi, 
-                                        ngày tham gia 18/10/20201, 
-                                        đã chia sẻ: 108.000.000 đ
-                                    </span>
-                                </div>
-                            </div>
-                            <div class="main-divided-content-program-info-cover-list">
-                                <div class="main-divided-content-program-info-cover-list_item">
-                                    <a href="{{ route('public-divided-detail') }}" class="title">
-                                        <img src="./assets/icons/Profile.svg" alt="">
-                                        <h4 class="hd hd-4 hd-secondary text-left">Nguyễn Ngọc Hà </h4>
-                                    </a>
-                                    <span class="hd hd-5 hd-intro">
-                                        59 tuổi, 
-                                        ngày tham gia 18/10/20201, 
-                                        đã chia sẻ: 108.000.000 đ
-                                    </span>
-                                </div>
-                                <div class="main-divided-content-program-info-cover-list_item">
-                                    <a href="{{ route('public-divided-detail') }}" class="title">
-                                        <img src="./assets/icons/Profile.svg" alt="">
-                                        <h4 class="hd hd-4 hd-secondary text-left">Nguyễn Ngọc Hà </h4>
-                                    </a>
-                                    <span class="hd hd-5 hd-intro">
-                                        59 tuổi, 
-                                        ngày tham gia 18/10/20201, 
+                                        59 tuổi,
+                                        ngày tham gia 18/10/20201,
                                         đã chia sẻ: 108.000.000 đ
                                     </span>
                                 </div>
@@ -443,8 +395,8 @@ $name = 'warpper';
                                         <h4 class="hd hd-4 hd-secondary text-left">Nguyễn Ngọc Hà </h4>
                                     </a>
                                     <span class="hd hd-5 hd-intro">
-                                        59 tuổi, 
-                                        ngày tham gia 18/10/20201, 
+                                        59 tuổi,
+                                        ngày tham gia 18/10/20201,
                                         đã chia sẻ: 108.000.000 đ
                                     </span>
                                 </div>
@@ -454,8 +406,56 @@ $name = 'warpper';
                                         <h4 class="hd hd-4 hd-secondary text-left">Nguyễn Ngọc Hà </h4>
                                     </a>
                                     <span class="hd hd-5 hd-intro">
-                                        59 tuổi, 
-                                        ngày tham gia 18/10/20201, 
+                                        59 tuổi,
+                                        ngày tham gia 18/10/20201,
+                                        đã chia sẻ: 108.000.000 đ
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="main-divided-content-program-info-cover-list">
+                                <div class="main-divided-content-program-info-cover-list_item">
+                                    <a href="{{ route('public-divided-detail') }}" class="title">
+                                        <img src="./assets/icons/Profile.svg" alt="">
+                                        <h4 class="hd hd-4 hd-secondary text-left">Nguyễn Ngọc Hà </h4>
+                                    </a>
+                                    <span class="hd hd-5 hd-intro">
+                                        59 tuổi,
+                                        ngày tham gia 18/10/20201,
+                                        đã chia sẻ: 108.000.000 đ
+                                    </span>
+                                </div>
+                                <div class="main-divided-content-program-info-cover-list_item">
+                                    <a href="{{ route('public-divided-detail') }}" class="title">
+                                        <img src="./assets/icons/Profile.svg" alt="">
+                                        <h4 class="hd hd-4 hd-secondary text-left">Nguyễn Ngọc Hà </h4>
+                                    </a>
+                                    <span class="hd hd-5 hd-intro">
+                                        59 tuổi,
+                                        ngày tham gia 18/10/20201,
+                                        đã chia sẻ: 108.000.000 đ
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="main-divided-content-program-info-cover-list">
+                                <div class="main-divided-content-program-info-cover-list_item">
+                                    <a href="{{ route('public-divided-detail') }}" class="title">
+                                        <img src="./assets/icons/Profile.svg" alt="">
+                                        <h4 class="hd hd-4 hd-secondary text-left">Nguyễn Ngọc Hà </h4>
+                                    </a>
+                                    <span class="hd hd-5 hd-intro">
+                                        59 tuổi,
+                                        ngày tham gia 18/10/20201,
+                                        đã chia sẻ: 108.000.000 đ
+                                    </span>
+                                </div>
+                                <div class="main-divided-content-program-info-cover-list_item">
+                                    <a href="{{ route('public-divided-detail') }}" class="title">
+                                        <img src="./assets/icons/Profile.svg" alt="">
+                                        <h4 class="hd hd-4 hd-secondary text-left">Nguyễn Ngọc Hà </h4>
+                                    </a>
+                                    <span class="hd hd-5 hd-intro">
+                                        59 tuổi,
+                                        ngày tham gia 18/10/20201,
                                         đã chia sẻ: 108.000.000 đ
                                     </span>
                                 </div>
@@ -562,7 +562,7 @@ $name = 'warpper';
                             <p class="hd hd-5 hd-intro text-left">
                                 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, <br> <br>
                                 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,
-                            </p>    
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -607,8 +607,8 @@ $name = 'warpper';
                                         <h4 class="hd hd-4 hd-secondary text-left">Nguyễn Ngọc Hà </h4>
                                     </a>
                                     <span class="hd hd-5 hd-intro">
-                                        59 tuổi, 
-                                        ngày tham gia 18/10/20201, 
+                                        59 tuổi,
+                                        ngày tham gia 18/10/20201,
                                         đã chia sẻ: 108.000.000 đ
                                     </span>
                                 </div>
@@ -618,32 +618,8 @@ $name = 'warpper';
                                         <h4 class="hd hd-4 hd-secondary text-left">Nguyễn Ngọc Hà </h4>
                                     </a>
                                     <span class="hd hd-5 hd-intro">
-                                        59 tuổi, 
-                                        ngày tham gia 18/10/20201, 
-                                        đã chia sẻ: 108.000.000 đ
-                                    </span>
-                                </div>
-                            </div>
-                            <div class="main-divided-content-program-info-cover-list">
-                                <div class="main-divided-content-program-info-cover-list_item">
-                                    <a href="{{ route('public-divided-detail') }}" class="title">
-                                        <img src="./assets/icons/Profile.svg" alt="">
-                                        <h4 class="hd hd-4 hd-secondary text-left">Nguyễn Ngọc Hà </h4>
-                                    </a>
-                                    <span class="hd hd-5 hd-intro">
-                                        59 tuổi, 
-                                        ngày tham gia 18/10/20201, 
-                                        đã chia sẻ: 108.000.000 đ
-                                    </span>
-                                </div>
-                                <div class="main-divided-content-program-info-cover-list_item">
-                                    <a href="{{ route('public-divided-detail') }}" class="title">
-                                        <img src="./assets/icons/Profile.svg" alt="">
-                                        <h4 class="hd hd-4 hd-secondary text-left">Nguyễn Ngọc Hà </h4>
-                                    </a>
-                                    <span class="hd hd-5 hd-intro">
-                                        59 tuổi, 
-                                        ngày tham gia 18/10/20201, 
+                                        59 tuổi,
+                                        ngày tham gia 18/10/20201,
                                         đã chia sẻ: 108.000.000 đ
                                     </span>
                                 </div>
@@ -655,8 +631,8 @@ $name = 'warpper';
                                         <h4 class="hd hd-4 hd-secondary text-left">Nguyễn Ngọc Hà </h4>
                                     </a>
                                     <span class="hd hd-5 hd-intro">
-                                        59 tuổi, 
-                                        ngày tham gia 18/10/20201, 
+                                        59 tuổi,
+                                        ngày tham gia 18/10/20201,
                                         đã chia sẻ: 108.000.000 đ
                                     </span>
                                 </div>
@@ -666,32 +642,8 @@ $name = 'warpper';
                                         <h4 class="hd hd-4 hd-secondary text-left">Nguyễn Ngọc Hà </h4>
                                     </a>
                                     <span class="hd hd-5 hd-intro">
-                                        59 tuổi, 
-                                        ngày tham gia 18/10/20201, 
-                                        đã chia sẻ: 108.000.000 đ
-                                    </span>
-                                </div>
-                            </div>
-                            <div class="main-divided-content-program-info-cover-list">
-                                <div class="main-divided-content-program-info-cover-list_item">
-                                    <a href="{{ route('public-divided-detail') }}" class="title">
-                                        <img src="./assets/icons/Profile.svg" alt="">
-                                        <h4 class="hd hd-4 hd-secondary text-left">Nguyễn Ngọc Hà </h4>
-                                    </a>
-                                    <span class="hd hd-5 hd-intro">
-                                        59 tuổi, 
-                                        ngày tham gia 18/10/20201, 
-                                        đã chia sẻ: 108.000.000 đ
-                                    </span>
-                                </div>
-                                <div class="main-divided-content-program-info-cover-list_item">
-                                    <a href="{{ route('public-divided-detail') }}" class="title">
-                                        <img src="./assets/icons/Profile.svg" alt="">
-                                        <h4 class="hd hd-4 hd-secondary text-left">Nguyễn Ngọc Hà </h4>
-                                    </a>
-                                    <span class="hd hd-5 hd-intro">
-                                        59 tuổi, 
-                                        ngày tham gia 18/10/20201, 
+                                        59 tuổi,
+                                        ngày tham gia 18/10/20201,
                                         đã chia sẻ: 108.000.000 đ
                                     </span>
                                 </div>
@@ -703,8 +655,8 @@ $name = 'warpper';
                                         <h4 class="hd hd-4 hd-secondary text-left">Nguyễn Ngọc Hà </h4>
                                     </a>
                                     <span class="hd hd-5 hd-intro">
-                                        59 tuổi, 
-                                        ngày tham gia 18/10/20201, 
+                                        59 tuổi,
+                                        ngày tham gia 18/10/20201,
                                         đã chia sẻ: 108.000.000 đ
                                     </span>
                                 </div>
@@ -714,8 +666,56 @@ $name = 'warpper';
                                         <h4 class="hd hd-4 hd-secondary text-left">Nguyễn Ngọc Hà </h4>
                                     </a>
                                     <span class="hd hd-5 hd-intro">
-                                        59 tuổi, 
-                                        ngày tham gia 18/10/20201, 
+                                        59 tuổi,
+                                        ngày tham gia 18/10/20201,
+                                        đã chia sẻ: 108.000.000 đ
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="main-divided-content-program-info-cover-list">
+                                <div class="main-divided-content-program-info-cover-list_item">
+                                    <a href="{{ route('public-divided-detail') }}" class="title">
+                                        <img src="./assets/icons/Profile.svg" alt="">
+                                        <h4 class="hd hd-4 hd-secondary text-left">Nguyễn Ngọc Hà </h4>
+                                    </a>
+                                    <span class="hd hd-5 hd-intro">
+                                        59 tuổi,
+                                        ngày tham gia 18/10/20201,
+                                        đã chia sẻ: 108.000.000 đ
+                                    </span>
+                                </div>
+                                <div class="main-divided-content-program-info-cover-list_item">
+                                    <a href="{{ route('public-divided-detail') }}" class="title">
+                                        <img src="./assets/icons/Profile.svg" alt="">
+                                        <h4 class="hd hd-4 hd-secondary text-left">Nguyễn Ngọc Hà </h4>
+                                    </a>
+                                    <span class="hd hd-5 hd-intro">
+                                        59 tuổi,
+                                        ngày tham gia 18/10/20201,
+                                        đã chia sẻ: 108.000.000 đ
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="main-divided-content-program-info-cover-list">
+                                <div class="main-divided-content-program-info-cover-list_item">
+                                    <a href="{{ route('public-divided-detail') }}" class="title">
+                                        <img src="./assets/icons/Profile.svg" alt="">
+                                        <h4 class="hd hd-4 hd-secondary text-left">Nguyễn Ngọc Hà </h4>
+                                    </a>
+                                    <span class="hd hd-5 hd-intro">
+                                        59 tuổi,
+                                        ngày tham gia 18/10/20201,
+                                        đã chia sẻ: 108.000.000 đ
+                                    </span>
+                                </div>
+                                <div class="main-divided-content-program-info-cover-list_item">
+                                    <a href="{{ route('public-divided-detail') }}" class="title">
+                                        <img src="./assets/icons/Profile.svg" alt="">
+                                        <h4 class="hd hd-4 hd-secondary text-left">Nguyễn Ngọc Hà </h4>
+                                    </a>
+                                    <span class="hd hd-5 hd-intro">
+                                        59 tuổi,
+                                        ngày tham gia 18/10/20201,
                                         đã chia sẻ: 108.000.000 đ
                                     </span>
                                 </div>
@@ -822,7 +822,7 @@ $name = 'warpper';
                             <p class="hd hd-5 hd-intro text-left">
                                 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, <br> <br>
                                 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,
-                            </p>    
+                            </p>
                         </div>
                     </div>
                 </div>

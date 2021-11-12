@@ -23,6 +23,8 @@
 
         <x-banner></x-banner>
 
+        <x-social-media></x-social-media>
+
         <div class="main">
             {{ $slot }}
         </div>
@@ -34,7 +36,7 @@
 
         <x-confirmOTP></x-confirmOTP>
     </div>
-    
+
     <!-- <script src="./assets/common/js/jquery-3.6.0.min.js"></script> -->
     <script src="{{asset('js/header.js')}}"></script>
     <script src="{{asset('js/popup.js')}}"></script>

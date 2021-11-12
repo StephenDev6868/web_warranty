@@ -101,7 +101,7 @@ body {
         width: 186px !important;
         height: 50px !important;
     }
-    
+
     &-banner {
         width: 342px !important;
         height: 50px !important;
@@ -109,7 +109,7 @@ body {
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.16);
         border-radius: 5px;
     }
-    
+
     &-secondary {
         background-color: $secondary-color;
     }
@@ -153,6 +153,31 @@ li {
 		max-width: 1180px;
 		margin: 0 auto;
 	}
+}
+
+.social-media {
+    position: relative;
+    &-item {
+
+        img {
+            position: fixed;
+        }
+
+        img.meseager {
+            top: 85%;
+            left: 1%;
+        }
+
+        img.calling_phone {
+            top: 92%;
+            left: 1%;
+        }
+
+        img.charge_money {
+            top: 90%;
+            right: 1%;
+        }
+    }
 }
 
 @media screen and (max-width: 1245px) {
