@@ -21,7 +21,7 @@ class CreateAdminsTable extends Migration
             $table->dateTime('password_changed_at')->nullable();
             $table->tinyInteger('role')->nullable();
             $table->boolean('is_privilege')->default(false);
-            $table->string('token')->nullable();
+            $table->string('api_token')->nullable();
             $table->timestamps();
             $table->softDeletes();
 

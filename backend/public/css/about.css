@@ -148,6 +148,7 @@ li {
 
 .social-media {
   position: relative;
+  z-index: 999;
 }
 .social-media-item img {
   position: fixed;
@@ -190,6 +191,17 @@ li {
 @media screen and (max-width: 700px) {
   .container-custom {
     padding: 0 1rem;
+  }
+
+  .social-media-item img.meseager {
+    top: 83%;
+    left: 0%;
+  }
+  .social-media-item img.calling_phone {
+    left: 0%;
+  }
+  .social-media-item img.charge_money {
+    right: 0%;
   }
 
   .hd-1 {
@@ -762,6 +774,7 @@ li {
 
 .social-media {
   position: relative;
+  z-index: 999;
 }
 .social-media-item img {
   position: fixed;
@@ -804,6 +817,17 @@ li {
 @media screen and (max-width: 700px) {
   .container-custom {
     padding: 0 1rem;
+  }
+
+  .social-media-item img.meseager {
+    top: 83%;
+    left: 0%;
+  }
+  .social-media-item img.calling_phone {
+    left: 0%;
+  }
+  .social-media-item img.charge_money {
+    right: 0%;
   }
 
   .hd-1 {

@@ -157,6 +157,7 @@ li {
 
 .social-media {
     position: relative;
+    z-index: 999;
     &-item {
 
         img {
@@ -209,6 +210,23 @@ li {
 
     .container-custom {
         padding: 0 1rem;
+    }
+
+    .social-media {
+        &-item {
+            img.meseager {
+                top: 83%;
+                left: 0%;
+            }
+
+            img.calling_phone {
+                left: 0%;
+            }
+
+            img.charge_money {
+                right: 0%;
+            }
+        }
     }
 
     .hd {

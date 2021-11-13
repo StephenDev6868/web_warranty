@@ -13,8 +13,21 @@ return [
     |
     */
 
-    'failed' => 'These credentials do not match our records.',
-    'password' => 'The provided password is incorrect.',
+    'failed' => 'Your login_id or password is incorrect.',
+    'unauthorized' => 'Unauthorized',
     'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
-
+    'login' => [
+        'success' => 'Login successfully.'
+    ],
+    'logout' => [
+        'success' => 'Logout successfully.'
+    ],
+    'reset_password' => [
+        'send_code_success' => 'Send reset password url to email successfully.',
+        'send_code_error' => 'An error occurred while sending reset password url to email.',
+        'reset_success' => 'Reset password successfully.',
+        'invalid_user' => 'User is invalid.',
+        'invalid_token' => 'Token is invalid.',
+        'reset_error' => 'An error occurred while resetting password.',
+    ],
 ];
