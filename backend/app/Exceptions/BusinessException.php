@@ -15,7 +15,7 @@ class BusinessException extends Exception
     /**
      * Errors
      *
-     * @var array
+     * @var string
      */
     protected $errors;
 
@@ -23,11 +23,11 @@ class BusinessException extends Exception
      * BusinessException constructor.
      *
      * @param string         $message  Message
-     * @param array          $errors   Errors
+     * @param string         $errors   Errors
      * @param int            $code     Code
      * @param Throwable|null $previous Previous
      */
-    public function __construct($message = "", $errors = [], $code = 0, Throwable $previous = null)
+    public function __construct($message = "", $errors = "", $code = 0, Throwable $previous = null)
     {
         parent::__construct($message, $code, $previous);
 
@@ -37,7 +37,7 @@ class BusinessException extends Exception
     /**
      * Get Errors
      *
-     * @return array
+     * @return string
      */
     public function getErrors()
     {
