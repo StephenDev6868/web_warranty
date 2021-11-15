@@ -18,6 +18,7 @@ class CreateUsersTable extends Migration
             $table->string('phone_nums')->unsigned()->unique();
             $table->string('user_name');
             $table->string('email');
+            $table->date('birthday')->nullable();
             $table->tinyInteger('sex')->nullable()->comment('1: Male | 2: Female | 3: other');
             $table->string('id_card_num')->nullable();
             $table->string('hi_card_num')->nullable();

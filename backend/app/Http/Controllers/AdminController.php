@@ -19,7 +19,6 @@ class AdminController extends Controller
      * AdminController Constructor
      *
      * @param AdminService $adminService AdminService
-     *
     */
     public function __construct(AdminService $adminService)
     {
@@ -47,6 +46,18 @@ class AdminController extends Controller
         $results = $this->adminService->login($credentials);
 
         return $this->response('', $results);
+    }
+
+    /**
+     * Logout
+     *
+     * @return mixed|\Illuminate\Http\JsonResponse
+     */
+    public function logout()
+    {
+        $this->adminService->logout();
+
+        return $this->responseNoContent();
     }
 
     /**

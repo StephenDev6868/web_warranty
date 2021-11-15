@@ -10,14 +10,13 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
 use Illuminate\Validation\ValidationException;
 
-
-Class AdminService
+class AdminService
 {
-    /**
-    */
-    public function __construct()
-    {
-    }
+    // /**
+    // */
+    // public function __construct()
+    // {
+    // }
 
     /**
      * Login admin
@@ -48,8 +47,23 @@ Class AdminService
             return $admin;
         }
 
-        throw new BusinessException(trans('auth.failed'));
+        throw new BusinessException(trans('auth.unauthorized'), trans('auth.failed'));
+    }
 
+    /**
+     * Logout
+     *
+     * @return void
+    */
+    public function logout()
+    {
+        if (Auth::guest()) {
+            $admin = Auth::user();
+            $admin->token = null;
+            $admin->save();
+
+            Auth::logout();
+        }
     }
 
     /**
