@@ -15,7 +15,8 @@ class QAService
     /**
      */
     public function __construct()
-    { }
+    {
+    }
 
     public function listAll()
     {
@@ -34,7 +35,6 @@ class QAService
 
         $qa = QA::create($attributes);
         return $qa;
-
     }
 
     public function showDetail($id)
@@ -48,5 +48,35 @@ class QAService
             throw new ValidationException($validator);
         }
         return QA::find($id);
+    }
+
+    public function update($id, $params)
+    {
+        $tmpAttr = $params;
+        $tmpAttr['id'] = $id;
+
+        $validator = Validator::make($tmpAttr, [
+            'id' => 'required|numeric|exists:qas,id',
+            'question' => 'required',
+            'answer' => 'required',
+        ]);
+        if ($validator->fails()) {
+            throw new ValidationException($validator);
+        }
+        $qa = QA::find($id);
+        return $qa->update($params);
+    }
+
+    public function delete($id)
+    {
+        $params = ['id' => $id];
+        $validator = Validator::make($params, [
+            'id' => 'required|numeric|exists:qas,id',
+        ]);
+        if ($validator->fails()) {
+            throw new ValidationException($validator);
+        }
+        $qa = QA::find($id);
+        return $qa->delete();
     }
 }

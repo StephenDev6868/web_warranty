@@ -20,7 +20,7 @@ class QAController extends Controller
         return $this->response('', $results);
     }
 
-    public function show(Request $request, $id)
+    public function show($id)
     {
         $results = $this->qaService->showDetail($id);
         return $this->response('', $results);
@@ -33,6 +33,14 @@ class QAController extends Controller
         return $this->response('', $results);
     }
 
-    public function update(Request $request)
-    { }
+    public function update(Request $request, $id)
+    {
+        $result = $this->qaService->update($id, $request->all('question', 'answer'));
+        return $this->response('', $result);
+    }
+
+    public function destroy($id) {
+        $result = $this->qaService->delete($id);
+        return $this->response('', $result);
+    }
 }
