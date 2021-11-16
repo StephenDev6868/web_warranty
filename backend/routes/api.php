@@ -15,14 +15,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-//Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-//    return $request->user();
-//});
 
 Route::post('login', [AdminController::class, 'login']);
 
-Route::group(['middleware' => 'auth:api'], function() {
-    Route::group(['prefix' => 'admins'], function() {
+Route::group(['middleware' => 'auth:api'], function () {
+    Route::post('logout', [AdminController::class, 'logout']);
+    Route::group(['prefix' => 'admins'], function () {
         Route::get('', [AdminController::class, 'index']);
     });
 });
