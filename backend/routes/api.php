@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\QAController;
+use App\Http\Controllers\NewsControler;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,5 +37,12 @@ Route::group(['middleware' => 'auth:api'], function () {
         Route::put('{id}', [QAController::class, 'update']);
         Route::post('', [QAController::class, 'store']);
         Route::delete('{id}', [QAController::class, 'destroy']);
+    });
+    Route::group(['prefix' => 'news'], function () {
+        Route::post('search', [NewsControler::class, 'search']);
+        Route::get('{id}/detail', [NewsControler::class, 'show']);
+        Route::put('{id}/update', [NewsControler::class, 'update']);
+        Route::post('create', [NewsControler::class, 'create']);
+        Route::delete('{id}/delete', [NewsControler::class, 'destroy']);
     });
 });
