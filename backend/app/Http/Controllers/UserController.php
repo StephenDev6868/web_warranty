@@ -2,18 +2,52 @@
 
 namespace App\Http\Controllers;
 
+use App\Exceptions\BusinessException;
+use App\Models\User;
 use Illuminate\Http\Request;
+use App\Services\UserService;
 
 class UserController extends Controller
 {
     /**
+     * UserService
+     *
+     * @var UserService
+    */
+    public $userService;
+
+    /**
+     * UserController constructor
+     *
+     * @param UserService $userService UserService
+    */
+    public function __construct(UserService $userService)
+    {
+        $this->userService = $userService;
+    }
+
+    /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @param Request $request Request
+     *
+     * @return \Illuminate\Http\JsonResponse
+     * @throws BusinessException
+     * @throws \Exception
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        $inputs = $request->all([
+            'phone_nums',
+            'user_name',
+            'email',
+            'id_card_num',
+            'hi_card_num',
+            'limit'
+        ]);
+        $user = $this->userService->getList($inputs);
+
+        return $this->response('', $user);
     }
 
     /**
@@ -29,29 +63,44 @@ class UserController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param  User                     $user    User
+     * @param  \Illuminate\Http\Request $request Request
+     * @return \Illuminate\Http\JsonResponse
      */
-    public function store(Request $request)
+    public function store(User $user, Request $request)
     {
-        //
+        $inputs = $request->all([
+            'id',
+            'phone_nums',
+            'user_name',
+            'email',
+            'id_card_num',
+            'hi_card_num',
+            'birthday',
+            'phone_num_parent',
+            'sex',
+        ]);
+
+        $results = $this->userService->update($user, $inputs);
+
+        return $this->response('', $results);
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param  User $user User
+     * @return mixed|\Illuminate\Http\JsonResponse
      */
-    public function show($id)
+    public function show(User $user)
     {
-        //
+        return $this->response('', $user);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -62,23 +111,26 @@ class UserController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  User                     $user    User
+     * @param  \Illuminate\Http\Request $request Request
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(User $user, Request $request)
     {
-        //
+
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param User $user User
+     *
+     * @return \Illuminate\Http\JsonResponse
      */
-    public function destroy($id)
+    public function destroy(User $user)
     {
-        //
+        $this->userService->delete($user);
+
+        return $this->responseNoContent();
     }
 }

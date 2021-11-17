@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\AdminController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\QAController;
@@ -17,12 +16,19 @@ use App\Http\Controllers\QAController;
 */
 
 
-Route::post('login', [AdminController::class, 'login']);
+Route::post('login', [\App\Http\Controllers\AdminController::class, 'login']);
 
 Route::group(['middleware' => 'auth:api'], function () {
-    Route::post('logout', [AdminController::class, 'logout']);
+    Route::post('logout', [\App\Http\Controllers\AdminController::class, 'logout']);
+
     Route::group(['prefix' => 'admins'], function () {
-        Route::get('', [AdminController::class, 'index']);
+        Route::get('', [\App\Http\Controllers\AdminController::class, 'index']);
+    });
+    Route::group(['prefix' => 'users'], function () {
+        Route::get('', [\App\Http\Controllers\UserController::class, 'index']);
+        Route::delete('/{user}', [\App\Http\Controllers\UserController::class, 'destroy']);
+        Route::get('/{user}', [\App\Http\Controllers\UserController::class, 'show']);
+        Route::put('/{user}', [\App\Http\Controllers\UserController::class, 'store']);
     });
     Route::group(['prefix' => 'qas'], function () {
         Route::get('', [QAController::class, 'index']);
