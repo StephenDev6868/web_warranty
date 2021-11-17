@@ -57,17 +57,17 @@ trait HasApiResponse
      * Response Error JSON
      *
      * @param string $message    Response messgae
-     * @param array  $error      Error array
+     * @param string $error      Error array
      * @param int    $statusCode Status Code
      * @param array  $rest       Another attributes
      *
      * @return \Illuminate\Http\JsonResponse
      */
-    public function responseError($message = '', $error = [], $statusCode = Response::HTTP_BAD_REQUEST, $rest = [])
+    public function responseError($message = '', $error = '', $statusCode = Response::HTTP_BAD_REQUEST, $rest = [])
     {
-        if (empty($error)) {
-            $error = (object) $error;
-        }
+        // if (empty($error)) {
+        //     $error = (object) $error;
+        // }
 
         return response()->json(array_merge($rest, [
             'message'     => $message,
