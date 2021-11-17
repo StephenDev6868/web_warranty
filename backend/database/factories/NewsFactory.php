@@ -17,6 +17,7 @@ class NewsFactory extends Factory
     {
         return [
             'title' => $this->faker->realText($maxNbChars = 100, $indexSize = 2),
+            'preview_content' => $this->faker->realText($maxNbChars = 100, $indexSize = 2),
             'content' => $this->faker->text,
             'thumbnail_url' => $this->faker->image,
         ];

@@ -15,6 +15,6 @@ class News extends Model
     protected $table = 'news';
 
     public $fillable = [
-        'title', 'content', 'thumbnail_url'
+        'title', 'content', 'preview_content', 'thumbnail_url'
     ];
 }

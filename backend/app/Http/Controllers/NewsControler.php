@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Exceptions\BusinessException;
 use App\Services\NewsService;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
+use Symfony\Component\CssSelector\Exception\InternalErrorException;
 
 class NewsControler extends Controller
 {
@@ -22,6 +25,7 @@ class NewsControler extends Controller
         //
         $results = $this->newsService->search($request);
         return $this->response('', $results);
+        throw new InternalErrorException();
     }
 
     /**
@@ -29,20 +33,12 @@ class NewsControler extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
         //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
+        $results = $this->newsService->create($request);
+        return $this->response('', $results);
+        throw new InternalErrorException();
     }
 
     /**
@@ -54,18 +50,11 @@ class NewsControler extends Controller
     public function show($id)
     {
         //
+        $results = $this->newsService->show($id);
+        return $this->response('', $results);
+        throw new InternalErrorException();
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
 
     /**
      * Update the specified resource in storage.
@@ -77,6 +66,9 @@ class NewsControler extends Controller
     public function update(Request $request, $id)
     {
         //
+        $results = $this->newsService->update($request, $id);
+        return $this->response('', $results);
+        throw new InternalErrorException();
     }
 
     /**
@@ -88,5 +80,8 @@ class NewsControler extends Controller
     public function destroy($id)
     {
         //
+        $results = $this->newsService->delete($id);
+        return $this->response('', $results);
+        throw new InternalErrorException();
     }
 }
