@@ -35,7 +35,7 @@ class NewsService
         if ($validator->fails()) {
             throw new ValidationException($validator);
         }
-        $news = DB::table('news');
+        $news = DB::table('news')->whereNull('deleted_at');
         if (!empty($request->key_word)) {
             $news = $news->where('title', 'like', "%{$request->key_word}%")
                 ->orWhere('content', 'like', "%{$request->key_word}%");
@@ -60,7 +60,7 @@ class NewsService
             'title' => 'required',
             'preview_content' => 'required',
             'content' => 'required',
-            'thumbnail' => 'required|max:2048|mimes:jpeg,jpg,png,gif',
+            'thumbnail' => 'required|max:3072|mimes:jpeg,jpg,png,gif',
         ]);
         if ($validator->fails()) {
             throw new ValidationException($validator);
