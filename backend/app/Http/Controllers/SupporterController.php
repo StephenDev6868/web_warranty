@@ -2,18 +2,28 @@
 
 namespace App\Http\Controllers;
 
+use App\Services\SupporterService;
 use Illuminate\Http\Request;
+use Symfony\Component\CssSelector\Exception\InternalErrorException;
 
 class SupporterController extends Controller
 {
+    public function __construct(SupporterService $supporterService)
+    {
+        $this->supporterService = $supporterService;
+    }
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function search(Request $request)
     {
         //
+        //
+        $results = $this->supporterService->search($request);
+        return $this->response('', $results);
+        throw new InternalErrorException();
     }
 
     /**
@@ -21,9 +31,12 @@ class SupporterController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
         //
+        $results = $this->supporterService->create($request);
+        return $this->response('', $results);
+        throw new InternalErrorException();
     }
 
     /**
@@ -46,6 +59,9 @@ class SupporterController extends Controller
     public function show($id)
     {
         //
+        $results = $this->supporterService->show($id);
+        return $this->response('', $results);
+        throw new InternalErrorException();
     }
 
     /**
@@ -69,6 +85,9 @@ class SupporterController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $results = $this->supporterService->update($request, $id);
+        return $this->response('', $results);
+        throw new InternalErrorException();
     }
 
     /**
@@ -80,5 +99,8 @@ class SupporterController extends Controller
     public function destroy($id)
     {
         //
+        $results = $this->supporterService->destroy($id);
+        return $this->response('', $results);
+        throw new InternalErrorException();
     }
 }

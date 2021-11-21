@@ -19,6 +19,7 @@ class Supporter extends Model
         'process_work',
         'province_id',
         'info_contact',
+        'thumbnail',
         'field_operator_id',
         'job_id',
     ];
