@@ -1,9 +1,13 @@
 <?php
 
+use App\Http\Controllers\FieldOperatorController;
+use App\Http\Controllers\JobOperatorController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\QAController;
 use App\Http\Controllers\NewsControler;
+use App\Http\Controllers\ProvinceController;
+use App\Http\Controllers\SupporterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,5 +48,21 @@ Route::group(['middleware' => 'auth:api'], function () {
         Route::put('{id}/update', [NewsControler::class, 'update']);
         Route::post('create', [NewsControler::class, 'create']);
         Route::delete('{id}/delete', [NewsControler::class, 'destroy']);
+    });
+    Route::prefix('provinces')->group(function () {
+        Route::get('all', [ProvinceController::class, 'index']);
+    });
+    Route::prefix('job_operators')->group(function () {
+        Route::get('all', [JobOperatorController::class, 'index']);
+    });
+    Route::prefix('field_operators')->group(function () {
+        Route::get('all', [FieldOperatorController::class, 'index']);
+    });
+    Route::group(['prefix' => 'supporters'], function () {
+        Route::post('search', [SupporterController::class, 'search']);
+        Route::post('create', [SupporterController::class, 'create']);
+        Route::get('{id}/detail', [SupporterController::class, 'show']);
+        Route::put('{id}/update', [SupporterController::class, 'update']);
+        Route::delete('{id}/delete', [SupporterController::class, 'destroy']);
     });
 });

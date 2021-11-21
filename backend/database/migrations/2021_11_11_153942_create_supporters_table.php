@@ -16,6 +16,7 @@ class CreateSupportersTable extends Migration
         Schema::create('supporters', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->longText('thumbnail');
             $table->string('process_work')->nullable();
             $table->string('info_contact')->nullable();
             $table->integer('province_id')->nullable();
