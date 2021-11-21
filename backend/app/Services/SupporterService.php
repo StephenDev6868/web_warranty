@@ -31,10 +31,20 @@ class SupporterService
             throw new ValidationException($validator);
         }
 
-        $supporters = DB::table('supporters')->whereNull('deleted_at');
+        $supporters = DB::table('supporters')
+        ->leftJoin('provinces', 'supporters.province_id', '=', 'provinces.id')
+        ->leftJoin('jobs_operators', 'supporters.job_id', '=', 'jobs_operators.id')
+        ->leftJoin('field_operators', 'supporters.field_operator_id', '=', 'field_operators.id')
+        ->select([
+            'supporters.id', 'supporters.name', 'thumbnail', 'process_work', 'info_contact', 'province_id', 'field_operator_id', 'job_id',
+            'provinces.name as province_name',
+            'jobs_operators.name as job_name',
+            'field_operators.name as field_job_name',
+            ])
+        ->whereNull('supporters.deleted_at');
         //search namne, province, job, field
         if (!empty($request->name)) {
-            $supporters = $supporters->where('name', 'like', "%{$request->name}%");
+            $supporters = $supporters->where('supporters.name', 'like', "%{$request->name}%");
         }
         if ($request->province_id != 0 && !empty($request->province_id)) {
             $supporters = $supporters->where('province_id', $request->province_id);
