@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\BankController;
+use App\Http\Controllers\DiseaseController;
 use App\Http\Controllers\FieldOperatorController;
 use App\Http\Controllers\JobOperatorController;
 use Illuminate\Http\Request;
@@ -64,5 +66,20 @@ Route::group(['middleware' => 'auth:api'], function () {
         Route::get('{id}/detail', [SupporterController::class, 'show']);
         Route::put('{id}/update', [SupporterController::class, 'update']);
         Route::delete('{id}/delete', [SupporterController::class, 'destroy']);
+    });
+
+    Route::prefix('banks')->group(function () {
+        Route::get('all', [BankController::class, 'index']);
+        Route::post('create', [BankController::class, 'create']);
+        Route::get('{id}/detail', [BankController::class, 'show']);
+        Route::put('{id}/update', [BankController::class, 'update']);
+        Route::delete('{id}/delete', [BankController::class, 'destroy']);
+    });
+    Route::prefix('diseases')->group(function () {
+        Route::get('all', [DiseaseController::class, 'index']);
+        Route::post('create', [DiseaseController::class, 'create']);
+        Route::get('{id}/detail', [DiseaseController::class, 'show']);
+        Route::put('{id}/update', [DiseaseController::class, 'update']);
+        Route::delete('{id}/delete', [DiseaseController::class, 'destroy']);
     });
 });

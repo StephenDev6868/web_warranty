@@ -2,10 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Services\BankService;
 use Illuminate\Http\Request;
+use Symfony\Component\CssSelector\Exception\InternalErrorException;
 
 class BankController extends Controller
 {
+    public function __construct(BankService $bankService)
+    {
+        $this->bankService = $bankService;
+    }
     /**
      * Display a listing of the resource.
      *
@@ -14,6 +20,9 @@ class BankController extends Controller
     public function index()
     {
         //
+        $result =  $this->bankService->all();
+        return $this->response('', $result);
+        throw new InternalErrorException();
     }
 
     /**
@@ -21,20 +30,12 @@ class BankController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
         //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
+        $result =  $this->bankService->create($request);
+        return $this->response('', $result);
+        throw new InternalErrorException();
     }
 
     /**
@@ -46,18 +47,11 @@ class BankController extends Controller
     public function show($id)
     {
         //
+        $result =  $this->bankService->detail($id);
+        return $this->response('', $result);
+        throw new InternalErrorException();
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
 
     /**
      * Update the specified resource in storage.
@@ -69,6 +63,9 @@ class BankController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $result =  $this->bankService->update($request, $id);
+        return $this->response('', $result);
+        throw new InternalErrorException();
     }
 
     /**
@@ -80,5 +77,8 @@ class BankController extends Controller
     public function destroy($id)
     {
         //
+        $result =  $this->bankService->delete($id);
+        return $this->response('', $result);
+        throw new InternalErrorException();
     }
 }
