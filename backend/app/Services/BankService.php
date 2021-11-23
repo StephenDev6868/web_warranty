@@ -16,7 +16,8 @@ class BankService
 
     public function all()
     {
-        return Bank::all();
+        return Bank::orderBy('name', 'asc')->get();
+        ;
     }
 
     public function create($request)

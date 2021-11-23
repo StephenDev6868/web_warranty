@@ -16,7 +16,7 @@ class DiseaseService
 
     public function all()
     {
-        return Disease::all();
+        return Disease::orderBy('name', 'asc')->get();
     }
 
     public function create($request)
