@@ -52,7 +52,7 @@ class DocumentService
         if (!empty($request->order_by) && !empty($request->direction)) {
             $docs = $docs->orderBy($request->order_by, $request->direction);
         } else {
-            $docs = $docs->orderBy('id', 'asc');
+            $docs = $docs->orderBy('program_id', 'desc');
         }
         return $docs->paginate($request->per_page);
     }
@@ -103,7 +103,32 @@ class DocumentService
     public function show($id)
     {
     }
-    public function delete($id)
+    public function delete($id, $program_id)
     {
+        $params = [
+            'id' => $id,
+            'program_id' => $program_id
+        ];
+        $validator = Validator::make($params, [
+            'id' => 'required|numeric|exists:documents,id',
+            'program_id' => 'required|numeric|exists:programs,id',
+        ]);
+        if ($validator->fails()) {
+            throw new ValidationException($validator);
+        }
+        $doc = Document::find($id);
+        // has 1 or many
+        $program_docs = ProgramDoc::where('document_id', $id)->whereNull('deleted_at');
+        // has 1 record
+        $delete_doc = $program_docs->where('program_id', $program_id)->first();
+        $size_programdoc = sizeof($program_docs->get());
+        //delete file when size of
+        if ($size_programdoc == 1) {
+            UploadService::deleteFile($this->folderUpload, $doc->file_name);
+        }
+
+        $delete_doc->delete();
+        $doc->delete();
+        return 'Delete success';
     }
 }

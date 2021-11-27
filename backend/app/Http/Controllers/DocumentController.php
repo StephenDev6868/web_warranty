@@ -77,10 +77,10 @@ class DocumentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($id, $program_id)
     {
         //
-        $result =  $this->documentService->delete($id);
+        $result =  $this->documentService->delete($id, $program_id);
         return $this->response('', $result);
         throw new InternalErrorException();
     }
