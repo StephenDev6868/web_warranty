@@ -68,7 +68,6 @@ class DocumentController extends Controller
         //
         $result =  $this->documentService->update($request, $id, $program_id);
         return $this->response('', $result);
-        throw new InternalErrorException();
     }
 
     /**
@@ -83,5 +82,11 @@ class DocumentController extends Controller
         $result =  $this->documentService->delete($id, $program_id);
         return $this->response('', $result);
         throw new InternalErrorException();
+    }
+
+    public function download($id)
+    {
+        //
+        return $this->documentService->download($id);
     }
 }

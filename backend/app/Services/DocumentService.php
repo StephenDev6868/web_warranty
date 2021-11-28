@@ -194,4 +194,28 @@ class DocumentService
         $doc->delete();
         return 'Delete success';
     }
+
+    public function download($id)
+    {
+        $params = [
+            'id' => $id,
+        ];
+        $validator = Validator::make($params, [
+            'id' => 'required|numeric|exists:documents,id',
+        ]);
+        if ($validator->fails()) {
+            throw new ValidationException($validator);
+        }
+        try {
+            ///
+            $doc = Document::find($id);
+            $path = public_path('upload/' . $this->folderUpload.'/'.$doc->file_name);
+            $headers = [
+                // 'Content-Type: application/pdf'
+            ];
+            return response()->file($path, $headers);
+        } catch (\Exception $exception) {
+            throw new \Exception($exception);
+        }
+    }
 }

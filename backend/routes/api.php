@@ -90,5 +90,6 @@ Route::group(['middleware' => 'auth:api'], function () {
         Route::get('{id}/{program_id}/detail', [DocumentController::class, 'show']);
         Route::put('{id}/{program_id}/update', [DocumentController::class, 'update']);
         Route::delete('{id}/{program_id}/delete', [DocumentController::class, 'destroy']);
+        Route::post('{id}/download', [DocumentController::class, 'download']);
     });
 });
