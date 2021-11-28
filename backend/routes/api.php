@@ -92,4 +92,11 @@ Route::group(['middleware' => 'auth:api'], function () {
         Route::delete('{id}/{program_id}/delete', [DocumentController::class, 'destroy']);
         Route::post('{id}/download', [DocumentController::class, 'download']);
     });
+    Route::group(['prefix' => 'banners'], function () {
+        Route::get('', [\App\Http\Controllers\BannerController::class, 'index']);
+        Route::post('', [\App\Http\Controllers\BannerController::class, 'create']);
+        Route::post('/{banner}', [\App\Http\Controllers\BannerController::class, 'update']);
+        Route::get('/{banner}', [\App\Http\Controllers\BannerController::class, 'show']);
+        Route::delete('/{banner}', [\App\Http\Controllers\BannerController::class, 'destroy']);
+    });
 });
