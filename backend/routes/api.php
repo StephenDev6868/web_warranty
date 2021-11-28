@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\BankController;
 use App\Http\Controllers\DiseaseController;
+use App\Http\Controllers\DocumentController;
 use App\Http\Controllers\FieldOperatorController;
 use App\Http\Controllers\JobOperatorController;
 use Illuminate\Http\Request;
@@ -83,6 +84,14 @@ Route::group(['middleware' => 'auth:api'], function () {
         Route::delete('{id}/delete', [DiseaseController::class, 'destroy']);
     });
 
+    Route::prefix('program_docs')->group(function () {
+        Route::post('search', [DocumentController::class, 'search']);
+        Route::post('create', [DocumentController::class, 'create']);
+        Route::get('{id}/{program_id}/detail', [DocumentController::class, 'show']);
+        Route::put('{id}/{program_id}/update', [DocumentController::class, 'update']);
+        Route::delete('{id}/{program_id}/delete', [DocumentController::class, 'destroy']);
+        Route::post('{id}/download', [DocumentController::class, 'download']);
+    });
     Route::group(['prefix' => 'banners'], function () {
         Route::get('', [\App\Http\Controllers\BannerController::class, 'index']);
         Route::post('', [\App\Http\Controllers\BannerController::class, 'create']);
