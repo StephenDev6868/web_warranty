@@ -100,9 +100,72 @@ class DocumentService
         }
         return 'success';
     }
-    public function show($id)
+    public function show($id, $program_id)
     {
+        $params = [
+            'id' => $id,
+            'program_id' => $program_id
+        ];
+        $validator = Validator::make($params, [
+            'id' => 'required|numeric|exists:documents,id',
+            'program_id' => 'required|numeric|exists:programs,id',
+        ]);
+        if ($validator->fails()) {
+            throw new ValidationException($validator);
+        }
+        $doc = DB::table('documents')
+        ->join('program_docs', 'documents.id', '=', 'program_docs.document_id')
+        ->join('programs', 'programs.id', '=', 'program_docs.program_id')
+        ->select([
+            'documents.id', 'file_name', 'documents.created_at',
+            'program_id', 'title', 'status'
+            ])
+            ->where(['documents.id' => $id, 'program_docs.program_id' => $program_id])
+        ->whereNull('documents.deleted_at')->first();
+        return $doc;
     }
+
+
+    public function update($request, $id, $program_id)
+    {
+        $params = [
+            'id' => $id,
+            'program_id' => $program_id,
+            'file_data' => $request->file_data,
+        ];
+        $validator = Validator::make($params, [
+            'id' => 'required|numeric|exists:documents,id',
+            'program_id' => 'required|numeric|exists:programs,id',
+            'file_data' => 'nullable|max:10240|mimes:jpeg,jpg,png,gif,xlsx,csv,pdf,docx',
+        ]);
+        if ($validator->fails()) {
+            throw new ValidationException($validator);
+        }
+        
+
+        try {
+            $doc = Document::find($id);
+
+            if ($request->hasFile('file_data')) {
+                // has 1 or many
+                $program_docs = ProgramDoc::where('document_id', $id)->whereNull('deleted_at')->get();
+                // has 1 record
+                $size_programdoc = sizeof($program_docs);
+                //delete file when size of
+                if ($size_programdoc == 1) {
+                    UploadService::deleteFile($this->folderUpload, $doc->file_name);
+                }
+                $file_name = UploadService::upload($this->folderUpload, $request->file_data);
+                $doc->file_name = $file_name;
+                $doc->save();
+            }
+            return $doc;
+        } catch (\Exception $exception) {
+            throw new \Exception($exception);
+        }
+    }
+
+
     public function delete($id, $program_id)
     {
         $params = [

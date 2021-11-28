@@ -48,10 +48,10 @@ class DocumentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($id, $program_id)
     {
         //
-        $result =  $this->documentService->detail($id);
+        $result =  $this->documentService->show($id, $program_id);
         return $this->response('', $result);
         throw new InternalErrorException();
     }
@@ -63,10 +63,10 @@ class DocumentController extends Controller
     * @param  int  $id
     * @return \Illuminate\Http\Response
     */
-    public function update(Request $request, $id)
+    public function update(Request $request, $id, $program_id)
     {
         //
-        $result =  $this->documentService->update($request, $id);
+        $result =  $this->documentService->update($request, $id, $program_id);
         return $this->response('', $result);
         throw new InternalErrorException();
     }
