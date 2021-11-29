@@ -121,6 +121,11 @@
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/tijsverkoyen/css-to-inline-styles" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/fakerphp/faker" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/phpoption/phpoption" />
+      <excludeFolder url="file://$MODULE_DIR$/backend/vendor/doctrine/cache" />
+      <excludeFolder url="file://$MODULE_DIR$/backend/vendor/psr/cache" />
+      <excludeFolder url="file://$MODULE_DIR$/backend/vendor/doctrine/dbal" />
+      <excludeFolder url="file://$MODULE_DIR$/backend/vendor/doctrine/event-manager" />
+      <excludeFolder url="file://$MODULE_DIR$/backend/vendor/doctrine/deprecations" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

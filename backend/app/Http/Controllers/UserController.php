@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Exceptions\BusinessException;
 use App\Models\User;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use App\Services\UserService;
 
@@ -31,8 +32,7 @@ class UserController extends Controller
      *
      * @param Request $request Request
      *
-     * @return \Illuminate\Http\JsonResponse
-     * @throws BusinessException
+     * @return JsonResponse
      * @throws \Exception
      */
     public function index(Request $request)
@@ -63,9 +63,10 @@ class UserController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  User                     $user    User
-     * @param  \Illuminate\Http\Request $request Request
-     * @return \Illuminate\Http\JsonResponse
+     * @param User    $user    User
+     * @param Request $request Request
+     *
+     * @return JsonResponse
      */
     public function store(User $user, Request $request)
     {
@@ -89,8 +90,9 @@ class UserController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  User $user User
-     * @return mixed|\Illuminate\Http\JsonResponse
+     * @param User $user User
+     *
+     * @return mixed|JsonResponse
      */
     public function show(User $user)
     {
@@ -117,7 +119,6 @@ class UserController extends Controller
      */
     public function update(User $user, Request $request)
     {
-
     }
 
     /**
@@ -125,7 +126,7 @@ class UserController extends Controller
      *
      * @param User $user User
      *
-     * @return \Illuminate\Http\JsonResponse
+     * @return JsonResponse
      */
     public function destroy(User $user)
     {
