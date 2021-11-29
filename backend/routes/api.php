@@ -99,4 +99,12 @@ Route::group(['middleware' => 'auth:api'], function () {
         Route::get('/{banner}', [\App\Http\Controllers\BannerController::class, 'show']);
         Route::delete('/{banner}', [\App\Http\Controllers\BannerController::class, 'destroy']);
     });
+
+    Route::group(['prefix' => 'programs'], function () {
+        Route::get('', [\App\Http\Controllers\ProgramController::class, 'index']);
+        Route::post('', [\App\Http\Controllers\ProgramController::class, 'create']);
+        Route::put('/{program}', [\App\Http\Controllers\ProgramController::class, 'update']);
+        Route::get('/{program}', [\App\Http\Controllers\ProgramController::class, 'show']);
+        Route::delete('/{program}', [\App\Http\Controllers\ProgramController::class, 'destroy']);
+    });
 });

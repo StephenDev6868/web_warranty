@@ -63,25 +63,53 @@ class Handler extends ExceptionHandler
         // dd($exception);
         switch (true) {
             case $exception instanceof AuthenticationException:
-                return $this->responseError(trans('auth.unauthorized'), [], Response::HTTP_UNAUTHORIZED);
+                return $this->responseError(
+                    trans('auth.unauthorized'),
+                    [],
+                    Response::HTTP_UNAUTHORIZED
+                );
 
             case $exception instanceof ModelNotFoundException:
-                return $this->responseError(trans('message.model_not_found'), [], Response::HTTP_BAD_REQUEST);
+                return $this->responseError(
+                    trans('message.model_not_found'),
+                    [],
+                    Response::HTTP_BAD_REQUEST
+                );
 
             case $exception instanceof ValidationException:
-                return $this->responseError(trans('message.validate.fail'), $exception->validator->errors()->first(), Response::HTTP_UNPROCESSABLE_ENTITY);
+                return $this->responseError(
+                    trans('message.validate.fail'),
+                    $exception->validator->errors()->first(),
+                    Response::HTTP_UNPROCESSABLE_ENTITY
+                );
 
             case $exception instanceof NotFoundHttpException:
-                return $this->responseError(trans('message.404_not_found'), [], Response::HTTP_NOT_FOUND);
+                return $this->responseError(
+                    trans('message.404_not_found'),
+                    [],
+                    Response::HTTP_NOT_FOUND
+                );
 
             case $exception instanceof AuthorizationException:
-                return $this->responseError($exception->getMessage(), [], Response::HTTP_FORBIDDEN);
+                return $this->responseError(
+                    $exception->getMessage(),
+                    [],
+                    Response::HTTP_FORBIDDEN
+                );
 
             case $exception instanceof BusinessException:
-                return $this->responseError($exception->getMessage(), $exception->getErrors(), Response::HTTP_BAD_REQUEST);
+                return $this->responseError(
+                    $exception->getMessage(),
+                    $exception->getErrors(),
+                    Response::HTTP_BAD_REQUEST
+                );
 
             default:
-                return $this->responseError(trans('message.server_error'), [], Response::HTTP_INTERNAL_SERVER_ERROR);
+                return $this->responseError(
+                    trans('message.server_error'),
+                    [],
+                    Response::HTTP_INTERNAL_SERVER_ERROR
+                );
         }
     }
 }
