@@ -56,6 +56,11 @@ class CompensationService
             if (!empty($request->status)) {
                 $compensations = $compensations->where('history_compensations.history_compensations', "%{$request->status}%");
             }
+            if (!empty($request->order_by) && !empty($request->direction)) {
+                $compensations = $compensations->orderBy($request->order_by, $request->direction);
+            } else {
+                $compensations = $compensations->orderBy('created_at', 'desc');
+            }
             return $compensations->paginate($request->per_page);
         } catch (\Exception $exception) {
             throw new \Exception($exception);
