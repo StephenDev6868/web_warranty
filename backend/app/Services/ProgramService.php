@@ -118,4 +118,9 @@ class ProgramService
 
         return $program->update($attributes);
     }
+
+    public function getAll()
+    {
+        return Program::select(['id', 'title'])->whereNull('deleted_at')->orderBy('title')->get();
+    }
 }
