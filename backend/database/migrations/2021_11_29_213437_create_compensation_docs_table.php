@@ -16,6 +16,7 @@ class CreateCompensationDocsTable extends Migration
         Schema::create('compensation_docs', function (Blueprint $table) {
             $table->id();
             $table->longText('file_name');
+            $table->integer('compensation_id');
             $table->timestamps();
             $table->softDeletes();
         });

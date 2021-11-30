@@ -15,7 +15,8 @@ class CompensationDocFactory extends Factory
     {
         return [
             //
-            'file_name' => $this->faker->image()
+            'file_name' => $this->faker->image(),
+            'compensation_id' => $this->faker->numberBetween(1, 50),
         ];
     }
 }

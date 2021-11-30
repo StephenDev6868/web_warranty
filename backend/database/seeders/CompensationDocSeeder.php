@@ -17,6 +17,6 @@ class CompensationDocSeeder extends Seeder
     {
         //
         DB::table('compensation_docs')->truncate();
-        CompensationDoc::factory()->count(10)->create();
+        CompensationDoc::factory()->count(30)->create();
     }
 }
