@@ -51,10 +51,10 @@ class CompensationService
                 $compensations = $compensations->where('users.phone_nums', 'like', "%{$request->phone_nums}%");
             }
             if (!empty($request->date_start)) {
-                $compensations = $compensations->whereDate('compensations.date_start', "%{$request->date_start}%");
+                $compensations = $compensations->whereDate('compensations.date_start', "$request->date_start");
             }
             if (!empty($request->status)) {
-                $compensations = $compensations->where('history_compensations.history_compensations', "%{$request->status}%");
+                $compensations = $compensations->where('history_compensations.status', "$request->status");
             }
             if (!empty($request->order_by) && !empty($request->direction)) {
                 $compensations = $compensations->orderBy($request->order_by, $request->direction);
