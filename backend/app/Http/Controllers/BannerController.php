@@ -19,7 +19,6 @@ class BannerController extends Controller
      * BannerController Constructor
      *
      * @param BannerService $bannerService BannerService
-     *
      */
     public function __construct(BannerService $bannerService)
     {
@@ -66,7 +65,7 @@ class BannerController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -89,7 +88,7 @@ class BannerController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Banner  $banner
+     * @param  \App\Models\Banner $banner
      * @return \Illuminate\Http\Response
      */
     public function edit(Banner $banner)

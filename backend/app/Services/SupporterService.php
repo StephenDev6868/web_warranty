@@ -74,7 +74,7 @@ class SupporterService
         'province_id' => $request->province_id,
         'job_id' => $request->job_id,
         'field_operator_id' => $request->field_operator_id,
-    ];
+        ];
         $validator = Validator::make($params, [
         'name' => 'required',
         'process_work' => 'required',
@@ -83,7 +83,7 @@ class SupporterService
         'province_id' => 'required|exists:provinces,id',
         'job_id' => 'required|exists:jobs_operators,id',
         'field_operator_id' => 'required|exists:field_operators,id',
-    ]);
+        ]);
         if ($validator->fails()) {
             throw new ValidationException($validator);
         }

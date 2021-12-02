@@ -39,11 +39,11 @@ class CompensationService
         
         try {
             $compensations = DB::table('compensations')
-        ->join('provinces', 'compensations.province_id', '=', 'provinces.id')
-        ->join('history_compensations', 'compensations.id', '=', 'history_compensations.compensation_id')
-        ->join('users', 'history_compensations.user_id', '=', 'users.id')
-        ->select(['compensations.*', 'provinces.name', 'history_compensations.status', 'users.user_name', 'users.phone_nums'])
-        ->whereNull('compensations.deleted_at');
+            ->join('provinces', 'compensations.province_id', '=', 'provinces.id')
+            ->join('history_compensations', 'compensations.id', '=', 'history_compensations.compensation_id')
+            ->join('users', 'history_compensations.user_id', '=', 'users.id')
+            ->select(['compensations.*', 'provinces.name', 'history_compensations.status', 'users.user_name', 'users.phone_nums'])
+            ->whereNull('compensations.deleted_at');
             if (!empty($request->user_name)) {
                 $compensations = $compensations->where('users.user_name', 'like', "%{$request->user_name}%");
             }
@@ -81,18 +81,18 @@ class CompensationService
 
         try {
             $compensation = DB::table('compensations')
-        ->join('provinces', 'compensations.province_id', '=', 'provinces.id')
-        ->join('history_compensations', 'compensations.id', '=', 'history_compensations.compensation_id')
-        ->join('users', 'history_compensations.user_id', '=', 'users.id')
-        ->select([
+            ->join('provinces', 'compensations.province_id', '=', 'provinces.id')
+            ->join('history_compensations', 'compensations.id', '=', 'history_compensations.compensation_id')
+            ->join('users', 'history_compensations.user_id', '=', 'users.id')
+            ->select([
             'compensations.*',
             'notify_date', 'mount_request', 'doc_code', 'assurance_type', 'mount_pay', 'reason_reduce', 'status',
             'phone_nums', 'user_name', 'email', 'sex',
             'provinces.name'
             ])
-        ->whereNull('compensations.deleted_at')
-        ->where('compensations.id', $id)
-        ->first();
+            ->whereNull('compensations.deleted_at')
+            ->where('compensations.id', $id)
+            ->first();
             $compensation_docs = CompensationDoc::where('compensation_id', $id)->get();
             $compensation->compensation_docs = $compensation_docs;
             return $compensation;

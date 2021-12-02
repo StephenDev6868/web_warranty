@@ -39,7 +39,8 @@ class QAController extends Controller
         return $this->response('', $result);
     }
 
-    public function destroy($id) {
+    public function destroy($id)
+    {
         $result = $this->qaService->delete($id);
         return $this->response('', $result);
     }

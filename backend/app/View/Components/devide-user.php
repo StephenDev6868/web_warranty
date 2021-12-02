@@ -4,7 +4,7 @@ namespace App\View\Components;
 
 use Illuminate\View\Component;
 
-class devide-user extends Component
+class devide- user extends Component
 {
     /**
      * Create a new component instance.
