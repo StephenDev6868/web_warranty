@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BankController;
+use App\Http\Controllers\CompensationController;
 use App\Http\Controllers\DiseaseController;
 use App\Http\Controllers\DocumentController;
 use App\Http\Controllers\FieldOperatorController;
@@ -101,6 +102,7 @@ Route::group(['middleware' => 'auth:api'], function () {
     });
 
     Route::group(['prefix' => 'programs'], function () {
+        Route::get('/all', [\App\Http\Controllers\ProgramController::class, 'alll']);
         Route::get('', [\App\Http\Controllers\ProgramController::class, 'index']);
         Route::post('', [\App\Http\Controllers\ProgramController::class, 'create']);
         Route::put('/{program}', [\App\Http\Controllers\ProgramController::class, 'update']);
@@ -108,6 +110,12 @@ Route::group(['middleware' => 'auth:api'], function () {
         Route::delete('/{program}', [\App\Http\Controllers\ProgramController::class, 'destroy']);
     });
 
+    Route::prefix('compensations')->group(function () {
+        Route::post('search', [CompensationController::class, 'search']);
+        Route::get('{id}/detail', [CompensationController::class, 'show']);
+        Route::put('{id}/update', [CompensationController::class, 'update']);
+        Route::post('{doc_id}/download', [CompensationController::class, 'download']);
+    });
     Route::group(['prefix' => 'transactions'], function () {
         Route::get('', [\App\Http\Controllers\TransactionController::class, 'index']);
         Route::get('/{transaction}', [\App\Http\Controllers\TransactionController::class, 'show']);

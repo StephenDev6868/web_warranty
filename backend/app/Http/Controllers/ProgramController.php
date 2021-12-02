@@ -134,4 +134,10 @@ class ProgramController extends Controller
 
         return $this->response('', null);
     }
+
+    public function alll()
+    {
+        $result = $this->programService->getAll();
+        return $this->response('', $result);
+    }
 }
