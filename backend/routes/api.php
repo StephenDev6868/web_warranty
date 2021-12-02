@@ -107,4 +107,14 @@ Route::group(['middleware' => 'auth:api'], function () {
         Route::get('/{program}', [\App\Http\Controllers\ProgramController::class, 'show']);
         Route::delete('/{program}', [\App\Http\Controllers\ProgramController::class, 'destroy']);
     });
+
+    Route::group(['prefix' => 'transactions'], function () {
+        Route::get('', [\App\Http\Controllers\TransactionController::class, 'index']);
+        Route::get('/{transaction}', [\App\Http\Controllers\TransactionController::class, 'show']);
+        Route::put('/{transaction}', [\App\Http\Controllers\TransactionController::class, 'update']);
+    });
+
+    Route::group(['prefix' => 'otps'], function () {
+        Route::get('', [\App\Http\Controllers\UserAuthOtpController::class, 'index']);
+    });
 });

@@ -28,7 +28,7 @@ class UserFactory extends Factory
             'email'            => $this->faker->email(),
             'id_card_num'      => rand(1000000000, 9999999999),
             'hi_card_num'      => rand(1000000000, 9999999999),
-            'phone_num_parent' => (int) '090' . rand(1000000, 9999999),
+            'phone_num_parent' => '090' . rand(1000000, 9999999),
             'birthday'         => $this->faker->date(),
         ];
     }

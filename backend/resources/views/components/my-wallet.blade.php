@@ -5,10 +5,10 @@ $name = 'wrapper';
     <!--  -->
     <div class="menu-select d-flex">
         <div class="menu-item menu-account active">
-            <a href="./my-wallet.html">Quản lý tài khoản</a>
+            <a href="{{ route('my-wallet') }}">Quản lý tài khoản</a>
         </div>
         <div class="menu-item menu-history">
-            <a href="./my-wallet-trade-history.html">Lịch sử giao dịch</a>
+            <a href="{{ route('my-wallet-trade-history')  }}">Lịch sử giao dịch</a>
         </div>
     </div>
     <!-- money-change -->

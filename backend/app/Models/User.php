@@ -46,4 +46,14 @@ class User extends Authenticatable
      */
     protected $casts = [
     ];
+
+    /**
+     * User hasOne Wallet
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function wallet()
+    {
+        return $this->hasOne(Wallet::class, 'user_id', 'id');
+    }
 }

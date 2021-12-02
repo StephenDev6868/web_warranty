@@ -61,6 +61,10 @@ Route::get('/my-wallet', function () {
     return view('components.my-wallet');
 })->name('my-wallet');
 
+Route::get('/my-wallet-trade-history', function () {
+    return view('components.my-wallet-trade-history');
+})->name('my-wallet-trade-history');
+
 Route::get('/devide-user', function () {
     return view('components.devide-user');
 })->name('devide-user');
