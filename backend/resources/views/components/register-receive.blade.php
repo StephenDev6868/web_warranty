@@ -85,7 +85,7 @@ $name = 'wrapper';
 
             </div>
             <div class="btn-submit-cnt">
-                <a href="./history-compensation-0.html">
+                <a href="{{ route('history-compensation-zero') }}">
                     <button class="btn-submit" type="button">Thêm thông tin khám bệnh</button>
                 </a>
             </div>

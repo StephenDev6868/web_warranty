@@ -116,4 +116,13 @@ Route::group(['middleware' => 'auth:api'], function () {
         Route::put('{id}/update', [CompensationController::class, 'update']);
         Route::post('{doc_id}/download', [CompensationController::class, 'download']);
     });
+    Route::group(['prefix' => 'transactions'], function () {
+        Route::get('', [\App\Http\Controllers\TransactionController::class, 'index']);
+        Route::get('/{transaction}', [\App\Http\Controllers\TransactionController::class, 'show']);
+        Route::put('/{transaction}', [\App\Http\Controllers\TransactionController::class, 'update']);
+    });
+
+    Route::group(['prefix' => 'otps'], function () {
+        Route::get('', [\App\Http\Controllers\UserAuthOtpController::class, 'index']);
+    });
 });
