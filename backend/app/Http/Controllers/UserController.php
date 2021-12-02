@@ -96,6 +96,8 @@ class UserController extends Controller
      */
     public function show(User $user)
     {
+        $user['wallet'] = $user->wallet()->first();
+
         return $this->response('', $user);
     }
 
