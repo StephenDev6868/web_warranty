@@ -17,6 +17,7 @@ class CompensationFactory extends Factory
             //
             'province_id' => $this->faker->numberBetween(1, 50),
             'compensation_doc_id' => $this->faker->numberBetween(1, 50),
+            'package_id' => $this->faker->numberBetween(1, 50),
             'compensation_package' => 'Gói hỗ trợ '. $this->faker->numberBetween(50000, 500000),
             'treatment_type' => $this->faker->numberBetween(1, 3),
             'date_start' => $this->faker->date('Y-m-d', 'now'),
