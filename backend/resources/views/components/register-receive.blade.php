@@ -5,19 +5,20 @@ $name = 'wrapper';
     <h2 class="title">Đăng ký nhận hỗ trợ</h2>
     <div class="register-form-wrap">
 
-        <form class="register-form" method="POST" action="{{route('post-register-receive')}}" enctype="multipart/form-data">
+        <form class="register-form" method="POST" action="{{route('post-register-receive')}}"
+            enctype="multipart/form-data">
             @csrf
             @if ($errors->any())
-                @foreach ($errors->all() as $error)
-                <div class="alert alert-danger" role="alert">
-                    {{ $error }}
-                </div>
-                @endforeach
+            @foreach ($errors->all() as $error)
+            <div class="alert alert-danger" role="alert">
+                {{ $error }}
+            </div>
+            @endforeach
             @endif
             @if(session()->has('message'))
-                <div class="alert alert-success">
-                    {{ session()->get('message') }}
-                </div>
+            <div class="alert alert-success">
+                {{ session()->get('message') }}
+            </div>
             @endif
             <div class="wrap-input">
 
@@ -81,11 +82,12 @@ $name = 'wrapper';
                             <img src="{{ asset('images/upload-img.png') }}" alt="">
                             <span>Tải hồ sơ khám chữa bệnh</span>
                         </label>
-                        <label class="file-description">
-                            <span class="file-name"><img src="{{ asset('images/pdf-icon.png') }}" alt=""> Hồ sơ bệnh
+                        <label class="file-description" id="file_description">
+                            {{-- <span class="file-name"><img src="{{ asset('images/pdf-icon.png') }}" alt=""> Hồ sơ
+                                bệnh
                                 án_Nguyen Hoang Giang.pdf</span>
                             <span class="file-name"><img src="{{ asset('images/image-icon.png') }}" alt="">
-                                image.jpeg</span>
+                                image.jpeg</span> --}}
                         </label>
                     </p>
                 </div>
@@ -100,3 +102,22 @@ $name = 'wrapper';
         </form>
     </div>
 </x-PrimaryLayout>
+
+<script>
+    $(document).ready(function() {
+        console.log( "ready!" );
+        $('#uploadFile').change(function($event) {
+            if($event.target.files.length > 0) {
+                $('#file_description').empty();
+                let arrFiles = $event.target.files;
+                for(let i = 0; i < arrFiles.length; i++) {
+                    let elHTML = `<span class="file-name"><img src="{{ asset('images/pdf-icon.png') }}" alt="">${arrFiles[i].name}</span>`;
+                    if(arrFiles[i].type === 'image/jpeg') {
+                        elHTML = `<span class="file-name"><img src="{{ asset('images/image-icon.png') }}" alt="">${arrFiles[i].name}</span>`;
+                    }
+                    $('#file_description').append(elHTML);
+                }
+            }
+        });
+    });
+</script>
