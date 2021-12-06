@@ -17,11 +17,11 @@ class CreateHistoryLogsTable extends Migration
             $table->id();
             $table->dateTime('log_date');
             $table->string('description');
-            $table->integer('compensation_id');
+            $table->integer('history_compensation_id');
             $table->timestamps();
             $table->softDeletes();
 
-            $table->index('compensation_id', 'history_logs_compensation_id');
+            $table->index('history_compensation_id', 'history_logs_history_compensation_id');
         });
     }
 

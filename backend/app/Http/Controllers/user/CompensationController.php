@@ -97,18 +97,54 @@ class CompensationController extends Controller
 
     public function getCompensationInfo(Request $request)
     {
-        $id = Crypt::decrypt($request->id);
-        $history_compensation = DB::table('compensations')
-            ->join('provinces', 'compensations.province_id', '=', 'provinces.id')
-            ->join('history_compensations', 'compensations.id', '=', 'history_compensations.compensation_id')
-            ->join('users', 'history_compensations.user_id', '=', 'users.id')
-            ->select([
-            'history_compensations.*',
-            'treatment_type',
-            ])
-            ->whereNull('history_compensations.deleted_at')
-            ->where('history_compensations.id', $id)
-            ->first();
-        return view('components.history-compensation-one', ['history_compensation' => $history_compensation]);
+        try {
+            $id = Crypt::decrypt($request->id);
+            $history_compensation = DB::table('compensations')
+                ->join('provinces', 'compensations.province_id', '=', 'provinces.id')
+                ->join('history_compensations', 'compensations.id', '=', 'history_compensations.compensation_id')
+                ->join('users', 'history_compensations.user_id', '=', 'users.id')
+                ->select([
+                'history_compensations.*',
+                'treatment_type',
+                ])
+                ->whereNull('history_compensations.deleted_at')
+                ->where('history_compensations.id', $id)
+                ->first();
+            return view('components.history-compensation-one', ['history_compensation' => $history_compensation, 'id' => $request->id]);
+        } catch (\Exception $exception) {
+            return redirect()->route('history-compensation-zero');
+        }
+    }
+
+    public function getCompensationLog(Request $request)
+    {
+        try {
+            $id = Crypt::decrypt($request->id);
+            $history_logs = DB::table('history_logs')->where('history_compensation_id', $id)->get();
+            return view('components.history-compensation-two', ['history_logs' => $history_logs, 'id' => $request->id]);
+        } catch (\Exception $exception) {
+            return redirect()->route('history-compensation-zero');
+        }
+    }
+
+    public function getDocs(Request $request)
+    {
+        try {
+            $id = Crypt::decrypt($request->id);
+            $history_compensation = DB::table('compensations')
+                ->join('provinces', 'compensations.province_id', '=', 'provinces.id')
+                ->join('history_compensations', 'compensations.id', '=', 'history_compensations.compensation_id')
+                ->join('users', 'history_compensations.user_id', '=', 'users.id')
+                ->select([
+                'history_compensations.*',
+                'treatment_type',
+                ])
+                ->whereNull('history_compensations.deleted_at')
+                ->where('history_compensations.id', $id)
+                ->first();
+            return view('components.history-compensation-three', ['history_compensation' => $history_compensation, 'id' => $request->id]);
+        } catch (\Exception $exception) {
+            return redirect()->route('history-compensation-zero');
+        }
     }
 }

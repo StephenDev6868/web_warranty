@@ -17,6 +17,6 @@ class HistoryLog extends Model
     public $fillable = [
         'log_date',
         'description',
-        'compensation_id',
+        'history_compensation_id',
     ];
 }
