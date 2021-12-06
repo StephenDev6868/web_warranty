@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Crypt;
 
 class CompensationController extends Controller
 {
@@ -83,7 +84,7 @@ class CompensationController extends Controller
 
     public function getCompensationList()
     {
-        $compensations = DB::table('compensations')
+        $history_compensations = DB::table('compensations')
         ->join('provinces', 'compensations.province_id', '=', 'provinces.id')
         ->join('history_compensations', 'compensations.id', '=', 'history_compensations.compensation_id')
         ->join('users', 'history_compensations.user_id', '=', 'users.id')
@@ -91,6 +92,23 @@ class CompensationController extends Controller
         ->whereNull('compensations.deleted_at')
         ->where('history_compensations.user_id', 25)->get();
 
-        return view('components.history-compensation-zero', ['compensations' => $compensations]);
+        return view('components.history-compensation-zero', ['history_compensations' => $history_compensations]);
+    }
+
+    public function getCompensationInfo(Request $request)
+    {
+        $id = Crypt::decrypt($request->id);
+        $history_compensation = DB::table('compensations')
+            ->join('provinces', 'compensations.province_id', '=', 'provinces.id')
+            ->join('history_compensations', 'compensations.id', '=', 'history_compensations.compensation_id')
+            ->join('users', 'history_compensations.user_id', '=', 'users.id')
+            ->select([
+            'history_compensations.*',
+            'treatment_type',
+            ])
+            ->whereNull('history_compensations.deleted_at')
+            ->where('history_compensations.id', $id)
+            ->first();
+        return view('components.history-compensation-one', ['history_compensation' => $history_compensation]);
     }
 }

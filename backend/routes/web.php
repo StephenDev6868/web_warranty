@@ -69,17 +69,13 @@ Route::get('/devide-user', function () {
     return view('components.devide-user');
 })->name('devide-user');
 
-Route::get('/register-receive', function () {
-    return view('components.register-receive');
-})->name('register-receive');
 
-Route::get('/history-compensation-zero', function () {
-    return view('components.history-compensation-zero');
-})->name('history-compensation-zero');
+Route::get('/register-receive', [\App\Http\Controllers\User\CompensationController::class, 'getRegisterReceive'])->name('register-receive');
+Route::post('/register-receive', [\App\Http\Controllers\User\CompensationController::class, 'registerReceive'])->name('post-register-receive');
 
-Route::get('/history-compensation-one', function () {
-    return view('components.history-compensation-one');
-})->name('history-compensation-one');
+Route::get('/history-compensation-zero', [\App\Http\Controllers\User\CompensationController::class, 'getCompensationList'])->name('history-compensation-zero');
+
+Route::get('/history-compensation-one', [\App\Http\Controllers\User\CompensationController::class, 'getCompensationInfo'])->name('history-compensation-one');
 
 Route::get('/history-compensation-two', function () {
     return view('components.history-compensation-two');
