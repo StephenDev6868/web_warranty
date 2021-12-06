@@ -79,4 +79,18 @@ class CompensationController extends Controller
         }
         return redirect()->back()->with('message', 'Đăng ký thành công');
     }
+
+
+    public function getCompensationList()
+    {
+        $compensations = DB::table('compensations')
+        ->join('provinces', 'compensations.province_id', '=', 'provinces.id')
+        ->join('history_compensations', 'compensations.id', '=', 'history_compensations.compensation_id')
+        ->join('users', 'history_compensations.user_id', '=', 'users.id')
+        ->select(['history_compensations.*', 'users.user_name', 'users.phone_nums'])
+        ->whereNull('compensations.deleted_at')
+        ->where('history_compensations.user_id', 25)->get();
+
+        return view('components.history-compensation-zero', ['compensations' => $compensations]);
+    }
 }
