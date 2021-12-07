@@ -5,6 +5,7 @@ namespace App\Http\Controllers\user;
 use App\Http\Controllers\Controller;
 use App\Models\Compensation;
 use App\Models\CompensationDoc;
+use App\Models\HistoryCompensation;
 use App\Models\Package;
 use App\Models\Province;
 use App\Services\Upload\UploadService;
@@ -90,7 +91,7 @@ class CompensationController extends Controller
         ->join('users', 'history_compensations.user_id', '=', 'users.id')
         ->select(['history_compensations.*', 'users.user_name', 'users.phone_nums'])
         ->whereNull('compensations.deleted_at')
-        ->where('history_compensations.user_id', 25)->get();
+        ->where('history_compensations.user_id', 24)->get();
 
         return view('components.history-compensation-zero', ['history_compensations' => $history_compensations]);
     }
@@ -127,24 +128,31 @@ class CompensationController extends Controller
         }
     }
 
-    public function getDocs(Request $request)
+    public function getCompensationDocs(Request $request)
     {
         try {
+            // history_compensation_id
             $id = Crypt::decrypt($request->id);
-            $history_compensation = DB::table('compensations')
-                ->join('provinces', 'compensations.province_id', '=', 'provinces.id')
-                ->join('history_compensations', 'compensations.id', '=', 'history_compensations.compensation_id')
-                ->join('users', 'history_compensations.user_id', '=', 'users.id')
-                ->select([
-                'history_compensations.*',
-                'treatment_type',
-                ])
-                ->whereNull('history_compensations.deleted_at')
-                ->where('history_compensations.id', $id)
-                ->first();
-            return view('components.history-compensation-three', ['history_compensation' => $history_compensation, 'id' => $request->id]);
+            $history_compensation = HistoryCompensation::find($id);
+            $docs = CompensationDoc::where('compensation_id', $history_compensation->compensation_id)->whereNull('deleted_at')->get();
+            return view('components.history-compensation-three', ['docs' => $docs, 'id' => $request->id]);
         } catch (\Exception $exception) {
             return redirect()->route('history-compensation-zero');
+        }
+    }
+
+    public function downloadDocs(Request $request)
+    {
+        // return $request->file_name;
+        try {
+            $path = public_path('upload/' . $this->folderUpload.'/'.$request->file_name);
+            $headers = [
+                // 'Content-Type: application/zip'
+            ];
+            // return response()->file($path, $headers);
+            return response()->download($path);
+        } catch (\Exception $exception) {
+            // return redirect()->route('history-compensation-zero');
         }
     }
 }

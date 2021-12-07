@@ -74,11 +74,7 @@ Route::get('/register-receive', [\App\Http\Controllers\User\CompensationControll
 Route::post('/register-receive', [\App\Http\Controllers\User\CompensationController::class, 'registerReceive'])->name('post-register-receive');
 
 Route::get('/history-compensation-zero', [\App\Http\Controllers\User\CompensationController::class, 'getCompensationList'])->name('history-compensation-zero');
-
 Route::get('/history-compensation-one', [\App\Http\Controllers\User\CompensationController::class, 'getCompensationInfo'])->name('history-compensation-one');
-
 Route::get('/history-compensation-two', [\App\Http\Controllers\User\CompensationController::class, 'getCompensationLog'])->name('history-compensation-two');
-
-Route::get('/history-compensation-three', function () {
-    return view('components.history-compensation-three');
-})->name('history-compensation-three');
+Route::get('/history-compensation-three', [\App\Http\Controllers\User\CompensationController::class, 'getCompensationDocs'])->name('history-compensation-three');
+Route::post('/download-docs', [\App\Http\Controllers\User\CompensationController::class, 'downloadDocs']);

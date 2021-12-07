@@ -16,20 +16,47 @@ $name = 'wrapper';
     </div>
     <!-- info -->
     <div class="info">
-        <a class="info-item" href="#">
-            <img src="{{ asset('images/img-doc-2.png') }}" alt="">
-        </a>
-        <a class="info-item" href="#">
+        {{-- <a class="info-item" href="#">
             <img src="{{ asset('images/img-doc.png') }}" alt="">
-        </a>
-        <a class="info-item" href="#">
-            <img src="{{ asset('images/img-doc-2.png') }}" alt="">
-        </a>
-        <a class="info-item" href="#">
-            <img src="{{ asset('images/img-doc-2.png') }}" alt="">
-        </a>
-        <a class="info-item" href="#">
-            <img src="{{ asset('images/img-doc-2.png') }}" alt="">
-        </a>
+        </a> --}}
+        @php
+        // dd(Crypt::decrypt($id));
+        @endphp
+        @foreach ($docs as $doc)
+            {{-- <a class="info-item view_file" href="/upload/compensations-doc/{{$doc->file_name}}" filename="{{$doc->file_name}}"> --}}
+            <a class="info-item view_file" filename="{{$doc->file_name}}">
+                <img src="{{ asset('images/img-doc-2.png') }}" alt="">
+            </a>
+        @endforeach
     </div>
 </x-PrimaryLayout>
+<script>
+    $(document).ready(function(){
+      $("a.view_file").click(function(){
+          const fileName = $(this).attr('filename');
+          window.open('/upload/compensations-doc/'+fileName, '_blank').focus();
+        //   $.ajax({
+        //         url: "/download-docs",
+        //         type: "POST",
+        //         data: {
+        //             '_token': $('meta[name="csrf-token"]').attr('content'),
+        //             'file_name': fileName
+        //         },
+        //         contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+        //         success: function (res) {
+        //             const downloadURL = window.URL.createObjectURL(new Blob([res]));
+        //             console.log(downloadURL);
+        //             const link = document.createElement('a');
+        //             link.href = downloadURL;
+        //             link.download = fileName;
+        //             link.click();
+        //         },
+        //         error: function(jqXHR, textStatus, errorThrown) {
+        //            console.log(textStatus, errorThrown);
+        //            alert('Không tìm thấy file');
+        //         }
+        //     });
+        });
+    });
+
+</script>
