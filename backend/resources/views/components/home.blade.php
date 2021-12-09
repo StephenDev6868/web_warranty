@@ -108,7 +108,7 @@ $name = 'warpper';
                                 <button class="btn btnc btnc-large btnc-secondary">Xem chi tiết</button>
                             </a>
                         </div>
-                    </div> 
+                    </div>
                 </div>
             </div>
         </div>
@@ -118,43 +118,21 @@ $name = 'warpper';
         <div class="container-custom">
             <h1 class="hd hd-1 hd-intro">Tin tức</h1>
             <div class="main-news-box">
-                <div class="card" style="width: 375px;">
-                    <div class="main-news-box-thumnail">
-                        <img class="card-img-top" srcset="{{ asset('images/news.png') }} 2x" alt="Card image cap">
-                        <div class="main-news-box-thumnail_date">
-                            20-07-2021
+                @foreach($news as $new)
+                    <div class="card" style="width: 375px;">
+                        <div class="main-news-box-thumnail">
+                            <img class="card-img-top" srcset="{{ asset('upload/' . $new->thumbnail_url) }} 2x" alt="Card image cap">
+                            <div class="main-news-box-thumnail_date">
+                                {{ $new->created_at  }}
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title text-left hd-4">{{ $new->title }}</h5>
+                            <p class="card-text hd-5 text-left"> {{ $new->preview_content }} </p>
                         </div>
                     </div>
-                    <div class="card-body">
-                        <h5 class="card-title text-left hd-4">Bảo hiểm là gì? Các thuật ngữ cơ bản nhất trong bảo hiểm bạn nên biết</h5>
-                        <p class="card-text hd-5 text-left">Bảo hiểm là một hoạt động qua đó một cá nhân có quyền được hưởng trợ cấp bảo hiểm nhờ vào một khoản đóng góp cho mình hoặc cho người thứ 3 trong trường hợp xảy ra...</p>
-                    </div>
-                </div>
-                <div class="card" style="width: 375px;">
-                    <div class="main-news-box-thumnail">
-                        <img class="card-img-top" srcset="{{ asset('images/news.png') }} 2x" alt="Card image cap">
-                        <div class="main-news-box-thumnail_date">
-                            20-07-2021
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title text-left hd-4">Bảo hiểm là gì? Các thuật ngữ cơ bản nhất trong bảo hiểm bạn nên biết</h5>
-                        <p class="card-text hd-5 text-left">Bảo hiểm là một hoạt động qua đó một cá nhân có quyền được hưởng trợ cấp bảo hiểm nhờ vào một khoản đóng góp cho mình hoặc cho người thứ 3 trong trường hợp xảy ra...</p>
-                    </div>
-                </div>
-                <div class="card" style="width: 375px;">
-                    <div class="main-news-box-thumnail">
-                        <img class="card-img-top" srcset="{{ asset('images/news.png') }} 2x" alt="Card image cap">
-                        <div class="main-news-box-thumnail_date">
-                            20-07-2021
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title text-left hd-4">Bảo hiểm là gì? Các thuật ngữ cơ bản nhất trong bảo hiểm bạn nên biết</h5>
-                        <p class="card-text hd-5 text-left" >Bảo hiểm là một hoạt động qua đó một cá nhân có quyền được hưởng trợ cấp bảo hiểm nhờ vào một khoản đóng góp cho mình hoặc cho người thứ 3 trong trường hợp xảy ra...</p>
-                    </div>
-                </div>
+                @endforeach
             </div>
-        </div>    
+        </div>
     </div>
 </x-PrimaryLayout>
