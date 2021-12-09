@@ -41,7 +41,6 @@ $(document).ready(function () {
     })
 
     $('#open_navbar').click(function() {
-        console.log('23123123123');
         $('.navigation__content__navbarR').addClass('show-navbar');
     })
 

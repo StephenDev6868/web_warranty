@@ -22,7 +22,7 @@
             <x-navigation></x-navigation>
         </div>
 
-        <x-banner></x-banner>
+        <x-banners></x-banners>
 
         <x-social-media></x-social-media>
 

@@ -13,17 +13,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('components.home');
-})->name('home');
+Route::post('/login', [\App\Http\Controllers\User\UserController::class, 'login'])->name('login');
+
+
+Route::get('/', [\App\Http\Controllers\User\HomeController::class, 'index'])->name('home');
+Route::get('/assurances', [\App\Http\Controllers\User\AssuranceController::class, 'index'])->name('assurance');
 
 Route::get('/about', function () {
     return view('components.about');
 })->name('about');
 
-Route::get('/assurances', function () {
-    return view('components.assurance');
-})->name('assurance');
+//Route::get('/assurances', function () {
+//    return view('components.assurance');
+//})->name('assurance');
 
 Route::get('/public-divided', function () {
     return view('components.public-divided');

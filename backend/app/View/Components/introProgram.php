@@ -2,9 +2,10 @@
 
 namespace App\View\Components;
 
+use App\Models\Program;
 use Illuminate\View\Component;
 
-class introProgram extends Component
+class IntroProgram extends Component
 {
     /**
      * Create a new component instance.
@@ -13,7 +14,19 @@ class introProgram extends Component
      */
     public function __construct()
     {
-        //
+    }
+
+    /**
+     * Programs
+     *
+     * @return mixed|array
+     */
+    public function programs()
+    {
+        return Program::query()
+            ->limit(4)
+            ->orderBy('created_at', 'desc')
+            ->get(['*']);
     }
 
     /**
