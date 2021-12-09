@@ -1,0 +1,320 @@
+@import "variables";
+@import "common";
+@import "header";
+@import "banner";
+@import "footer";
+@import "popupSignin";
+@import "popupOTP";
+
+.main {
+    margin-top: 54px;
+    text-align: center;
+
+    h1 {
+        margin-top: 53px;
+    }
+
+    &-divided {
+        margin-bottom: 102px;
+
+        &-index {
+            max-width: 767px;
+            margin: 0 auto;
+
+            &-search {
+                height: 70px;
+                margin-top: 34px;
+                background-color: $primary-color;
+                padding: 9px 0 8px 11px;
+
+                &-select {
+                    width: 269px !important;
+                    height: 53px !important;
+                }
+            }
+
+            &-result {
+                height: 137px;
+                background-color: $grey-color;
+                display: flex;
+                gap: 0 60px;
+                padding-top: 27px;
+                justify-content: center;
+                margin-bottom: 62px;
+                &-item {
+
+                    p {
+                        margin-top: 7px;
+                    }
+                }
+            }
+        }
+
+        &-tab {
+            h3 {
+                margin-bottom: 60px;
+            }
+
+            ul.nav {
+                display: flex;
+                gap: 10px 20px;
+                justify-content: center;
+                align-items: center;
+            }
+    
+            ul.nav > li.nav-item > a.nav-link {
+                width: 380px;
+                height: 90px;
+                border: 1px solid $primary-color;
+                color: $primary-color;
+                padding: 26px 24px;
+                border-radius: 5px;
+            }
+    
+            ul.nav > li.nav-item > a.active {
+                background-color: $primary-color;
+                color: $text-color;
+            }
+        }
+        
+        &-content {
+            &-program {
+                max-width: 100%;
+                padding: 0 !important;
+                &-plan {
+                    margin-top: 39px;
+                    &-box {
+                        display: flex;
+                        justify-content: center;
+                        gap: 0 22px;
+
+                        &_item {
+                            width: 580px;
+                            .table-manual {
+                                thead {
+                                    height: 77px;
+                                    background-color: $secondary-color;
+                                    color: $text-color;
+                                }
+        
+                                th {
+                                    padding: 28px 50px;
+                                }
+    
+                                td {
+                                    padding: 29px 0;
+                                    background-color: $grey-color;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                &-breadcum {
+                    height: 67px;
+                    background-color: $grey-color;
+                    padding: 26px 0 22px 0;
+                    margin-top: 56px;
+
+                    &-info {
+                        display: flex;
+                        justify-content: start;
+                        align-items: center;
+                        gap: 0 12px;
+
+                        p {
+                            padding-right: 22px;
+                            border-right: 1px solid #060728;
+                        }
+
+                        p:last-child {
+                            border: none;
+                        }
+                    }
+                }
+
+                &-show {
+                    text-align: start;
+                    position: relative;
+
+                    .title-patient {
+                        height: 38px;
+                        width: 251px;
+                        background-color: $secondary-color;
+                        padding: 10px 0 16px 15px;
+                        margin: 14px 0 31px 0;
+                    }
+
+                    p {
+                        margin: 12px 0 20px 0;
+                    };
+
+                    .eviden-doc {
+                        height: 778px;
+                        background-color: $grey-color;
+                        margin-top: 24px;
+                        padding: 44px 0 40px 32px;
+                        position: relative;
+                        &-list {
+                            display: flex;
+                            flex-wrap: wrap;
+                            gap: 36px 38px;
+                        }
+                        
+                        .inactive {
+                            opacity: 0.25;
+                        }
+
+                        &-popup-inactive {
+                            padding: 70px 173px;
+                            position: absolute;
+                            width: 956px;
+                            height: 223px;
+                            justify-content: center;
+                            text-align: center;
+                            background-color: $info-color;
+                            margin: 0 auto;
+                            top: 30%;
+                            left: 10%;
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+}   
+
+@media screen and (max-width: 1200px) {
+    .main {
+        &-divided {
+            &-content {
+                &-program {
+                    &-show {
+                        .eviden-doc {
+                            &-popup-inactive {
+                                padding: 26px 120px;
+                                height: 150px;
+                                width: 80%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1078px) {
+    .main {
+        &-divided {
+            &-content {
+                &-program {
+                    &-info {
+                        &-cover {
+                            &-list {
+                                &_item {
+                                    padding-left: 10px; 
+                                    .title {
+                                        margin-left: 0;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .main {
+        &-divided {
+            &-content {
+                &-program {
+                    &-plan {
+                        &-box {
+                            flex-wrap: wrap;
+                        }
+                    }
+
+                    &-info {
+                        &-cover {
+                            &-list {
+                                gap: 0 80px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .main {
+        &-divided {
+            &-tab {
+                ul.nav > li.nav-item > a.nav-link { 
+                    width: 100%;
+                }
+            }
+
+            &-content {
+                &-program {
+                    &-plan {
+                        &-box {
+                            &_item {
+                                img {
+                                    width: 100%;
+                                }
+                            }
+                        }
+                    }
+
+                    &-info {
+                        &-cover {
+                            &-list {
+                                flex-wrap: wrap;
+                                padding: 20px 0 5px 0px;
+                                &_item {
+                                    margin-bottom: 20px;
+
+                                    h4 {
+                                        line-height: 25px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    
+                    &-show {
+                        .eviden-doc {
+                            height: auto;
+                            padding-left: 0;
+                            &-list {
+                                justify-content: center;
+                                gap: 10px 5px;
+                                &_item {
+                                   
+                                }
+                            }
+
+                            &-popup-inactive {
+                                padding: 20px 0px;
+                                height: 150px;
+                                width: 100%;
+                                left: 0;
+                            }
+                        }
+                    }
+                }
+            }
+
+            &-index {
+                padding: 0 10px;
+            } 
+        }
+    }
+}

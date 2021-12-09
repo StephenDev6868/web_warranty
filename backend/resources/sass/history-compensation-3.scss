@@ -1,0 +1,137 @@
+@import "variables";
+@import "common";
+@import "header";
+@import "banner";
+@import "footer";
+@import "popupSignin";
+@import "popupOTP";
+.wrapper {
+    .main {
+		max-width: 100%;
+		padding: 64px 0 90px;
+		.title {
+			text-align: center;
+			font-size: 24px;
+			font-weight: bold;
+		}
+		.menu-select {
+			margin: 0 auto;
+			margin-top: 37px;
+			justify-content: center;
+			.menu-item {
+				max-width: 380px;
+				flex-basis: 0;
+				flex-grow: 1;
+				&:not(:last-child) {
+					margin-right: 20px;
+				}
+				&:hover {
+					opacity: 0.6;
+				}
+				&.active {
+					a {
+						background: $primary-color;
+						color: #fff;
+					}
+				}
+				a {
+					display: block;
+					padding: 11px 0;
+					font-size: 18px;
+					text-align: center;
+					background: #fff;
+					color: $primary-color;
+					border: 1px solid $primary-color;
+					&:hover {
+						text-decoration: none;
+					}
+				}
+			}
+		}
+
+		.info {
+			max-width: 1180px;
+			margin: 53px auto 0;
+			padding: 44px 32px;
+			background: $bg-card-color;
+			display: grid;
+			grid-template-columns: repeat(4, minmax(0, 1fr));
+			grid-gap: 36px;
+			.info-item {
+				display: block;
+				&:hover {
+					opacity: 0.6;
+				}
+				img {
+					width: 100%;
+				}
+			}
+		}
+		
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+	.wrapper {
+		.main {
+			max-width: 100%;
+			padding: 40px 0 50px;
+			.title {
+				font-size: 22px;
+			}
+			.menu-select {
+				width: 100%;
+				margin: 0 auto;
+				margin-top: 37px;
+				justify-content: center;
+				flex-direction: column;
+				align-items: center;
+				.menu-item {
+					width: 80%;
+					max-width: 80%;
+					flex-basis: 0;
+					flex-grow: 1;
+					&:not(:last-child) {
+						margin-right: unset;
+					}
+					&:not(:first-child) {
+						margin-top: 20px;
+					}
+					&:hover {
+						opacity: 1;
+					}
+					&.active {
+					}
+					a {
+						display: block;
+						padding: 11px 0;
+						font-size: 16px;
+						&:hover {
+							text-decoration: none;
+						}
+					}
+				}
+			}
+	
+			.info {
+				max-width: 1180px;
+				margin: 53px auto 0;
+				padding: 44px 32px;
+				background: $bg-card-color;
+				display: grid;
+				grid-template-columns: repeat(4, minmax(0, 1fr));
+				grid-gap: 36px;
+				.info-item {
+					display: block;
+					&:hover {
+						opacity: 0.6;
+					}
+					img {
+						width: 100%;
+					}
+				}
+			}
+			
+		}
+	}
+} 

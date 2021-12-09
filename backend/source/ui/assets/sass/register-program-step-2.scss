@@ -1,0 +1,335 @@
+
+@import "variables";
+@import "common";
+@import "header";
+@import "banner";
+@import "footer";
+@import "popupSignin";
+@import "popupOTP";
+
+
+.wrapper {
+	.main {
+		padding-bottom: 70px;
+		.register-ctn {
+			h2.title {
+				margin-top: 90px;
+				font-size: 32px;
+				text-align: center;
+				font-weight: 700;
+			}
+			.timeline {
+				margin-top: 36px;
+				ul {
+					display: flex;
+					margin: 0 auto;
+					justify-content: space-between;
+					width: 815px;
+					li {
+						border-radius: 50%;
+						border: 2px solid $text-color-2;
+						padding: 5px;
+						position: relative;
+						.point {
+							display: block;
+							width: 24px;
+							height: 24px;
+							border-radius: 50%;
+						}
+						.text {
+							position: absolute;
+							font-size: 18px;
+							width: 160px;
+							top: calc(100% + 22px);
+							left: 50%;
+							transform: translateX(-50%);
+						}
+						&.active {
+							border: 2px solid $secondary-color;
+							.point {
+								background: $secondary-color;
+							}
+							
+						}
+						&.complete {
+							&:after {
+								background: $secondary-color!important;
+							}
+						}
+						&.coming {
+							border: 2px solid $secondary-color;
+						}
+						&:not(:last-child) {
+							&:after {
+								content: "";
+								display: block;
+								position: absolute;
+								width: calc((815px - 38px * 3) / 2);
+								height: 9px;
+								background: $text-color;
+								left: calc(100% + 2px);
+								top: 50%;
+								transform: translateY(-50%);
+							}
+						}
+					}
+				}
+			}
+			.form-register {
+				margin-top: 125px;
+				form {
+					p.note {
+						font-size: 16px;
+						color: $text-color-1;
+						text-align: center;
+					}
+
+					.portrait-image {
+						margin: 0 auto;
+						margin-top: 38px;
+						width: 800px;
+						display: flex;
+						justify-content: center;
+						.img-ctn {
+							width: 360px;
+							.upload-ctn {
+								display: flex;
+								justify-content: space-between;
+								padding: 10px;
+								border: 1px dashed #bdbdbd;
+								.left {
+									width: 130px;
+									height: 130px;
+									display: flex;
+									justify-content: center;
+									align-items: center;
+									background: rgba(135, 77, 127, 0.1);
+									border-radius: 4px;
+									img {
+										width: 100px;
+									}
+								}
+								.right {
+									display: flex;
+									width: 180px;
+									flex-direction: column;
+									justify-content: center;
+									.description {
+										margin-bottom: 20px;
+										font-size: 14px;
+										color: #828282;
+									}
+									label.upload-btn {
+										display: inline-block;
+										width: 88px;
+										background: #f2f2f2;
+										text-align: center;
+										padding: 6px 0;
+										border-radius: 3px;
+										cursor: pointer;
+										img {
+										}
+										span {
+											font-size: 12px;
+										}
+									}
+								}
+							}
+							.btn-camera {
+								margin-top: 30px;
+								a {
+									display: flex;
+									justify-content: center;
+									align-items: center;
+									padding: 9px 0;
+									margin: 0 auto;
+									width: 202px;
+									color: #fff;
+									background: $primary-color;
+									border-radius: 5px;
+									cursor: pointer;
+									img {
+										width: 20px;
+										margin-right: 7px;
+									}
+									span {
+										font-size: 14px;
+									}
+								}
+							}
+						}
+					}
+					.btn-continue {
+						margin-top: 70px;
+						text-align: center;
+						.btn-step-1 {
+							width: 220px;
+							height: 50px;
+							font-size: 16px;
+							color: #fff;
+							background: rgba(135, 77, 127, 0.5);
+							border: none;
+							border-radius: 5px;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: 1024px) {
+	.wrapper {
+		.main {
+			padding-bottom: 70px;
+			.register-ctn {
+				width: 96%;
+				margin: 0 auto;
+				h2.title {
+					margin-top: 70px;
+					font-size: 24px;
+				}
+				.timeline {
+					margin-top: 36px;
+					ul {
+						width: 80%;
+						display: flex;
+						margin: 0 auto;
+						justify-content: space-between;
+						flex-direction: column;
+						li {
+							width: 32px;
+							border-radius: 50%;
+							border: 2px solid $text-color-2;
+							padding: 5px;
+							position: relative;
+							&:not(:first-child) {
+								margin-top: 60px;
+							}
+							.point {
+								display: block;
+								width: 18px;
+								height: 18px;
+								border-radius: 50%;
+							}
+							.text {
+								position: absolute;
+								font-size: 14px;
+								width: 160px;
+								left: 100%;
+								top: 50%;
+								transform: translateY(-50%);
+								text-align: center;
+							}
+							&.active {
+							}
+							&.complete {
+								&:after {
+									background: $secondary-color!important;
+								}
+							}
+							&.coming {
+								border: 2px solid $secondary-color;
+							}
+							&:not(:last-child) {
+								&:after {
+									content: "";
+									display: block;
+									position: absolute;
+									width: 8px;
+									height: 61px;
+									background: $text-color;
+									left: 50%;
+									top: calc(100% + 2px);
+									transform: translateX(-50%);
+								}
+							}
+						}
+					}
+				}
+				.form-register {
+					margin-top: 80px;
+					form {
+						p.note {
+							font-size: 14px;
+						}
+	
+						.portrait-image {
+							margin: 0 auto;
+							margin-top: 38px;
+							width: 100%;
+							display: flex;
+							justify-content: center;
+							.img-ctn {
+								width: 320px;
+								.upload-ctn {
+									display: flex;
+									justify-content: space-between;
+									padding: 10px;
+									.left {
+										width: 100px;
+										height: 100px;
+										display: flex;
+										justify-content: center;
+										align-items: center;
+										border-radius: 4px;
+										img {
+											width: 100px;
+										}
+									}
+									.right {
+										display: flex;
+										width: 180px;
+										flex-direction: column;
+										justify-content: center;
+										.description {
+											margin-bottom: 20px;
+											font-size: 14px;
+										}
+										label.upload-btn {
+											display: inline-block;
+											width: 88px;
+											padding: 6px 0;
+											img {
+											}
+											span {
+												font-size: 12px;
+											}
+										}
+									}
+								}
+								.btn-camera {
+									margin-top: 30px;
+									a {
+										display: flex;
+										justify-content: center;
+										align-items: center;
+										padding: 9px 0;
+										margin: 0 auto;
+										width: 202px;
+										img {
+											width: 20px;
+											margin-right: 7px;
+										}
+										span {
+											font-size: 14px;
+										}
+									}
+								}
+							}
+						}
+						.btn-continue {
+							margin-top: 70px;
+							text-align: center;
+							.btn-step-1 {
+								width: 220px;
+								height: 50px;
+								font-size: 14px;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+} 
