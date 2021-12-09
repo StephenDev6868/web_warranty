@@ -143,7 +143,9 @@ $name = 'wrapper';
         <div class="history-trade">
             <h3 class="title">Lịch sử giao dịch</h3>
             @php
+            // dd(count($histories));
             @endphp
+            @if (count($histories) > 0)
             <ul class="trade-list">
                 @foreach ($histories as $history)
                 <li class="trade-item">
@@ -166,6 +168,12 @@ $name = 'wrapper';
                 </li>
                 @endforeach
             </ul>
+            @else
+                <div class="not-found mt-4">
+                    <p class="text-center">Bạn chưa có giao dịch nào!</p>
+                    <img src="/images/img-404.png" alt="" class="w-100 mt-4">
+                </div>
+            @endif
         </div>
     </div>
 </x-PrimaryLayout>
