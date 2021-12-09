@@ -16,12 +16,13 @@ class Compensation extends Model
 
     public $fillable = [
         'province_id',
-        'compensation_doc_id',
+        // 'compensation_doc_id',
         'compensation_package',
         'treatment_type',
         'date_start',
         'date_end',
         'hospital',
-        'disease'
+        'disease',
+        'package_id'
     ];
 }

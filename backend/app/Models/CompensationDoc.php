@@ -15,5 +15,6 @@ class CompensationDoc extends Model
     protected $table = 'compensation_docs';
     public $fillable = [
         'file_name',
+        'compensation_id'
     ];
 }

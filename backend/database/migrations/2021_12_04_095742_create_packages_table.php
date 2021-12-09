@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateHistoryLogsTable extends Migration
+class CreatePackagesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,12 @@ class CreateHistoryLogsTable extends Migration
      */
     public function up()
     {
-        Schema::create('history_logs', function (Blueprint $table) {
+        Schema::create('packages', function (Blueprint $table) {
             $table->id();
-            $table->dateTime('log_date');
-            $table->string('description');
-            $table->integer('history_compensation_id');
+            $table->string('package_name');
+            $table->integer('amount');
             $table->timestamps();
             $table->softDeletes();
-
-            $table->index('history_compensation_id', 'history_logs_history_compensation_id');
         });
     }
 
@@ -32,6 +29,6 @@ class CreateHistoryLogsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('history_logs');
+        Schema::dropIfExists('packages');
     }
 }
