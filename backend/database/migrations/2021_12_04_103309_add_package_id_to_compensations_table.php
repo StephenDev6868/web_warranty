@@ -15,7 +15,7 @@ class AddPackageIdToCompensationsTable extends Migration
     {
         Schema::table('compensations', function (Blueprint $table) {
             //
-            $table->integer('package_id');
+            $table->integer('package_id')->default(1);
             $table->index('package_id', 'compensations_package_id');
         });
     }
