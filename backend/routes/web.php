@@ -59,9 +59,8 @@ Route::get('/my-program', function () {
     return view('components.my-program');
 })->name('my-program');
 
-Route::get('/my-wallet', function () {
-    return view('components.my-wallet');
-})->name('my-wallet');
+Route::get('/my-wallet', [\App\Http\Controllers\User\WalletControler::class, 'getMyWallet'])->name('my-wallet');
+Route::post('/my-wallet', [\App\Http\Controllers\User\WalletControler::class, 'postMyWallet'])->name('post-my-wallet');
 
 Route::get('/my-wallet-trade-history', function () {
     return view('components.my-wallet-trade-history');

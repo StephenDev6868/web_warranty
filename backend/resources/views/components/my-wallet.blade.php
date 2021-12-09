@@ -12,12 +12,20 @@ $name = 'wrapper';
         </div>
     </div>
     <!-- money-change -->
+    @php
+        $total = 0;
+        foreach ($histories as $key => $history) {
+            if($history->status ===3) {
+                $total += $history->vnd_nums;
+            }
+        }
+    @endphp
     <div class="money-change">
         <h3 class="title">Ví của tôi</h3>
         <div class="money-input-container">
             <div class="input-item input-vnd">
                 <p class="label">Số lượng VNĐ</p>
-                <input type="text">
+                <input type="text" disabled value="{{number_format($total)}}">
             </div>
             <div class="input-item icon-change">
                 <p class="label">i</p>
@@ -27,7 +35,7 @@ $name = 'wrapper';
             </div>
             <div class="input-item output-vnd">
                 <p class="label">Số lượng xu</p>
-                <input type="text">
+                <input type="text" disabled value="{{number_format($total/100000, 4)}}">
                 <p class="note">(quy đổi 1 xu = 100.000 vnđ)</p>
             </div>
         </div>
@@ -82,18 +90,30 @@ $name = 'wrapper';
         <!-- account-charge -->
         <div class="account-charge">
             <h3 class="title">Nạp tiền vào tài khoản</h3>
-            <form class="account-charge-form">
+            <form class="account-charge-form" method="POST" action="{{route('post-my-wallet')}}">
+                @csrf
+                {{-- @foreach ($errors->all() as $error)
+                <div class="alert alert-danger" role="alert">
+                    {{ $error }}
+                </div>
+                @endforeach --}}
+
+                @if(session()->has('message'))
+                <div class="alert alert-success">
+                    {{ session()->get('message') }}
+                </div>
+                @endif
+
                 <div class="form-section">
                     <p class="label">
                         <label for="">Gửi tiền từ ngân hàng</label>
                     </p>
-                    <select name="" id="">
-                        <option value="">SCB</option>
-                        <option value="">ACB (Ngân hàng Á Châu)</option>
-                        <option value="">Techcombank</option>
-                        <option value="">Viettinbank</option>
-                        <option value="">Agribank</option>
-                        <option value="">MB bank</option>
+                    @php
+                    @endphp
+                    <select name="bank_id">
+                        @foreach ($banks as $bank)
+                            <option value="{{$bank->id}}">{{$bank->name}}</option>
+                        @endforeach
                     </select>
                 </div>
                 <div class="form-section">
@@ -101,15 +121,18 @@ $name = 'wrapper';
                         <label for="">Lượng VNĐ <a href="#" class="detail">Xem giới hạn</a> </label>
                     </p>
                     <p class="mount">
-                        <input type="text">
+                        <input type="number" name="vnd_nums">
                         <span class="unit">VND</span>
                     </p>
+                    @error('vnd_nums')
+                        <div class="error" style="color: #AF3914; margin-top: 10px;">{{ $message }}</div>
+                    @enderror
                 </div>
                 <div class="form-section">
                     <p class="label">
                         <label for="">Mã giao dịch thành công</label>
                     </p>
-                    <input type="text">
+                    <input type="text" name="reference_code">
                 </div>
                 <p class="btn-contain">
                     <button class="btn-charge">Nạp tiền</button>
@@ -119,31 +142,29 @@ $name = 'wrapper';
         <!-- history -->
         <div class="history-trade">
             <h3 class="title">Lịch sử giao dịch</h3>
+            @php
+            @endphp
             <ul class="trade-list">
+                @foreach ($histories as $history)
                 <li class="trade-item">
-                    <p class="code">Mã tham chiếu: M52211 P8</p>
-                    <p class="date-time">22/09/2021 - 10:06:35</p>
-                    <p class="mount">+ 2.000.000 VNĐ</p>
+                    <p class="code">Mã tham chiếu: {{$history->reference_code}}</p>
+                    <p class="date-time">{{date('d-m-Y H:i:s', strtotime( $history->created_at));}}</p>
+                    <p class="mount">+ {{number_format( $history->vnd_nums)}} VNĐ</p>
                     <p class="status">
-                        <span class="processing">Đang xử lý</span>
+                        @switch($history->status)
+                            @case(1)
+                                <span class="processing">Đang xử lý</span>
+                                @break
+                            @case(2)
+                                <span class="canceled">Đã huỷ</span>
+                                @break
+                            @case(3)
+                                <span class="successed">Thành công</span>
+                                @break
+                        @endswitch
                     </p>
                 </li>
-                <li class="trade-item">
-                    <p class="code">Mã tham chiếu: M52211 P8</p>
-                    <p class="date-time">22/09/2021 - 10:06:35</p>
-                    <p class="mount">+ 2.000.000 VNĐ</p>
-                    <p class="status">
-                        <span class="canceled">Đã huỷ</span>
-                    </p>
-                </li>
-                <li class="trade-item">
-                    <p class="code">Mã tham chiếu: M52211 P8</p>
-                    <p class="date-time">22/09/2021 - 10:06:35</p>
-                    <p class="mount">+ 2.000.000 VNĐ</p>
-                    <p class="status">
-                        <span class="successed">Thành công</span>
-                    </p>
-                </li>
+                @endforeach
             </ul>
         </div>
     </div>
