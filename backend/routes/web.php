@@ -35,9 +35,7 @@ Route::get('/public-divided-detail', function () {
     return view('components.public-divided-detail');
 })->name('public-divided-detail');
 
-Route::get('/supporter', function () {
-    return view('components.supporter');
-})->name('supporter');
+Route::get('/supporter', [\App\Http\Controllers\User\SupporterController::class, 'search'])->name('supporter');
 
 Route::get('/register-program/{id}', [\App\Http\Controllers\User\ProgramController::class, 'getRegisterProgram'])->name('register-program');
 Route::post('/register-program/{id}', [\App\Http\Controllers\User\ProgramController::class, 'postRegisterProgram'])->name('post-register-program');
