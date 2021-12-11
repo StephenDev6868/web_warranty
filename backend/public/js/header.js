@@ -31,7 +31,10 @@ $(document).ready(function () {
   } // Set info user if sign in
 
 
-  if (localStorage.getItem('login')) {
+  if (localStorage.getItem('login_success') === 'true') {
+    var userInfo = JSON.parse(localStorage.getItem('user_info'));
+    $('#user_name_web').html(userInfo.user_name);
+    $('#coin').html(userInfo.wallet ? userInfo.wallet.coin : 0);
     $('.header__content__action').addClass('d-none');
     $('.header__content__user').removeClass('d-none');
   } else {
@@ -41,11 +44,11 @@ $(document).ready(function () {
 
 
   $('#signOut').click(function () {
-    localStorage.removeItem('login');
+    localStorage.removeItem('login_success');
+    localStorage.removeItem('user_info');
     location.reload();
   });
   $('#open_navbar').click(function () {
-    console.log('23123123123');
     $('.navigation__content__navbarR').addClass('show-navbar');
   });
   $('#close_page').click(function () {

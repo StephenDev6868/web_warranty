@@ -39,6 +39,7 @@
     </div>
 
     <!-- <script src="./assets/common/js/jquery-3.6.0.min.js"></script> -->
+    @yield('handle-js')
     <script src="{{asset('js/header.js')}}"></script>
     <script src="{{asset('js/popup.js')}}"></script>
     <script src="{{asset('js/divided.js')}}"></script>

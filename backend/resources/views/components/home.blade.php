@@ -2,7 +2,7 @@
 $name = 'warpper';
 @endphp
 <x-PrimaryLayout :pathStyle="asset('css/home.css')" :generalClass="$name">
-    <x-intro-program></x-intro-program>
+    <x-intro-program :programs="$programs"></x-intro-program>
 
     <div class="main-public">
         <div class="container-custom">
@@ -56,7 +56,7 @@ $name = 'warpper';
                                     <h2 class="hd hd-info hd-3">50.000.000đ</h2>
                                 </div>
                             </div>
-                            <a href="./public-divided-detail.html">
+                            <a href="{{ route('public-divided-detail') }}">
                                 <button class="btn btnc btnc-large btnc-secondary">Xem chi tiết</button>
                             </a>
                         </div>
@@ -80,7 +80,7 @@ $name = 'warpper';
                                     <h2 class="hd hd-info hd-3">50.000.000đ</h2>
                                 </div>
                             </div>
-                            <a href="./public-divided-detail.html">
+                            <a href="{{ route('public-divided-detail') }}">
                                 <button class="btn btnc btnc-large btnc-secondary">Xem chi tiết</button>
                             </a>
                         </div>
@@ -104,7 +104,7 @@ $name = 'warpper';
                                     <h2 class="hd hd-info hd-3">50.000.000đ</h2>
                                 </div>
                             </div>
-                            <a href="./public-divided-detail.html">
+                            <a href="{{ route('public-divided-detail') }}">
                                 <button class="btn btnc btnc-large btnc-secondary">Xem chi tiết</button>
                             </a>
                         </div>
