@@ -21,7 +21,11 @@ $name = 'wrapper';
             </ul>
         </div>
         <div class="form-register">
-            <form>
+            @php
+                // dd($step0);
+            @endphp
+            <form action=""{{route('post-register-program-step-one', $program_id)}} method="POST" enctype="multipart/form-data">
+                @csrf
                 <p class="note">Vui lòng cung cấp cho chúng tôi hình ảnh thật chân dung của bạn</p>
                 <div class="portrait-image">
                     <div class="img-ctn before-imge">
@@ -33,7 +37,7 @@ $name = 'wrapper';
                                 <p class="description">Cung cấp hình ảnh chân dung của bạn.</p>
 
                                 <label class="upload-btn" for="cccd_before">
-                                    <input type="file" hidden id="cccd_before" img-id="cccd_before_img">
+                                    <input type="file" hidden id="cccd_before" img-id="cccd_before_img" name="portrait_image">
                                     <img src="{{ asset('images/upload-img.png') }}" alt="">
                                     <span>Tải lên</span>
                                 </label>
@@ -49,8 +53,8 @@ $name = 'wrapper';
                     </div>
                 </div>
                 <div class="btn-continue">
-                    <a href="{{ route('register-program-step-two') }}">
-                        <button class="btn-step-1" type="button">Tiếp tục đăng ký</button>
+                    <a>
+                        <button class="btn-step-1" type="submit">Tiếp tục đăng ký</button>
                     </a>
                 </div>
             </form>

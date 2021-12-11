@@ -3,6 +3,16 @@
 body {
     font-family: 'Inter', sans-serif !important;
 }
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+    -moz-appearance: textfield;
+}
 
 .hd {
     &-1 {

@@ -43,25 +43,19 @@ Route::get('/supporter', function () {
     return view('components.supporter');
 })->name('supporter');
 
-Route::get('/register-program', function () {
-    return view('components.register-program');
-})->name('register-program');
-
-Route::get('/register-program-step-one', function () {
-    return view('components.register-program-step-one');
-})->name('register-program-step-one');
-
-Route::get('/register-program-step-two', function () {
-    return view('components.register-program-step-two');
-})->name('register-program-step-two');
+Route::get('/register-program/{id}', [\App\Http\Controllers\User\ProgramController::class, 'getRegisterProgram'])->name('register-program');
+Route::post('/register-program/{id}', [\App\Http\Controllers\User\ProgramController::class, 'postRegisterProgram'])->name('post-register-program');
+Route::get('/register-program-step-one/{id}', [\App\Http\Controllers\User\ProgramController::class, 'getRegisterStep1'])->name('register-program-step-one');
+Route::post('/register-program-step-one/{id}', [\App\Http\Controllers\User\ProgramController::class, 'postRegisterStep1'])->name('post-register-program-step-one');
+Route::get('/register-program-step-two/{id}', [\App\Http\Controllers\User\ProgramController::class, 'getRegisterStep2'])->name('register-program-step-two');
+Route::post('/register-program-step-two/{id}', [\App\Http\Controllers\User\ProgramController::class, 'postRegisterStep2'])->name('post-register-program-step-two');
 
 Route::get('/my-program', function () {
     return view('components.my-program');
 })->name('my-program');
 
-Route::get('/my-wallet', function () {
-    return view('components.my-wallet');
-})->name('my-wallet');
+Route::get('/my-wallet', [\App\Http\Controllers\User\WalletControler::class, 'getMyWallet'])->name('my-wallet');
+Route::post('/my-wallet', [\App\Http\Controllers\User\WalletControler::class, 'postMyWallet'])->name('post-my-wallet');
 
 Route::get('/my-wallet-trade-history', function () {
     return view('components.my-wallet-trade-history');
