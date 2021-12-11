@@ -892,7 +892,7 @@ li {
   height: 50px;
   font-size: 16px;
   color: #fff;
-  background: rgba(135, 77, 127, 0.5);
+  background: rgba(135, 77, 127, 1);
   border: none;
   border-radius: 5px;
 }
