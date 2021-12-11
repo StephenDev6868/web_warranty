@@ -127,7 +127,7 @@ $name = 'wrapper';
                     <p class="label">
                         <label for="">Mã giao dịch thành công</label>
                     </p>
-                    <input type="text" name="code_reference">
+                    <input type="text" name="code_transaction_bank">
                 </div>
                 <p class="btn-contain">
                     <button class="btn-charge">Nạp tiền</button>
