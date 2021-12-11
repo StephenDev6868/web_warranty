@@ -7,27 +7,20 @@ use Illuminate\View\Component;
 
 class IntroProgram extends Component
 {
+    public $programs = [];
+
     /**
      * Create a new component instance.
      *
+     * @param mixed $programs Programs
+     *
      * @return void
      */
-    public function __construct()
+    public function __construct($programs)
     {
+        $this->programs = $programs;
     }
 
-    /**
-     * Programs
-     *
-     * @return mixed|array
-     */
-    public function programs()
-    {
-        return Program::query()
-            ->limit(4)
-            ->orderBy('created_at', 'desc')
-            ->get(['*']);
-    }
 
     /**
      * Get the view / contents that represent the component.

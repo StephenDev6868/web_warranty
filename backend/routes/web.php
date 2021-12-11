@@ -14,18 +14,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::post('/login', [\App\Http\Controllers\User\UserController::class, 'login'])->name('login');
+Route::post('/auth-otp', [\App\Http\Controllers\User\UserController::class, 'authOtp'])->name('authOtp');
+Route::post('/logout', [\App\Http\Controllers\User\UserController::class, 'logout'])->name('logout');
 
 
 Route::get('/', [\App\Http\Controllers\User\HomeController::class, 'index'])->name('home');
 Route::get('/assurances', [\App\Http\Controllers\User\AssuranceController::class, 'index'])->name('assurance');
+Route::get('/about', [\App\Http\Controllers\User\AboutController::class, 'index'])->name('about');
 
-Route::get('/about', function () {
-    return view('components.about');
-})->name('about');
-
-//Route::get('/assurances', function () {
-//    return view('components.assurance');
-//})->name('assurance');
 
 Route::get('/public-divided', function () {
     return view('components.public-divided');
