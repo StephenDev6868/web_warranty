@@ -13,19 +13,14 @@ $name = 'wrapper';
     </div>
     <!-- money-change -->
     @php
-        $total = 0;
-        foreach ($histories as $key => $history) {
-            if($history->status ===3) {
-                $total += $history->vnd_nums;
-            }
-        }
+    
     @endphp
     <div class="money-change">
         <h3 class="title">Ví của tôi</h3>
         <div class="money-input-container">
             <div class="input-item input-vnd">
                 <p class="label">Số lượng VNĐ</p>
-                <input type="text" disabled value="{{number_format($total)}}">
+                <input type="text" disabled value="{{number_format($total->vnd_nums)}}">
             </div>
             <div class="input-item icon-change">
                 <p class="label">i</p>
@@ -35,7 +30,7 @@ $name = 'wrapper';
             </div>
             <div class="input-item output-vnd">
                 <p class="label">Số lượng xu</p>
-                <input type="text" disabled value="{{number_format($total/100000, 4)}}">
+                <input type="text" disabled value="{{number_format($total->coin, 4)}}">
                 <p class="note">(quy đổi 1 xu = 100.000 vnđ)</p>
             </div>
         </div>
@@ -112,7 +107,7 @@ $name = 'wrapper';
                     @endphp
                     <select name="bank_id">
                         @foreach ($banks as $bank)
-                            <option value="{{$bank->id}}">{{$bank->name}}</option>
+                        <option value="{{$bank->id}}">{{$bank->name}}</option>
                         @endforeach
                     </select>
                 </div>
@@ -121,18 +116,18 @@ $name = 'wrapper';
                         <label for="">Lượng VNĐ <a href="#" class="detail">Xem giới hạn</a> </label>
                     </p>
                     <p class="mount">
-                        <input type="number" name="vnd_nums">
+                        <input type="number" name="amount">
                         <span class="unit">VND</span>
                     </p>
-                    @error('vnd_nums')
-                        <div class="error" style="color: #AF3914; margin-top: 10px;">{{ $message }}</div>
+                    @error('amount')
+                    <div class="error" style="color: #AF3914; margin-top: 10px;">{{ $message }}</div>
                     @enderror
                 </div>
                 <div class="form-section">
                     <p class="label">
                         <label for="">Mã giao dịch thành công</label>
                     </p>
-                    <input type="text" name="reference_code">
+                    <input type="text" name="code_reference">
                 </div>
                 <p class="btn-contain">
                     <button class="btn-charge">Nạp tiền</button>
@@ -142,37 +137,34 @@ $name = 'wrapper';
         <!-- history -->
         <div class="history-trade">
             <h3 class="title">Lịch sử giao dịch</h3>
-            @php
-            // dd(count($histories));
-            @endphp
             @if (count($histories) > 0)
             <ul class="trade-list">
                 @foreach ($histories as $history)
                 <li class="trade-item">
-                    <p class="code">Mã tham chiếu: {{$history->reference_code}}</p>
-                    <p class="date-time">{{date('d-m-Y H:i:s', strtotime( $history->created_at));}}</p>
-                    <p class="mount">+ {{number_format( $history->vnd_nums)}} VNĐ</p>
+                    <p class="code">Mã tham chiếu: {{$history->code_reference}}</p>
+                    <p class="date-time">{{date('d-m-Y H:i:s', strtotime( $history->done_at));}}</p>
+                    <p class="mount">+ {{number_format( $history->amount)}} VNĐ</p>
                     <p class="status">
                         @switch($history->status)
-                            @case(1)
-                                <span class="processing">Đang xử lý</span>
-                                @break
-                            @case(2)
-                                <span class="canceled">Đã huỷ</span>
-                                @break
-                            @case(3)
-                                <span class="successed">Thành công</span>
-                                @break
+                        @case(1)
+                        <span class="processing">Đang xử lý</span>
+                        @break
+                        @case(2)
+                        <span class="canceled">Đã huỷ</span>
+                        @break
+                        @case(3)
+                        <span class="successed">Thành công</span>
+                        @break
                         @endswitch
                     </p>
                 </li>
                 @endforeach
             </ul>
             @else
-                <div class="not-found mt-4">
-                    <p class="text-center">Bạn chưa có giao dịch nào!</p>
-                    <img src="/images/img-404.png" alt="" class="w-100 mt-4">
-                </div>
+            <div class="not-found mt-4">
+                <p class="text-center">Bạn chưa có giao dịch nào!</p>
+                <img src="/images/img-404.png" alt="" class="w-100 mt-4">
+            </div>
             @endif
         </div>
     </div>
