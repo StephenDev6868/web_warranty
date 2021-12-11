@@ -3,36 +3,23 @@
 namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
-use App\Models\News;
 use App\Models\Program;
+use App\Models\QA;
 use Illuminate\Http\Request;
 
-class HomeController extends Controller
+class AboutController extends Controller
 {
     /**
      * Get all
      *
      * @return mixed
-    */
+     */
     public function index()
     {
-        return view('components.home', [
-            'news' => $this->news(),
+        return view('components.about', [
             'programs' => $this->programs(),
+            'qaList' => $this->getQA(),
         ]);
-    }
-
-    /**
-     * News
-     *
-     * @return mixed|array
-     */
-    public function news()
-    {
-        return News::query()
-            ->limit(3)
-            ->orderBy('created_at', 'desc')
-            ->get(['*']);
     }
 
     /**
@@ -56,5 +43,15 @@ class HomeController extends Controller
         }, $programs->toArray());
 
         return $programs;
+    }
+
+    /**
+     * QA
+     *
+     * @return mixed|array
+     */
+    public function getQA()
+    {
+        return QA::all(['*']);
     }
 }

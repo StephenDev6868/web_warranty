@@ -4,15 +4,15 @@
             <ul class="header__content__contact">
                 <div class="header__content__contact--item">
                     <img srcset="{{ asset('icons/Calling.svg')}}" alt="">
-                    <p>1900.988.965 | 0906.060.784</p> 
+                    <p>1900.988.965 | 0906.060.784</p>
                 </div>
                 <div class="header__content__contact--item">
                     <img srcset="{{ asset('icons/Message.svg')}}" alt="">
-                    <p>webtuongho@vics.vn</p> 
+                    <p>webtuongho@vics.vn</p>
                 </div>
             </ul>
             <div class="header__content__action">
-                <a href="./register-program.html">
+                <a href="{{ route('assurance') }}">
                     <button class="btn btnc btnc-primary">Đăng ký</button>
                 </a>
                 <a href="#">
@@ -42,15 +42,15 @@
                 </div>
                 <div class="header__content__user-name">
                     <div class="money text-right">
-                        <p class="hd hd-5 hd-intro">Xin chào, Hạnh Lê</p>
+                        <p class="hd hd-5 hd-intro">Xin chào, <strong id="user_name_web">Hạnh Lê</strong></p>
                         <div class="money-cash">
                             <img src="{{ asset('icons/dolar.svg') }}" alt="">
-                            <p class="hd hd-5-bold hd-gold">30.000 xu</p>
+                            <p class="hd hd-5-bold hd-gold" id="coin">30.000 xu</p>
                         </div>
                     </div>
                     <div class="avatar">
                         <p class="text-center">H</p>
-                    </div>   
+                    </div>
                 </div>
                 <div class="header__content__user-page dropdown">
                     <img src="{{ asset('icons/arrow_qa.svg') }}" class="dropdown-toggle" data-toggle="dropdown" alt="">
@@ -60,7 +60,10 @@
                         <a class="hd hd-5 hd-intro dropdown-item" href="{{ route('devide-user') }}">Công khai phân chia</a>
                         <a class="hd hd-5 hd-intro dropdown-item" href="{{ route('register-receive') }}">Đăng ký nhận hỗ trợ</a>
                         <a class="hd hd-5 hd-intro dropdown-item" href="{{ route('history-compensation-zero') }}">Quyền lợi</a>
-                        <a class="hd hd-5 hd-secondary dropdown-item" href="" id="signOut">Đăng xuất</a>
+                        <form method="post">
+{{--                            <a class="hd hd-5 hd-secondary dropdown-item" href="{{ route('logout')  }}" id="signOut">Đăng xuất</a>--}}
+                            <a class="hd hd-5 hd-secondary dropdown-item" id="signOut">Đăng xuất</a>
+                        </form>
                     </div>
                 </div>
             </div>

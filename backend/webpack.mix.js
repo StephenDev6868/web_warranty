@@ -19,6 +19,7 @@ mix.js('resources/js/app.js', 'public/js')
     .js('resources/js/popup.js', 'public/js')
     .js('resources/js/register-program-step-2.js', 'public/js')
     .js('resources/js/register-program.js', 'public/js')
+    .js('resources/js/main-intro.js', 'public/js')
     .postCss('resources/css/app.css', 'public/css', [
         //
     ]);

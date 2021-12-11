@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    if (!localStorage.getItem('login')) {
+    if (localStorage.getItem('login_success') === 'true') {
         $('.eviden-doc-list').addClass('inactive');
     } else {
         $('.eviden-doc-list').removeClass('inactive');
