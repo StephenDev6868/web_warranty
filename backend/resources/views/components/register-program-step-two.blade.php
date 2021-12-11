@@ -24,7 +24,7 @@ $name = 'wrapper';
             @php
                 // dd($program_id);
             @endphp
-            <form action=""{{route('post-register-program-step-two', $program_id)}} method="POST" enctype="multipart/form-data">
+            <form method="POST" action=""{{route('post-register-program-step-two', $program_id)}} enctype="multipart/form-data">
                 @csrf
                 <div class="form-wrap">
                     <div class="form-group">
@@ -54,17 +54,19 @@ $name = 'wrapper';
                         <label for="policy">Tôi đồng ý với <a href="#">thoả thuận điều kiện</a> tham gia chương trình của Vicscorp</label>
                     </div>
                     <div class="form-group">
-                        <input type="file" name="file" id="file" hidden multiple name="file_data[]">
+                        <input type="file" id="file" multiple name="file_data[]" accept=".jpeg,.jpg,.png,.xlsx,.pdf,.docx" hidden>
                         <label for="file" class="d-flex justify-content-center align-items-center">
                             <img src="{{ asset('images/upload_file2.svg') }}" alt="" class="mr-2">
                             <span>Tải hồ sơ khám chữa bệnh</span>
+                        </label>
+                        <label class="file-description" id="file_description">
                         </label>
                     </div>
                 </div>
                 
                 <div class="btn-continue">
                     <a>
-                        <button class="btn-step-1" type="submit">Đăng ký chương trình</button>
+                        <button class="btn-step-1" type="submit" id="sub_btn" disabled>Đăng ký chương trình</button>
                     </a>   
                 </div>
             </form>
@@ -73,5 +75,30 @@ $name = 'wrapper';
 </x-PrimaryLayout>
 
 <script>
+    $(document).ready(function() {
+        console.log( "ready!" );
+        $('#file').change(function($event) {
+            if($event.target.files.length > 0) {
+                $('#file_description').empty();
+                let arrFiles = $event.target.files;
+                for(let i = 0; i < arrFiles.length; i++) {
+                    let elHTML = `<span class="file-name"><img src="{{ asset('images/pdf-icon.png') }}" alt="">${arrFiles[i].name}</span><br/>`;
+                    if(arrFiles[i].type === 'image/jpeg') {
+                        elHTML = `<span class="file-name"><img src="{{ asset('images/image-icon.png') }}" alt="">${arrFiles[i].name}</span><br/>`;
+                    }
+                    $('#file_description').append(elHTML);
+                }
+            }
+        });
+
+        $('#policy').change(function($event) {
+            if($(this)[0].checked) {
+                $('#sub_btn').attr("disabled", false);
+            }else {
+                $('#sub_btn').attr("disabled", true);
+            }
+        });
+    });
+
 
 </script>

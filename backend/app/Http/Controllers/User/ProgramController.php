@@ -4,16 +4,20 @@ namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use App\Models\UserDoc;
+use App\Models\UserProgramRegister;
 use App\Services\Upload\UploadService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Crypt;
+use Illuminate\Support\Facades\Log;
 
 class ProgramController extends Controller
 {
     //
     private $folderUpload = 'user-info';
+    private $userDocUpload = 'user-doc';
 
     public function getRegisterProgram(Request $request, $id)
     {
@@ -143,6 +147,8 @@ class ProgramController extends Controller
     {
         // dd($request->all());
         $program_id = Crypt::decrypt($id);
+        $files_data = [];
+        $files_data = $request->file('file_data');
         $params = [
             'program_id' => $program_id,
             'user_name' => $request->user_name,
@@ -168,9 +174,42 @@ class ProgramController extends Controller
             return Redirect::back()->withErrors($validator);
         }
 
+        foreach ($files_data as $key => $value) {
+            $validator2 = Validator::make(['file_data' => $value], [
+                'file_data' => 'required|max:10240|mimes:jpeg,jpg,png,xlsx,pdf,docx',
+            ]);
+            if ($validator2->fails()) {
+                return Redirect::back()->withErrors($validator);
+            }
+        }
+        
+
         if ($request->session()->get('user_id')) {
             $user = User::find($request->session()->get('user_id'));
             $user->update($params);
+
+            // create data user_doc table
+            foreach ($files_data as $key => $value) {
+                $file_name = UploadService::upload($this->userDocUpload, $value);
+                try {
+                    UserDoc::create(['file_name' => $file_name, 'user_id'=> $request->session()->get('user_id')]);
+                } catch (\Exception $e) {
+                    Log::error($e->getMessage());
+                }
+            }
+            //create User program register
+            $userProgramRes = UserProgramRegister::where(['user_id'=> $request->session()->get('user_id'), 'program_id' => $program_id])->first();
+            if ($userProgramRes) {
+            } else {
+                UserProgramRegister::create(
+                    [
+                        'user_id' => $request->session()->get('user_id'),
+                        'program_id' => $program_id,
+                        'status' => 1,
+                    ]
+                );
+            }
+            return redirect()->route('my-program');
         }
     }
 }
