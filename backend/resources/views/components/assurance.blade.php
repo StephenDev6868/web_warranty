@@ -2,7 +2,7 @@
 $name = 'warpper';
 @endphp
 <x-PrimaryLayout :pathStyle="asset('css/assurances.css')" :generalClass="$name">
-    <div class="main-assurances">
+    <div class="main-assurances" style="margin-bottom: 0 !important;">
         <div class="main-assurances-tab">
             <div class="container-custom">
                 <ul class="nav nav-pills">
@@ -237,15 +237,15 @@ $name = 'warpper';
                             </div>
                         </div>
                     </div>
+
+                    <div class="main-banner-register" style="margin: 80px 0 0 0;">
+                        <p class="hd hd-5 hd-info">Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
+                        <a href="{{ route('register-program', encrypt($program->id)) }}" class="hd hd-5 hd-primary">
+                            <button class="btn btn btnc btnc-banner btnc-info">Đăng ký tham gia chương trình</button>
+                        </a>
+                    </div>
                 </div>
             @endforeach
         </div>
-    </div>
-
-    <div class="main-banner-register">
-        <p class="hd hd-5 hd-info">Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
-        <a href="{{ route('register-program') }}" class="hd hd-5 hd-primary">
-            <button class="btn btn btnc btnc-banner btnc-info">Đăng ký tham gia chương trình</button>
-        </a>
     </div>
 </x-PrimaryLayout>

@@ -2,6 +2,17 @@ body {
   font-family: "Inter", sans-serif !important;
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
 .hd-1 {
   font-weight: 700;
   font-size: 40px;
@@ -1173,15 +1184,4 @@ li {
     padding: 7px 0;
     font-size: 14px;
   }
-}
-
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-}
-
-/* Firefox */
-input[type="number"] {
-    -moz-appearance: textfield;
 }

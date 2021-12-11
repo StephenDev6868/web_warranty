@@ -2,7 +2,9 @@
 
 namespace App\Services;
 
+use App\Services\WalletService;
 use App\Models\Transaction;
+use App\Models\Wallet;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -12,6 +14,12 @@ use Illuminate\Validation\ValidationException;
 
 class TransactionService
 {
+    /**
+    */
+    public function __construct()
+    {
+    }
+
     /**
      * List Transactions
      *
@@ -66,6 +74,17 @@ class TransactionService
 
         if ($validator->fails()) {
             throw new ValidationException($validator);
+        }
+
+        if ($status == 2) {
+            $totalMoney = Wallet::query()
+                ->where('user_id', $transaction->user_id)
+                ->first();
+
+            if ($totalMoney) {
+                (int) $totalMoney->vnd_nums += (int) $transaction->amount;
+                $totalMoney->save();
+            }
         }
 
         return $transaction->update([

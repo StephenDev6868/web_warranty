@@ -41,7 +41,7 @@ class UserController extends Controller
 
             $user = User::query()
                 ->where('phone_nums', $attributes['phone_number'])
-                ->first(['id']);
+                ->first();
 
             if (app()->environment('dev') || app()->environment('local')) {
                 $otpCode = '000000';
