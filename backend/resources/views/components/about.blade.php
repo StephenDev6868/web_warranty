@@ -55,7 +55,7 @@ $name = 'warpper';
                         </div>
                     </div>
                 </div>
-                <x-intro-program></x-intro-program>
+                <x-intro-program :programs="$programs"></x-intro-program>
             </div>
             <div class="main-explanation-content-process tab-pane container fade" id="explain1">
                 <h1 class="hd hd-1 hd-intro">Quy trình hỗ trợ</h1>
@@ -74,76 +74,22 @@ $name = 'warpper';
             </div>
             <div class="main-explanation-content-QA tab-pane container fade" id="explain2">
                 <div id="accordion" style="margin: 76px 0">
-                    <div class="main-explanation-content-QA_item">
-                        <div class="title">
-                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" class="title-link hd hd-4 hd-intro" aria-expanded="true">
-                                Thời gian tương trợ của XiangHuBao là bao lâu?
-                                <img src="{{ asset('icons/arrow_qa.svg') }}" alt="">
-                            </a>
-                            
-                        </div>
-                        <div id="collapseOne" class="body collapse show">
-                            <div class="body-content hd hd-5 hd-intro">
-                                Hỗ trợ về dạng sức khoẻ sẽ có hiệu lực từ 0 giờ ngày hôm sau, sau khi tham gia (sau khi đã vượt qua 90 ngày) và kế hoạch hỗ trợ cho sự cố giao thông sẽ có hiệu lực  từ 0 giờ của ngày thứ 7 kể từ khi tham gia. Miễn là không có sự rút lui khỏi kế hoạch cho đến khi tuổi của các thành viên vượt quá độ tuổi của kế hoạch.
+                    @foreach($qaList as $qa)
+                        <div class="main-explanation-content-QA_item">
+                            <div class="title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse{{ $loop->index }}" class="title-link hd hd-4 hd-intro" aria-expanded="true">
+                                    {{ $qa->question  }}
+                                    <img src="{{ asset('icons/arrow_qa.svg') }}" alt="">
+                                </a>
+
+                            </div>
+                            <div id="collapse{{ $loop->index }}" class="body collapse show">
+                                <div class="body-content hd hd-5 hd-intro">
+                                    {{ $qa->answer }}
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="main-explanation-content-QA_item">
-                        <div class="title">
-                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse2" class="title-link hd hd-4 hd-intro" aria-expanded="true">
-                                Trong thời kỳ công khai tôi rút khỏi kế hoạch vậy trong kỳ đó tôi có bị rút tiền phân chia không?
-                                <img src="{{ asset('icons/arrow_qa.svg') }}" alt="">
-                            </a>
-                            
-                        </div>
-                        <div id="collapse2" class="body collapse show">
-                            <div class="body-content hd hd-5 hd-intro">
-                                Số lượng người tham gia phân chia quỹ hỗ trợ lẫn nhau trong mỗi kỳ sẽ bị khoá một ngày trước khi công bố. Nếu bạn rút khỏi kế hoạch hỗ trợ vào ngày công khai và sau ngày công khai, bạn vẫn cần tham gia phân chia hỗ trợ tại kỳ hiện tại và phí phân bố sẽ được Alipay khấu trừ vào ngày phân chia. Bạn cũng sẽ không cần tham gia phân chia vào kỳ đầu của kỳ tiếp theo
-                            </div>
-                        </div>
-                    </div>
-                    <div class="main-explanation-content-QA_item">
-                        <div class="title">
-                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse3" class="title-link hd hd-4 hd-intro" aria-expanded="true">
-                                Điều kiện xin hỗ trợ lẫn nhau là gì?
-                                <img src="{{ asset('icons/arrow_qa.svg') }}" alt="">
-                            </a>
-                            
-                        </div>
-                        <div id="collapse3" class="body collapse show">
-                            <div class="body-content hd hd-5 hd-intro">
-                                Đáp ứng các yêu cầu về sức khoẻ hoặc quy tắc hỗ trợ khi bị tai nạn giao thông công cộng, về bệnh tật hoặc thương tật do tai nạn nằm trong phạm vi hỗ trợ. Các loại bệnh hoặc là bị thương do tai nạn có trong phạm vi bảo vệ sẽ có hiệu lực. Bạn có thể đăng ký hỗ trợ sau khi kiểm tra sức khoẻ hoặc bị trấn thương do tai nạn. 
-                            </div>
-                        </div>
-                    </div>
-                    <div class="main-explanation-content-QA_item">
-                        <div class="title">
-                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse4" class="title-link hd hd-4 hd-intro" aria-expanded="true">
-                                Phạm vi hỗ trợ lẫn nhau của xianghubao là gì?
-                                <img src="{{ asset('icons/arrow_qa.svg') }}" alt="">
-                            </a>
-                            
-                        </div>
-                        <div id="collapse4" class="body collapse show">
-                            <div class="body-content hd hd-5 hd-intro">
-                                Phạm vi hỗ trợ của chương trình đối với các bệnh nặng, nghiêm trọng với 99 bệnh hiểm nghèo + khối u ác tính + các bệnh hiếm gặp cụ thể, hỗ trợ tối đa là 30 vạn nhân dân tệ. Phạm vi hỗ trợ đối với chương trình chống ung thư dành cho người mắc bệnh mãn tính và chống ung thư cho người già tối đa nhận được 10 vạn tệ. Tử vong và tàn tật do tai nạn khi di chuyển bằng phương tiện đang vận hành liên quan đến nước Việt Nam bao gồm: máy bay hàng không dân dụng, tàu khách, phương tiện vận tải đường sắt (tàu điện ngầm, đường sắt), phương tiện chở khách (xe bus, xe bus đường dài, xe điện, taxi, nền tảng và các dịch vụ gọi xe trực tuyến) đã được chính phủ đăng ký và phê duyệt cho mục đích hoạt động, hỗ trợ cao nhất lên tới 100 vạn nhân dân. 
-                            </div>
-                        </div>
-                    </div>
-                    <div class="main-explanation-content-QA_item">
-                        <div class="title">
-                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse5" class="title-link hd hd-4 hd-intro" aria-expanded="true">
-                                Cách nhận hỗ trợ
-                                <img src="{{ asset('icons/arrow_qa.svg') }}" alt="">
-                            </a>
-                            
-                        </div>
-                        <div id="collapse5" class="body collapse show">
-                            <div class="body-content hd hd-5 hd-intro">
-                                Đáp ứng các yêu cầu về sức khoẻ hoặc quy tắc hỗ trợ khi bị tai nạn giao thông công cộng, về bệnh tật hoặc thương tật do tai nạn nằm trong phạm vi hỗ trợ. Các loại bệnh hoặc là bị thương do tai nạn có trong phạm vi bảo vệ sẽ có hiệu lực. Bạn có thể đăng ký hỗ trợ sau khi kiểm tra sức khoẻ hoặc bị trấn thương do tai nạn. 
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>

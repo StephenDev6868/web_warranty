@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddPackageIdToCompensationsTable extends Migration
+class RemoveColumnsInUserProgramRegisters extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class AddPackageIdToCompensationsTable extends Migration
      */
     public function up()
     {
-        Schema::table('compensations', function (Blueprint $table) {
+        Schema::table('user_program_registers', function (Blueprint $table) {
             //
-            $table->integer('package_id')->default(1);
-            $table->index('package_id', 'compensations_package_id');
+            $table->dropColumn('start_at');
+            $table->dropColumn('end_at');
         });
     }
 
@@ -27,9 +27,10 @@ class AddPackageIdToCompensationsTable extends Migration
      */
     public function down()
     {
-        Schema::table('compensations', function (Blueprint $table) {
+        Schema::table('user_program_registers', function (Blueprint $table) {
             //
-            $table->dropColumn('package_id');
+            $table->dateTime('start_at');
+            $table->dateTime('end_at');
         });
     }
 }

@@ -22,6 +22,9 @@ class Wallet extends Model
         'coin',
         'vnd_nums',
         'transaction_id',
+        'bank_id',
+        'status',
+        'reference_code'
     ];
 
     /**
