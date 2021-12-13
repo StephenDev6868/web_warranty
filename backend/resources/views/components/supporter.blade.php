@@ -44,59 +44,68 @@ $name = 'wrapper';
                 </button>
             </div>
         </form>
-        <div class="search-result">
-            @php
-                $detail = $supporters[0];
-            @endphp
-            <ul class="result-list">
-                {{-- <li class="active">
-                    <a href="#">LÊ HOÀNG SƠN</a>
-                </li> --}}
-                @foreach ($supporters as $key => $supporter)
-                    @php
-                        if($supporter->id == $params['supporter_id']) {
-                            $detail = $supporter;
-                        }
-                    @endphp
-                    <li class="supporter-item {{$supporter->id == $params['supporter_id']?'active':''}} {{($params['supporter_id']=='' && $key==0)?'active': ''}}">
-                        <a href="/supporter?job_id={{$params['job_id']}}&field_id={{$params['field_id']}}&province_id={{$params['province_id']}}&supporter_id={{$supporter->id}}">{{$supporter->name}}</a>
-                    </li>
-                @endforeach
-            </ul>
-        </div>
-        <div class="search-info">
-            <div class="avatar">
-                <img src="{{ $detail->thumbnail }}" alt="">
+        @php
+            // dd($supporters);
+        @endphp
+        @if (count($supporters) > 0)
+            <div class="search-result">
+                @php
+                    $detail = $supporters[0];
+                @endphp
+                <ul class="result-list">
+                    {{-- <li class="active">
+                        <a href="#">LÊ HOÀNG SƠN</a>
+                    </li> --}}
+                    @foreach ($supporters as $key => $supporter)
+                        @php
+                            if($supporter->id == $params['supporter_id']) {
+                                $detail = $supporter;
+                            }
+                        @endphp
+                        <li class="supporter-item {{$supporter->id == $params['supporter_id']?'active':''}} {{($params['supporter_id']=='' && $key==0)?'active': ''}}">
+                            <a href="/supporter?job_id={{$params['job_id']}}&field_id={{$params['field_id']}}&province_id={{$params['province_id']}}&supporter_id={{$supporter->id}}">{{$supporter->name}}</a>
+                        </li>
+                    @endforeach
+                </ul>
             </div>
-            <div class="info">
-                <h3 class="name">{{$detail->name}}</h3>
-                <div class="ctn-info">
-                    <div class="item-info">
-                        <p class="title">Quá trình hoạt động</p>
-                        <p class="detail">{{$detail->process_work}}</p>
-                    </div>
-                    <div class="item-info">
-                        <p class="title">Khu vực</p>
-                        <p class="detail">{{$detail->province_name}}</p>
-                    </div>
-                    <div class="item-info">
-                        <p class="title">Lĩnh vực hoạt động</p>
-                        <p class="detail">{{$detail->field_job_name}}</p>
-                    </div>
-                    <div class="item-info">
-                        <p class="title">Liên hệ</p>
-                        <p class="detail">{{$detail->info_contact}}</p>
-                    </div>
-                    <div class="item-info">
-                        <p class="title">Công việc</p>
-                        <p class="detail">{{$detail->job_name}}</p>
-                    </div>
-                    <div class="item-info">
-                        <p class="detail"><a href="">Xem chi tiết</a></p>
+            <div class="search-info">
+                <div class="avatar">
+                    <img src="{{ $detail->thumbnail }}" alt="">
+                </div>
+                <div class="info">
+                    <h3 class="name">{{$detail->name}}</h3>
+                    <div class="ctn-info">
+                        <div class="item-info">
+                            <p class="title">Quá trình hoạt động</p>
+                            <p class="detail">{{$detail->process_work}}</p>
+                        </div>
+                        <div class="item-info">
+                            <p class="title">Khu vực</p>
+                            <p class="detail">{{$detail->province_name}}</p>
+                        </div>
+                        <div class="item-info">
+                            <p class="title">Lĩnh vực hoạt động</p>
+                            <p class="detail">{{$detail->field_job_name}}</p>
+                        </div>
+                        <div class="item-info">
+                            <p class="title">Liên hệ</p>
+                            <p class="detail">{{$detail->info_contact}}</p>
+                        </div>
+                        <div class="item-info">
+                            <p class="title">Công việc</p>
+                            <p class="detail">{{$detail->job_name}}</p>
+                        </div>
+                        <div class="item-info">
+                            <p class="detail"><a href="">Xem chi tiết</a></p>
+                        </div>
                     </div>
                 </div>
             </div>
+        @else
+        <div class="not-found text-center mt-3">
+            <img class="w-50" src="{{ asset('images/img-404.png') }}" alt="">
         </div>
+        @endif
     </div>
     <div class="map">
         <img src="{{ asset('images/map.png') }}" alt="">
