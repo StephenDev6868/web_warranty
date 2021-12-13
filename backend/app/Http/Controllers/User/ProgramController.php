@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\User;
 use App\Models\UserDoc;
 use App\Models\UserProgramRegister;
+use App\Models\Wallet;
 use App\Services\Upload\UploadService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
@@ -208,6 +209,14 @@ class ProgramController extends Controller
                         'status' => 1,
                     ]
                 );
+            }
+            // create wallet for user
+            $wallet = Wallet::where('user_id', $request->session()->get('user_id'))->first();
+            if ($wallet) {
+            } else {
+                Wallet::create([
+                    'user_id' => $request->session()->get('user_id')
+                ]);
             }
             return redirect()->route('my-program');
         }
