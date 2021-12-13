@@ -33,7 +33,7 @@ class BannerService
         $validator = Validator::make($attributes, [
            'title'        => 'required|string|min:10|max:255',
            'content'      => 'required|string|min:10|max:255',
-           'file_image'  => 'required|max:2048|mimes:jpeg,jpg,png,gif',
+           'file_image'   => 'required|max:5120|mimes:jpeg,jpg,png,gif',
         ]);
 
         if ($validator->fails()) {
