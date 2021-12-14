@@ -13,6 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/authentication', function () {
+    return view('components.user-auth');
+})->name('user-auth');
+
 Route::post('/login', [\App\Http\Controllers\User\UserController::class, 'login'])->name('login');
 Route::post('/auth-otp', [\App\Http\Controllers\User\UserController::class, 'authOtp'])->name('authOtp');
 Route::post('/logout', [\App\Http\Controllers\User\UserController::class, 'logout'])->name('logout');
@@ -22,6 +26,10 @@ Route::get('/', [\App\Http\Controllers\User\HomeController::class, 'index'])->na
 Route::get('/assurances', [\App\Http\Controllers\User\AssuranceController::class, 'index'])->name('assurance');
 Route::get('/about', [\App\Http\Controllers\User\AboutController::class, 'index'])->name('about');
 
+Route::group(['middleware' => 'auth:user'], function () {
+    Route::get('/my-wallet', [\App\Http\Controllers\User\WalletControler::class, 'getMyWallet'])->name('my-wallet');
+    Route::post('/my-wallet', [\App\Http\Controllers\User\WalletControler::class, 'postMyWallet'])->name('post-my-wallet');
+});
 
 Route::get('/public-divided', function () {
     return view('components.public-divided');
@@ -47,9 +55,6 @@ Route::post('/register-program-step-two/{id}', [\App\Http\Controllers\User\Progr
 Route::get('/my-program', function () {
     return view('components.my-program');
 })->name('my-program');
-
-Route::get('/my-wallet', [\App\Http\Controllers\User\WalletControler::class, 'getMyWallet'])->name('my-wallet');
-Route::post('/my-wallet', [\App\Http\Controllers\User\WalletControler::class, 'postMyWallet'])->name('post-my-wallet');
 
 Route::get('/my-wallet-trade-history', function () {
     return view('components.my-wallet-trade-history');

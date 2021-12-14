@@ -12,14 +12,17 @@
                 </div>
             </ul>
             <div class="header__content__action">
-                <a href="{{ route('assurance') }}">
-                    <button class="btn btnc btnc-primary">Đăng ký</button>
-                </a>
-                <a href="#">
-                    <button class="btn btnc btnc-secondary" data-toggle="modal" data-target="#signIn">Đăng nhập</button>
-                </a>
+                @if(auth()->guard('user')->check() === false)
+                    <a href="{{ route('assurance') }}">
+                        <button class="btn btnc btnc-primary">Đăng ký</button>
+                    </a>
+                    <a href="#">
+                        <button class="btn btnc btnc-secondary" data-toggle="modal" data-target="#signIn">Đăng nhập</button>
+                    </a>
+                @endif
             </div>
-            <div class="header__content__user d-none">
+            @if(auth()->guard('user')->check())
+            <div class="header__content__user">
                 <div class="header__content__user-notification dropdown">
                     <img src="{{ asset('icons/notification.svg') }}" class="dropdown-toggle" data-toggle="dropdown" alt="">
                     <div class="dropdown-menu">
@@ -42,10 +45,10 @@
                 </div>
                 <div class="header__content__user-name">
                     <div class="money text-right">
-                        <p class="hd hd-5 hd-intro">Xin chào, <strong id="user_name_web">Hạnh Lê</strong></p>
+                        <p class="hd hd-5 hd-intro">Xin chào, <strong id="user_name_web">{{ auth('user')->user()->user_name }}</strong></p>
                         <div class="money-cash">
                             <img src="{{ asset('icons/dolar.svg') }}" alt="">
-                            <p class="hd hd-5-bold hd-gold" id="coin">30.000 xu</p>
+                            <p class="hd hd-5-bold hd-gold" id="coin">{{ auth('user')->user()->wallet()->first()->coin }}</p>
                         </div>
                     </div>
                     <div class="avatar">
@@ -60,13 +63,15 @@
                         <a class="hd hd-5 hd-intro dropdown-item" href="{{ route('devide-user') }}">Công khai phân chia</a>
                         <a class="hd hd-5 hd-intro dropdown-item" href="{{ route('register-receive') }}">Đăng ký nhận hỗ trợ</a>
                         <a class="hd hd-5 hd-intro dropdown-item" href="{{ route('history-compensation-zero') }}">Quyền lợi</a>
-                        <form method="post">
-{{--                            <a class="hd hd-5 hd-secondary dropdown-item" href="{{ route('logout')  }}" id="signOut">Đăng xuất</a>--}}
-                            <a class="hd hd-5 hd-secondary dropdown-item" id="signOut">Đăng xuất</a>
+{{--                        <a class="hd hd-5 hd-intro dropdown-item" id="signOut">Đăng xuất</a>--}}
+                        <form method="POST" action="{{ route('logout') }}">
+                            @csrf
+                            <button type="submit" class="hd hd-5 hd-secondary dropdown-item">Đăng xuất</button>
                         </form>
                     </div>
                 </div>
             </div>
+            @endif
         </div>
     </div>
 </header>

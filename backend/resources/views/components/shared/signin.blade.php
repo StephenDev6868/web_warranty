@@ -13,7 +13,7 @@
                 <form method="POST" role="form">
                     <input type="hidden" id="_token" name="_token" value="{{ csrf_token() }}" />
                     <input type="text" class="form-control" id="phone_number" placeholder="Nhập số điện thoại" maxlength="11">
-                    <div id="res"></div>
+                    <p id="res" class="mt-2 text-danger"></p>
                     <button type="submit" id="btnc-sign-in" class="btn btnc btnc-large btnc-secondary">Đăng nhập</button>
                 </form>
 
@@ -26,11 +26,3 @@
         </div>
     </div>
 </div>
-
-<script>
-    $(document).ready(function(){
-        // ("#sign_in").submit(function(e){
-        //
-        // )
-    })
-</script>

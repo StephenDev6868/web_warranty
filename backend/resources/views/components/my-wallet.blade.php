@@ -12,15 +12,12 @@ $name = 'wrapper';
         </div>
     </div>
     <!-- money-change -->
-    @php
-    
-    @endphp
     <div class="money-change">
         <h3 class="title">Ví của tôi</h3>
         <div class="money-input-container">
             <div class="input-item input-vnd">
                 <p class="label">Số lượng VNĐ</p>
-                <input type="text" disabled value="{{number_format($total->vnd_nums)}}">
+                <input type="text" disabled value="{{number_format(optional($total)->vnd_nums)}}">
             </div>
             <div class="input-item icon-change">
                 <p class="label">i</p>
@@ -30,7 +27,7 @@ $name = 'wrapper';
             </div>
             <div class="input-item output-vnd">
                 <p class="label">Số lượng xu</p>
-                <input type="text" disabled value="{{number_format($total->coin, 4)}}">
+                <input type="text" disabled value="{{number_format(optional($total)->coin, 4)}}">
                 <p class="note">(quy đổi 1 xu = 100.000 vnđ)</p>
             </div>
         </div>
@@ -142,17 +139,17 @@ $name = 'wrapper';
                 @foreach ($histories as $history)
                 <li class="trade-item">
                     <p class="code">Mã tham chiếu: {{$history->code_reference}}</p>
-                    <p class="date-time">{{date('d-m-Y H:i:s', strtotime( $history->done_at));}}</p>
+                    <p class="date-time">{{date('d-m-Y H:i:s', strtotime( $history->done_at))}}</p>
                     <p class="mount">+ {{number_format( $history->amount)}} VNĐ</p>
                     <p class="status">
                         @switch($history->status)
                         @case(1)
                         <span class="processing">Đang xử lý</span>
                         @break
-                        @case(2)
+                        @case(3)
                         <span class="canceled">Đã huỷ</span>
                         @break
-                        @case(3)
+                        @case(2)
                         <span class="successed">Thành công</span>
                         @break
                         @endswitch
