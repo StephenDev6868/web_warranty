@@ -175,14 +175,17 @@ class ProgramController extends Controller
             return Redirect::back()->withErrors($validator);
         }
 
-        foreach ($files_data as $key => $value) {
-            $validator2 = Validator::make(['file_data' => $value], [
-                'file_data' => 'required|max:10240|mimes:jpeg,jpg,png,xlsx,pdf,docx',
-            ]);
-            if ($validator2->fails()) {
-                return Redirect::back()->withErrors($validator);
+        if ($files_data) {
+            foreach ($files_data as $key => $value) {
+                $validator2 = Validator::make(['file_data' => $value], [
+                    'file_data' => 'required|max:10240|mimes:jpeg,jpg,png,xlsx,pdf,docx',
+                ]);
+                if ($validator2->fails()) {
+                    return Redirect::back()->withErrors($validator);
+                }
             }
         }
+
         
 
         if ($request->session()->get('user_id')) {
@@ -190,12 +193,14 @@ class ProgramController extends Controller
             $user->update($params);
 
             // create data user_doc table
-            foreach ($files_data as $key => $value) {
-                $file_name = UploadService::upload($this->userDocUpload, $value);
-                try {
-                    UserDoc::create(['file_name' => $file_name, 'user_id'=> $request->session()->get('user_id')]);
-                } catch (\Exception $e) {
-                    Log::error($e->getMessage());
+            if ($files_data) {
+                foreach ($files_data as $key => $value) {
+                    $file_name = UploadService::upload($this->userDocUpload, $value);
+                    try {
+                        UserDoc::create(['file_name' => $file_name, 'user_id'=> $request->session()->get('user_id')]);
+                    } catch (\Exception $e) {
+                        Log::error($e->getMessage());
+                    }
                 }
             }
             //create User program register
