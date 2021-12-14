@@ -78,7 +78,7 @@ $name = 'warpper';
                         <div class="main-explanation-content-QA_item">
                             <div class="title">
                                 <a data-toggle="collapse" data-parent="#accordion" href="#collapse{{ $loop->index }}" class="title-link hd hd-4 hd-intro" aria-expanded="true">
-                                    {{ $qa->question  }}
+                                    {{ $qa->question }}
                                     <img src="{{ asset('icons/arrow_qa.svg') }}" alt="">
                                 </a>
 
