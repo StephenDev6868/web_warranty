@@ -7,7 +7,9 @@ use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Auth\AuthenticationException;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Validation\ValidationException;
+use Illuminate\View\View;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\HttpKernel\Exception\UnauthorizedHttpException;
@@ -56,7 +58,7 @@ class Handler extends ExceptionHandler
      * @param \Illuminate\Http\Request $request   Request
      * @param Throwable                $exception Throwable
      *
-     * @return \Illuminate\Http\Response|Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response|Response
      */
     public function render($request, Throwable $exception)
     {
@@ -103,6 +105,9 @@ class Handler extends ExceptionHandler
                     $exception->getErrors(),
                     Response::HTTP_BAD_REQUEST
                 );
+
+            case $exception instanceof UserAuthException:
+                return Redirect::route('user-auth');
 
             default:
                 return $this->responseError(

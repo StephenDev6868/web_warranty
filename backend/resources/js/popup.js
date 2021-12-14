@@ -7,10 +7,8 @@ $(document).ready(function () {
         });
         e.preventDefault();
         var formData = {
-            phone_number: jQuery('#phone_number').val(),
+            phone_nums: jQuery('#phone_number').val(),
         };
-
-        jQuery('#res').append('');
 
         $.ajax({
             type: 'POST',
@@ -32,8 +30,7 @@ $(document).ready(function () {
                 }, 1000);
             },
             error: function (errors) {
-                var error = '<p class="mt-2 text-danger">' + errors.responseJSON.error + '</p>';
-                jQuery('#res').append(error);
+                jQuery('#res').html(errors.responseJSON.error);
             },
         });
     });
@@ -46,11 +43,9 @@ $(document).ready(function () {
         });
         e.preventDefault();
         var formData = {
-            phone_number: jQuery('#phone_number').val(),
+            phone_nums: jQuery('#phone_number').val(),
             otp: jQuery('#otp1').val() + jQuery('#otp2').val() + jQuery('#otp3').val() + jQuery('#otp4').val() + jQuery('#otp5').val() + jQuery('#otp6').val(),
         };
-
-        jQuery('#res2').append('');
 
         $.ajax({
             type: 'POST',
@@ -64,8 +59,7 @@ $(document).ready(function () {
                 location.reload();
             },
             error: function (errors) {
-                var error = '<p class="mt-2 text-danger">' + errors.responseJSON.error + '</p>';
-                jQuery('#res2').append(error);
+                jQuery('#res2').html(errors.responseJSON.error);
             },
         });
     });

@@ -146,10 +146,10 @@ $name = 'wrapper';
                         @case(1)
                         <span class="processing">Đang xử lý</span>
                         @break
-                        @case(2)
+                        @case(3)
                         <span class="canceled">Đã huỷ</span>
                         @break
-                        @case(3)
+                        @case(2)
                         <span class="successed">Thành công</span>
                         @break
                         @endswitch
