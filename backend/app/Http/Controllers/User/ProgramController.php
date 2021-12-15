@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class ProgramController extends Controller
 {
@@ -251,7 +252,29 @@ class ProgramController extends Controller
             }
         } catch (\Exception $e) {
             Log::error($e->getMessage());
-            return Redirect::back()->withErrors($validator);
+            return Redirect::back();
+        }
+    }
+
+    public function getMyProgram(Request $request)
+    {
+        try {
+            $id_detail = $request->id;
+            $user_id = Auth::guard('user')->user()->id;
+            if ($user_id) {
+                $programs = DB::table('programs')
+                ->join('user_program_registers', 'user_program_registers.program_id', '=', 'programs.id')
+                ->join('users', 'user_program_registers.user_id', '=', 'users.id')
+                ->select(['programs.*'])
+                ->groupBy('programs.id')
+                ->get();
+
+                $wallet = Wallet::where('user_id', $user_id)->first();
+                return view('components.my-program', ['programs' =>$programs, 'wallet' => $wallet, 'id_detail' => $id_detail]);
+            }
+        } catch (\Exception $e) {
+            Log::error($e->getMessage());
+            // return Redirect::back();
         }
     }
 }
