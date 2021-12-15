@@ -24,6 +24,13 @@ $name = 'wrapper';
             @php
                 // dd($program_id);
             @endphp
+             @if ($errors->any())
+                 @foreach ($errors->all() as $error)
+                     <div class="alert alert-danger" role="alert">
+                         {{ $error }}
+                     </div>
+                 @endforeach
+             @endif
             <form method="POST" action=""{{route('post-register-program-step-two', $program_id)}} enctype="multipart/form-data">
                 @csrf
                 <div class="form-wrap">
@@ -35,7 +42,7 @@ $name = 'wrapper';
                         <input type="text" class="form-control" placeholder="Nhập email" name="email">
                     </div>
                     <div class="form-group d-flex">
-                        <select class="form-control mr-2" name="sex" id="">
+                        <select class="form-control mr-2" name="sex">
                             <option value="1">Nam</option>
                             <option value="2">Nữ</option>
                             <option value="3">Khác</option>
@@ -102,3 +109,10 @@ $name = 'wrapper';
 
 
 </script>
+
+<style>
+    button:disabled{
+        opacity: 0.6;
+        cursor: not-allowed
+    }
+</style>
