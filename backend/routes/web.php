@@ -52,9 +52,7 @@ Route::post('/register-program-step-one/{id}', [\App\Http\Controllers\User\Progr
 Route::get('/register-program-step-two/{id}', [\App\Http\Controllers\User\ProgramController::class, 'getRegisterStep2'])->name('register-program-step-two');
 Route::post('/register-program-step-two/{id}', [\App\Http\Controllers\User\ProgramController::class, 'postRegisterStep2'])->name('post-register-program-step-two');
 
-Route::get('/my-program', function () {
-    return view('components.my-program');
-})->name('my-program');
+Route::get('/my-program', [\App\Http\Controllers\User\ProgramController::class, 'getMyProgram'])->name('my-program');
 
 Route::get('/my-wallet-trade-history', function () {
     return view('components.my-wallet-trade-history');

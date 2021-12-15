@@ -40,7 +40,7 @@ $name = 'wrapper';
             <div class="info-section">
                 <p class="label">Nội dung chuyển khoản</p>
                 <p class="content">
-                    VICS1100NP9
+                    <span class="content-copy">VICS1100NP9</span>
                     <label class="copy-ctn">
                         <img src="{{ asset('images/copy-icon.png') }}" alt="">
                         <span class="copy">Sao chép</span>
@@ -50,7 +50,7 @@ $name = 'wrapper';
             <div class="info-section">
                 <p class="label">Tên tài khoản</p>
                 <p class="content">
-                    CTY CPTM VA DAU TU VICSCORP
+                    <span>CTY CPTM VA DAU TU VICSCORP</span>
                     <label class="copy-ctn">
                         <img src="{{ asset('images/copy-icon.png') }}" alt="">
                         <span class="copy">Sao chép</span>
@@ -60,7 +60,7 @@ $name = 'wrapper';
             <div class="info-section">
                 <p class="label">Số tài khoản</p>
                 <p class="content">
-                    19030001111888999
+                    <span>19030001111888999</span>
                     <label class="copy-ctn">
                         <img src="{{ asset('images/copy-icon.png') }}" alt="">
                         <span class="copy">Sao chép</span>
@@ -70,7 +70,7 @@ $name = 'wrapper';
             <div class="info-section">
                 <p class="label">Ngân hàng</p>
                 <p class="content">
-                    Techcombank
+                    <span>Techcombank</span>
                     <label class="copy-ctn">
                         <img src="{{ asset('images/copy-icon.png') }}" alt="">
                         <span class="copy">Sao chép</span>
@@ -166,3 +166,17 @@ $name = 'wrapper';
         </div>
     </div>
 </x-PrimaryLayout>
+
+<script>
+    $(document).ready(function() {
+        $('.copy-ctn').click(function($event) {
+            const content = $(this).prev()[0].textContent;
+            console.log(content);
+            navigator.clipboard.writeText(content).then(function() {
+              alert('Đã copy');
+            }, function(err) {
+            });
+        });
+    });
+
+</script>

@@ -44,13 +44,13 @@ $name = 'wrapper';
                 <div class="form-section">
                     <p class="label">Ngày khám/nhập viện<span class="highlight">*</span></p>
                     <p class="input">
-                        <input type="date" name="date_start">
+                        <input type="date" name="date_start" required>
                     </p>
                 </div>
                 <div class="form-section">
                     <p class="label">Ngày kết thúc/ ra viện<span class="highlight">*</span></p>
                     <p class="input">
-                        <input type="date" name="date_end">
+                        <input type="date" name="date_end" required>
                     </p>
                 </div>
                 <div class="form-section">
@@ -66,18 +66,18 @@ $name = 'wrapper';
                 <div class="form-section">
                     <p class="label">Tên cơ sở y tế<span class="highlight">*</span></p>
                     <p class="input">
-                        <input type="text" name="hospital">
+                        <input type="text" name="hospital" required>
                     </p>
                 </div>
                 <div class="form-section">
                     <p class="label">Chẩn đoán bệnh<span class="highlight">*</span></p>
                     <p class="input">
-                        <input type="text" name="disease">
+                        <input type="text" name="disease" required>
                     </p>
                 </div>
                 <div class="form-section">
                     <p class="input">
-                        <input type="file" hidden id="uploadFile" multiple name="file_data[]">
+                        <input type="file" hidden id="uploadFile" multiple name="file_data[]" required>
                         <label class="upload-btn" for="uploadFile">
                             <img src="{{ asset('images/upload-img.png') }}" alt="">
                             <span>Tải hồ sơ khám chữa bệnh</span>

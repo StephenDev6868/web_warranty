@@ -37,7 +37,7 @@ $name = 'wrapper';
                                 <p class="description">Cung cấp hình ảnh chân dung của bạn.</p>
 
                                 <label class="upload-btn" for="cccd_before">
-                                    <input type="file" hidden id="cccd_before" img-id="cccd_before_img" name="portrait_image">
+                                    <input type="file" hidden id="cccd_before" img-id="cccd_before_img" name="portrait_image" required>
                                     <img src="{{ asset('images/upload-img.png') }}" alt="">
                                     <span>Tải lên</span>
                                 </label>
