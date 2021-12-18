@@ -201,7 +201,7 @@ li {
 }
 @media screen and (max-width: 700px) {
   .container-custom {
-    padding: 0 1rem;
+    padding: 0 0.5rem;
   }
 
   .social-media-item img.meseager {

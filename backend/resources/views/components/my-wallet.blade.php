@@ -84,16 +84,32 @@ $name = 'wrapper';
             <h3 class="title">Nạp tiền vào tài khoản</h3>
             <form class="account-charge-form" method="POST" action="{{route('post-my-wallet')}}">
                 @csrf
-                {{-- @foreach ($errors->all() as $error)
-                <div class="alert alert-danger" role="alert">
-                    {{ $error }}
-                </div>
-                @endforeach --}}
-
                 @if(session()->has('message'))
-                <div class="alert alert-success">
-                    {{ session()->get('message') }}
-                </div>
+                    <div class="popup2 modal fade" id="resultCharge">
+                        <div class="popup2-dialog modal-dialog">
+                            <div class="popup2-dialog-content modal-content">
+                                <!-- Modal Header -->
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">
+                                        <img src="{{ asset('icons/close.svg') }}" alt="">
+                                    </button>
+                                </div>
+
+                                <div class="modal-body">
+                                    <img src="{{ asset('images/result_charge.svg') }}" alt="">
+                                    <div class="popup2-dialog-content-confirm">
+                                        <p class="hd hd-5 hd-intro">
+                                            Cảm ơn bạn đã tin tưởng và nạp tiền tại ... <br>
+                                            Chúng tôi đang xử lý giao dịch của bạn, vui lòng chờ
+                                        </p>
+                                    </div>
+                                    <button class="btn btnc btnc-secondary" style="height: 40px; width: 200px">
+                                        <a class="text-white text-bold" href="{{ route('home') }}">Về trang chủ</a>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 @endif
 
                 <div class="form-section">
@@ -208,6 +224,8 @@ $name = 'wrapper';
 
 <script>
     $(document).ready(function() {
+        jQuery('#resultCharge').modal('show');
+
         $('.copy-ctn').click(function($event) {
             const content = $(this).prev()[0].textContent;
             console.log(content);

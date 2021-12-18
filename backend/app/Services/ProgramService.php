@@ -73,7 +73,8 @@ class ProgramService
             'requirement'      => 'required|string|min:10|max:255',
             'protection_range' => 'required|string|min:10|max:255',
             'customer_rule'    => 'required|string|min:10|max:255',
-            'auth_rule'        => 'required|string|min:10|max:255',
+            'time_waiting'     => 'required|string|min:10|max:255',
+            'fee'              => 'required|string|min:10|max:255',
             'status'           => 'required|numeric',
             'started_at'       => 'required|date_format:Y-m-d',
             'end_at'           => 'required|date_format:Y-m-d',
@@ -106,7 +107,8 @@ class ProgramService
             'requirement'      => 'required|string|min:10',
             'protection_range' => 'required|string|min:10',
             'customer_rule'    => 'required|string|min:10',
-            'auth_rule'        => 'required|string|min:10',
+            'time_waiting'     => 'required|string|min:10',
+            'fee'              => 'required|string|min:10',
             'status'           => 'required|numeric',
             'started_at'       => 'required|date_format:Y-m-d|before:end_at',
             'end_at'           => 'required|date_format:Y-m-d',
@@ -121,6 +123,6 @@ class ProgramService
 
     public function getAll()
     {
-        return Program::select(['id', 'title'])->whereNull('deleted_at')->orderBy('title')->get();
+        return Program::select(['id', 'title', 'name'])->whereNull('deleted_at')->orderBy('title')->get();
     }
 }

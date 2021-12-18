@@ -46,8 +46,6 @@ class WalletControler extends Controller
         if ($validator->fails()) {
             return Redirect::back()->withErrors($validator);
         }
-        // $params['coin'] = $params['vnd_nums'] / 100000;
-        // dd($params);
         Transaction::create($params);
         return redirect()->back()->with('isSuccess', true);
     }

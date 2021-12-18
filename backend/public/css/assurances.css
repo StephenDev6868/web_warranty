@@ -201,7 +201,7 @@ li {
 }
 @media screen and (max-width: 700px) {
   .container-custom {
-    padding: 0 1rem;
+    padding: 0 0.5rem;
   }
 
   .social-media-item img.meseager {
@@ -843,7 +843,7 @@ li {
   gap: 0 33px;
 }
 .main-assurances-content-program-doc .doc-show_item {
-  width: 233px;
+  width: auto;
   height: 50px;
   border-radius: 5px;
   background-color: #FFFFFF;
