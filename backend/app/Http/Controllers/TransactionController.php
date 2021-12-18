@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Transaction;
 use App\Services\TransactionService;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class TransactionController extends Controller
 {
@@ -70,8 +71,10 @@ class TransactionController extends Controller
      */
     public function update(Transaction $transaction, Request $request)
     {
-        $result = $this->transactionService->update($transaction, $request->status);
-        return $this->response('', $result);
+        DB::transaction(function () use ($transaction, $request) {
+            $result = $this->transactionService->update($transaction, $request->status);
+            return $this->response('', $result);
+        });
     }
 
     /**

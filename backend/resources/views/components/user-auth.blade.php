@@ -48,7 +48,7 @@
 
                             <h4>Vui lòng đăng nhập để thực hiện tính năng này nhé!</h4>
 
-                            <button class="btn btnc btnc-primary">Trang chủ</button>
+                            <a class="btn btnc btnc-primary" href="{{ route('home') }}">Trang chủ</a>
                         </div>
                     </div>
                 </div>

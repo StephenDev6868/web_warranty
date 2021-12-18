@@ -32,12 +32,13 @@ Route::group(['middleware' => 'auth:api'], function () {
 
     Route::group(['prefix' => 'admins'], function () {
         Route::get('', [\App\Http\Controllers\AdminController::class, 'index']);
+        Route::get('profile', [\App\Http\Controllers\AdminController::class, 'getDetail']);
     });
     Route::group(['prefix' => 'users'], function () {
         Route::get('', [\App\Http\Controllers\UserController::class, 'index']);
         Route::delete('/{user}', [\App\Http\Controllers\UserController::class, 'destroy']);
         Route::get('/{user}', [\App\Http\Controllers\UserController::class, 'show']);
-        Route::put('/{user}', [\App\Http\Controllers\UserController::class, 'store']);
+        Route::post('/{user}', [\App\Http\Controllers\UserController::class, 'store']);
     });
     Route::group(['prefix' => 'qas'], function () {
         Route::get('', [QAController::class, 'index']);
@@ -102,7 +103,7 @@ Route::group(['middleware' => 'auth:api'], function () {
     });
 
     Route::group(['prefix' => 'programs'], function () {
-        Route::get('/all', [\App\Http\Controllers\ProgramController::class, 'alll']);
+        Route::get('/all', [\App\Http\Controllers\ProgramController::class, 'all']);
         Route::get('', [\App\Http\Controllers\ProgramController::class, 'index']);
         Route::post('', [\App\Http\Controllers\ProgramController::class, 'create']);
         Route::put('/{program}', [\App\Http\Controllers\ProgramController::class, 'update']);

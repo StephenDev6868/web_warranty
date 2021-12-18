@@ -14,7 +14,7 @@ $(document).ready(function () {
     } else if (pathName.indexOf('about') > 0) {
         $('#about_page').addClass('active');
         $('#about_pageR').addClass('active');
-    } else if (pathName.indexOf('assurance') > 0) {
+    } else if (pathName.indexOf('assurance') > 0 || pathName.indexOf('register-program') > 0) {
         $('#assurance_page').addClass('active');
         $('#assurance_pageR').addClass('active');
     } else if (pathName.indexOf('support') > 0) {

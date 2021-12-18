@@ -48,7 +48,7 @@
                         <p class="hd hd-5 hd-intro">Xin chào, <strong id="user_name_web">{{ auth('user')->user()->user_name }}</strong></p>
                         <div class="money-cash">
                             <img src="{{ asset('icons/dolar.svg') }}" alt="">
-                            <p class="hd hd-5-bold hd-gold" id="coin">{{ auth('user')->user()->wallet()->first()->coin }}</p>
+                            <p class="hd hd-5-bold hd-gold" id="coin">{{ optional(auth('user')->user()->wallet()->first())->coin }}</p>
                         </div>
                     </div>
                     <div class="avatar">

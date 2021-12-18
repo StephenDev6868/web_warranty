@@ -162,14 +162,14 @@ li {
   z-index: 999;
 }
 .social-media-item img {
+  top: 85%;
   position: fixed;
 }
 .social-media-item img.meseager {
-  top: 85%;
   left: 1%;
 }
 .social-media-item img.calling_phone {
-  top: 92%;
+  margin-top: 80px;
   left: 1%;
 }
 .social-media-item img.charge_money {

@@ -21,9 +21,6 @@ $name = 'wrapper';
             </ul>
         </div>
         <div class="form-register">
-            @php
-                // dd($program_id);
-            @endphp
              @if ($errors->any())
                  @foreach ($errors->all() as $error)
                      <div class="alert alert-danger" role="alert">
@@ -70,12 +67,14 @@ $name = 'wrapper';
                         </label>
                     </div>
                 </div>
-                
                 <div class="btn-continue">
                     <a>
                         <button class="btn-step-1" type="submit" id="sub_btn" disabled>Đăng ký chương trình</button>
-                    </a>   
+                    </a>
                 </div>
+{{--                @if(session('response'))--}}
+{{--                    <h1>DK THANH CONG</h1>--}}
+{{--                @endif--}}
             </form>
         </div>
     </div>

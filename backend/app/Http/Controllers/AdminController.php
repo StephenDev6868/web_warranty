@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Auth\AuthenticationException;
 use Illuminate\Http\Request;
 use App\Services\AdminService;
 use Illuminate\Http\Resources\Json\JsonResource;
+use Illuminate\Support\Facades\Auth;
 
 class AdminController extends Controller
 {
@@ -70,5 +72,21 @@ class AdminController extends Controller
         $results = $this->adminService->listAll();
 
         return $this->response('', $results);
+    }
+
+    /**
+     * Get admin info
+     *
+     * @return mixed
+     * @throws AuthenticationException
+     */
+    public function getDetail()
+    {
+        $admin = Auth::user();
+        if (! $admin) {
+            throw new AuthenticationException();
+        }
+
+        return $this->response('', $admin);
     }
 }

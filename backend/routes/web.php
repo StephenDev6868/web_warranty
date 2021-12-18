@@ -29,7 +29,18 @@ Route::get('/about', [\App\Http\Controllers\User\AboutController::class, 'index'
 Route::group(['middleware' => 'auth:user'], function () {
     Route::get('/my-wallet', [\App\Http\Controllers\User\WalletControler::class, 'getMyWallet'])->name('my-wallet');
     Route::post('/my-wallet', [\App\Http\Controllers\User\WalletControler::class, 'postMyWallet'])->name('post-my-wallet');
+    Route::get('/history-compensation-zero', [\App\Http\Controllers\User\CompensationController::class, 'getCompensationList'])->name('history-compensation-zero');
+    Route::get('/history-compensation-one', [\App\Http\Controllers\User\CompensationController::class, 'getCompensationInfo'])->name('history-compensation-one');
+    Route::get('/history-compensation-two', [\App\Http\Controllers\User\CompensationController::class, 'getCompensationLog'])->name('history-compensation-two');
+    Route::get('/history-compensation-three', [\App\Http\Controllers\User\CompensationController::class, 'getCompensationDocs'])->name('history-compensation-three');
+    Route::get('/my-program', [\App\Http\Controllers\User\ProgramController::class, 'getMyProgram'])->name('my-program');
+    Route::get('/my-wallet-trade-history', function () {
+        return view('components.my-wallet-trade-history');
+    })->name('my-wallet-trade-history');
 });
+
+Route::get('/register-receive', [\App\Http\Controllers\User\CompensationController::class, 'getRegisterReceive'])->name('register-receive');
+Route::post('/register-receive', [\App\Http\Controllers\User\CompensationController::class, 'registerReceive'])->name('post-register-receive');
 
 Route::get('/public-divided', function () {
     return view('components.public-divided');
@@ -52,22 +63,8 @@ Route::post('/register-program-step-one/{id}', [\App\Http\Controllers\User\Progr
 Route::get('/register-program-step-two/{id}', [\App\Http\Controllers\User\ProgramController::class, 'getRegisterStep2'])->name('register-program-step-two');
 Route::post('/register-program-step-two/{id}', [\App\Http\Controllers\User\ProgramController::class, 'postRegisterStep2'])->name('post-register-program-step-two');
 
-Route::get('/my-program', [\App\Http\Controllers\User\ProgramController::class, 'getMyProgram'])->name('my-program');
-
-Route::get('/my-wallet-trade-history', function () {
-    return view('components.my-wallet-trade-history');
-})->name('my-wallet-trade-history');
-
 Route::get('/devide-user', function () {
     return view('components.devide-user');
 })->name('devide-user');
 
-
-Route::get('/register-receive', [\App\Http\Controllers\User\CompensationController::class, 'getRegisterReceive'])->name('register-receive');
-Route::post('/register-receive', [\App\Http\Controllers\User\CompensationController::class, 'registerReceive'])->name('post-register-receive');
-
-Route::get('/history-compensation-zero', [\App\Http\Controllers\User\CompensationController::class, 'getCompensationList'])->name('history-compensation-zero');
-Route::get('/history-compensation-one', [\App\Http\Controllers\User\CompensationController::class, 'getCompensationInfo'])->name('history-compensation-one');
-Route::get('/history-compensation-two', [\App\Http\Controllers\User\CompensationController::class, 'getCompensationLog'])->name('history-compensation-two');
-Route::get('/history-compensation-three', [\App\Http\Controllers\User\CompensationController::class, 'getCompensationDocs'])->name('history-compensation-three');
 Route::post('/download-docs', [\App\Http\Controllers\User\CompensationController::class, 'downloadDocs']);

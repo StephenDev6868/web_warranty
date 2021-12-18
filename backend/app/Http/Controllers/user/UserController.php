@@ -44,9 +44,7 @@ class UserController extends Controller
                 ->where('phone_nums', $attributes['phone_nums'])
                 ->first();
 
-            $userLogin = Auth::guard('user')->loginUsingId($user->getKey());
-
-            if ($userLogin) {
+            if ($user) {
                 if (app()->environment('dev') || app()->environment('local')) {
                     $otpCode = '000000';
                 } else {
@@ -105,24 +103,30 @@ class UserController extends Controller
             ->first();
 
         if (! $otp) {
-            Auth::guard('user')->logout();
+            $otp->status = 3;
             return $this->responseError('Xác thực OTP thất bại', 'Mã OTP không chính xác vui lòng nhập lại');
         }
 
         if (Carbon::parse($otp->expired_at)->diffInSeconds(Carbon::now()) <= 0) {
-            Auth::guard('user')->logout();
+            $otp->status = 3;
             return $this->responseError('Xác thực OTP thất bại', 'Mã OTP đã hết hạn');
         }
         // Update status otp
         $otp->status = 2;
         $otp->save();
 
+        // Generate token
         $user = User::query()
             ->where('id', $otp->user_id)
             ->first();
         $user->token = Str::random(60);
         $user->save();
         $user['wallet'] = $user->wallet()->first(['coin']);
+
+        $result = Auth::guard('user')->loginUsingId($user->getKey());
+        if (! $result) {
+            return $this->responseError('Đăng nhập thất bại', 'Vui lòng đăng nhập lại');
+        }
 
         return $this->response('', $user);
     }
