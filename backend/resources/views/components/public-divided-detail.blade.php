@@ -77,7 +77,7 @@ $name = 'warpper';
 
                         <h5 class="hd hd-5-bold hd-primary">Tài liệu liên quan</h5>
                         <div class="eviden-doc" id="eviden-doc-1">
-                            <div class="eviden-doc-list">
+                            <div class="eviden-doc-list {{ auth()->guard('user')->check() === false ? 'inactive' : '' }}">
                                 <div class="eviden-doc-list_item">
                                     <img srcset="{{ asset('images/doc_hop_1.png') }} 2x" alt="">
                                 </div>
@@ -97,15 +97,17 @@ $name = 'warpper';
                                     <img srcset="{{ asset('images/doc_hop_1.png') }} 2x" alt="">
                                 </div>
                             </div>
-                            <div class="eviden-doc-popup-inactive">
-                                <p class="hd hd-5 hd-intro">Để xem chi tiết bệnh án, bạn cần phải đăng nhập, đi tới đăng ký, đăng nhập ngay</p>
-                                <a href="./register-program.html">
-                                    <button class="btn btnc btnc-secondary-outline">Đăng ký</button>
-                                </a>
-                                <a>
-                                    <button class="btn btnc btnc-secondary" data-toggle="modal" data-target="#signIn">Đăng nhập</button>
-                                </a>
-                            </div>
+                            @if(auth()->guard('user')->check() === false)
+                                <div class="eviden-doc-popup-inactive">
+                                    <p class="hd hd-5 hd-intro">Để xem chi tiết bệnh án, bạn cần phải đăng nhập, đi tới đăng ký, đăng nhập ngay</p>
+                                    <a href="{{ route('assurance') }}">
+                                        <button class="btn btnc btnc-secondary-outline">Đăng ký</button>
+                                    </a>
+                                    <a>
+                                        <button class="btn btnc btnc-secondary" data-toggle="modal" data-target="#signIn">Đăng nhập</button>
+                                    </a>
+                                </div>
+                            @endif
                         </div>
                     </div>
                 </div>
@@ -167,7 +169,7 @@ $name = 'warpper';
 
                         <h5 class="hd hd-5-bold hd-primary">Tài liệu liên quan</h5>
                         <div class="eviden-doc" id="eviden-doc-2">
-                            <div class="eviden-doc-list">
+                            <div class="eviden-doc-list {{ auth()->guard('user')->check() === false ? 'inactive' : '' }}">
                                 <div class="eviden-doc-list_item">
                                     <img srcset="{{ asset('images/doc_hop_1.png') }} 2x" alt="">
                                 </div>
@@ -187,15 +189,17 @@ $name = 'warpper';
                                     <img srcset="{{ asset('images/doc_hop_1.png') }} 2x" alt="">
                                 </div>
                             </div>
-                            <div class="eviden-doc-popup-inactive">
-                                <p class="hd hd-5 hd-intro">Để xem chi tiết bệnh án, bạn cần phải đăng nhập, đi tới đăng ký, đăng nhập ngay</p>
-                                <a href="./register-program.html">
-                                    <button class="btn btnc btnc-secondary-outline">Đăng ký</button>
-                                </a>
-                                <a>
-                                    <button class="btn btnc btnc-secondary" data-toggle="modal" data-target="#signIn">Đăng nhập</button>
-                                </a>
-                            </div>
+                            @if(auth()->guard('user')->check() === false)
+                                <div class="eviden-doc-popup-inactive">
+                                    <p class="hd hd-5 hd-intro">Để xem chi tiết bệnh án, bạn cần phải đăng nhập, đi tới đăng ký, đăng nhập ngay</p>
+                                    <a href="{{ route('assurance') }}">
+                                        <button class="btn btnc btnc-secondary-outline">Đăng ký</button>
+                                    </a>
+                                    <a>
+                                        <button class="btn btnc btnc-secondary" data-toggle="modal" data-target="#signIn">Đăng nhập</button>
+                                    </a>
+                                </div>
+                            @endif
                         </div>
                     </div>
                 </div>
@@ -257,7 +261,7 @@ $name = 'warpper';
 
                         <h5 class="hd hd-5-bold hd-primary">Tài liệu liên quan</h5>
                         <div class="eviden-doc" id="eviden-doc-1">
-                            <div class="eviden-doc-list">
+                            <div class="eviden-doc-list {{ auth()->guard('user')->check() === false ? 'inactive' : '' }}">
                                 <div class="eviden-doc-list_item">
                                     <img srcset="{{ asset('images/doc_hop_1.png') }} 2x" alt="">
                                 </div>
@@ -277,15 +281,17 @@ $name = 'warpper';
                                     <img srcset="{{ asset('images/doc_hop_1.png') }} 2x" alt="">
                                 </div>
                             </div>
-                            <div class="eviden-doc-popup-inactive">
-                                <p class="hd hd-5 hd-intro">Để xem chi tiết bệnh án, bạn cần phải đăng nhập, đi tới đăng ký, đăng nhập ngay</p>
-                                <a href="./register-program.html">
-                                    <button class="btn btnc btnc-secondary-outline">Đăng ký</button>
-                                </a>
-                                <a>
-                                    <button class="btn btnc btnc-secondary" data-toggle="modal" data-target="#signIn">Đăng nhập</button>
-                                </a>
-                            </div>
+                            @if(auth()->guard('user')->check() === false)
+                                <div class="eviden-doc-popup-inactive">
+                                    <p class="hd hd-5 hd-intro">Để xem chi tiết bệnh án, bạn cần phải đăng nhập, đi tới đăng ký, đăng nhập ngay</p>
+                                    <a href="{{ route('assurance') }}">
+                                        <button class="btn btnc btnc-secondary-outline">Đăng ký</button>
+                                    </a>
+                                    <a>
+                                        <button class="btn btnc btnc-secondary" data-toggle="modal" data-target="#signIn">Đăng nhập</button>
+                                    </a>
+                                </div>
+                            @endif
                         </div>
                     </div>
                 </div>

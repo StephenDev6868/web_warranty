@@ -112,7 +112,7 @@ class BannerController extends Controller
             'file_image',
         ]);
 
-        $result = $this->bannerService->updateBanner($banner, $attributes);
+        $result = $this->bannerService->updateBanner($request, $banner, $attributes);
 
         return $this->response('', $result);
     }

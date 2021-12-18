@@ -18,7 +18,7 @@
                             </p>
                             <button class="btn btn btnc btnc-large btnc-secondary">
                                 <a href="{{ route('about') }}" style="color: white;">
-                                    Tìm hiểu về quỹ
+                                    Tìm hiểu về cộng đồng
                                 </a>
                             </button>
                         </div>

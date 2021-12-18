@@ -162,14 +162,14 @@ li {
   z-index: 999;
 }
 .social-media-item img {
+  top: 85%;
   position: fixed;
 }
 .social-media-item img.meseager {
-  top: 85%;
   left: 1%;
 }
 .social-media-item img.calling_phone {
-  top: 92%;
+  margin-top: 80px;
   left: 1%;
 }
 .social-media-item img.charge_money {
@@ -528,8 +528,8 @@ li {
 }
 .banner__slider__carousel__inner img {
   height: 500px;
-  -o-object-fit: fill;
-     object-fit: fill;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .banner__slider__carousel__inner__item {
   position: relative;

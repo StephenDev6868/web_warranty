@@ -2,7 +2,7 @@
     <div class="container-custom navigation__content">
         <div class="navigation__content__logo">
             <a href="{{ route('home') }}" class="navigation__content__logo__item">
-                <img class="logo" srcset="{{asset('images/logo.png')}} 1x" alt="">                      
+                <img class="logo" srcset="{{asset('images/logo.png')}} 1x" alt="">
             </a>
         </div>
 
@@ -20,7 +20,7 @@
                 </li>
                 <li class="navigation__content__menu__list__item">
                     <a href="{{ route('assurance') }}" class="navigation__content__menu__list__item__link" id="assurance_page">
-                        Chương trình bảo hiểm 
+                        Chương trình hỗ trợ
                     </a>
                 </li>
                 <li class="navigation__content__menu__list__item">
@@ -38,7 +38,7 @@
 
         <div class="navigation__content__openNavbar">
             <i class="fa fa-bars" class="" id="open_navbar"></i>
-        </div> 
+        </div>
 
         <div class="navigation__content__navbarR">
             <ul class="navigation__content__navbarR__list">
@@ -55,7 +55,7 @@
                 </li>
                 <li class="navigation__content__navbarR__list__item">
                     <a href="{{ route('assurance') }}" class="navigation__content__navbarR__list__item__link" id="assurance_pageR">
-                        Chương trình bảo hiểm 
+                        Chương trình hỗ trợ
                     </a>
                 </li>
                 <li class="navigation__content__navbarR__list__item">

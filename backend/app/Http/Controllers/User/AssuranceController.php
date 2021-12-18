@@ -16,7 +16,7 @@ class AssuranceController extends Controller
     public function index()
     {
         return view('components.assurance', [
-            'programs' => $this->programs()
+            'programs' => $this->programs(),
         ]);
     }
 

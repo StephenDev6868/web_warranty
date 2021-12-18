@@ -19,7 +19,7 @@
                     <input type="text" class="form-control" name="" id="otp5" maxlength="1">
                     <input type="text" class="form-control" name="" id="otp6" maxlength="1">
                 </form>
-                <div id="res2"></div>
+                <p id="res2" class="mt-2 text-danger"></p>
                 <button class="btn btnc btnc-large btnc-secondary" id="btnc-auth-otp">Đăng nhập</button>
                 <hr>
                 <div class="popup2-dialog-content-confirm">
