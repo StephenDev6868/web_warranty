@@ -49,6 +49,6 @@ class WalletControler extends Controller
         // $params['coin'] = $params['vnd_nums'] / 100000;
         // dd($params);
         Transaction::create($params);
-        return redirect()->back()->with('message', 'Đang xử lý yêu cầu');
+        return redirect()->back()->with('isSuccess', true);
     }
 }

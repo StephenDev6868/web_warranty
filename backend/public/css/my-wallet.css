@@ -999,6 +999,22 @@ li {
   color: #209956;
 }
 
+
+.modal-body .img-alert-charge img {
+	 width: 100%;
+	 max-width: 426px;
+}
+ .modal-body .content-alert .btn-home-cnt a {
+	 width: 285px;
+	 border-radius: 0;
+	 color: #fff;
+	 
+}
+ .modal-body .content-alert .btn-home-cnt a:hover {
+	 color: #fff;
+	 opacity: 0.6;
+}
+
 @media only screen and (max-width: 1024px) {
   .wrapper .main {
     max-width: 100%;
@@ -1183,5 +1199,17 @@ li {
     width: 143px;
     padding: 7px 0;
     font-size: 14px;
+  }
+  
+  .modal-body .img-alert-charge img {
+	width: 100%;
+	max-width: 426px;
+  }
+ .modal-body .content-alert .btn-home-cnt a {
+	 font-size: 14px;
+	 width: 120px;
+  }
+ .modal-body .content-alert .btn-home-cnt a:hover {
+	opacity: 1;
   }
 }

@@ -165,6 +165,48 @@ $name = 'wrapper';
             @endif
         </div>
     </div>
+    @if(session()->has('isSuccess'))
+        <div class="alert alert-success">
+            {{ session()->get('isSuccess') }}
+        </div>
+        <button hidden class="btn btnc btnc-secondary" data-toggle="modal" data-target="#alertChargeSuccess" id="chargeBtn">Click me</button>
+        <div class="popup1 modal fade" id="alertChargeSuccess">
+            <div class="popup1-dialog modal-dialog modal-lg">
+                <div class="modal-content text-center">
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">
+                            <img src="{{ asset('icons/close.svg') }}" alt="">
+                        </button>
+                    </div>
+        
+                    <div class="modal-body">
+                        <div class="img-alert-charge">
+                            <img class="w-100" src="{{ asset('images/alert-success-charge.png') }}" alt="">
+                        </div>
+                        <div class="content-alert">
+                            <p class="text text-center mb-5">
+                                Cảm ơn bạn đã tin tưởng và nạp tiền<br>
+                                Chúng tôi đang xử lý giao dịch của bạn, vui lòng chờ 
+                            </p>
+                            <p class="tbn-cnt mt-3 btn-home-cnt">
+                                <a href="{{route('home')}}" class="btn btnc-secondary">Về trang chủ</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            $(document).ready(function() {
+                setTimeout(() => {
+                $('#chargeBtn').click();
+                }, 2000);
+            });
+        </script>
+    @endif
+
+
 </x-PrimaryLayout>
 
 <script>
