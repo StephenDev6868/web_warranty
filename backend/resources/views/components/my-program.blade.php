@@ -19,8 +19,6 @@ $name = 'wrapper';
                 $id_detail = Crypt::encrypt($program_detail->id);
             }
         }
-
-        // dd($wallet);
     @endphp
     <div class="program-joined">
         <h2 class="title">Bạn đã tham gia {{$total_programs}} chương trình</h2>
@@ -29,12 +27,12 @@ $name = 'wrapper';
             <span class="icon">
                 <img src="{{ asset('images/coin-icon.png') }}" alt="">
             </span>
-            <span class="coin-mount">{{number_format($wallet->coin)}} xu</span>
+            <span class="coin-mount">{{number_format(optional($wallet)->coin)}} xu</span>
         </p>
     </div>
     <div class="programs-list">
         @if ($total_programs > 0)
-        
+
             @foreach ($programs as $program)
             {{-- {{ Crypt::encrypt($program->id) .'----'. $id_detail.'<br/>'}} --}}
                 <div class="program-item {{$program->id == Crypt::decrypt($id_detail) ? 'active':'xxxx'}}">

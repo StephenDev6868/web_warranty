@@ -64,7 +64,7 @@ $name = 'warpper';
                                     </div>
                                     <div id="collapseOne" class="body collapse show">
                                         <div class="body-content hd hd-5 hd-intro">
-                                            {{ $program->term }}
+                                            {!! nl2br($program->term) !!}
                                         </div>
                                     </div>
                                 </div>

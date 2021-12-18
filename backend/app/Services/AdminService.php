@@ -75,4 +75,15 @@ class AdminService
     {
         return Admin::all();
     }
+
+    /**
+     * Show detail
+     *
+     * @param Admin $admin Admin
+     *
+     * @return mixed
+    */
+    public function showDetail(Admin $admin)
+    {
+    }
 }

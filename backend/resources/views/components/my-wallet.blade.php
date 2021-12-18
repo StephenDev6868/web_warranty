@@ -50,7 +50,7 @@ $name = 'wrapper';
             <div class="info-section">
                 <p class="label">Tên tài khoản</p>
                 <p class="content">
-                    <span>CTY CPTM VA DAU TU VICSCORP</span>
+                    <span>CTCP TV DICH VU BAO HIEM VIET NAM</span>
                     <label class="copy-ctn">
                         <img src="{{ asset('images/copy-icon.png') }}" alt="">
                         <span class="copy">Sao chép</span>
@@ -60,7 +60,7 @@ $name = 'wrapper';
             <div class="info-section">
                 <p class="label">Số tài khoản</p>
                 <p class="content">
-                    <span>19030001111888999</span>
+                    <span>035255366666</span>
                     <label class="copy-ctn">
                         <img src="{{ asset('images/copy-icon.png') }}" alt="">
                         <span class="copy">Sao chép</span>
@@ -70,7 +70,7 @@ $name = 'wrapper';
             <div class="info-section">
                 <p class="label">Ngân hàng</p>
                 <p class="content">
-                    <span>Techcombank</span>
+                    <span>MB Bank</span>
                     <label class="copy-ctn">
                         <img src="{{ asset('images/copy-icon.png') }}" alt="">
                         <span class="copy">Sao chép</span>

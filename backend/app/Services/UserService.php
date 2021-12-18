@@ -2,6 +2,8 @@
 namespace App\Services;
 
 use App\Models\User;
+use App\Services\Upload\UploadService;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
@@ -10,6 +12,8 @@ use Illuminate\Validation\ValidationException;
 
 class UserService
 {
+    protected $folderUpload = 'user-info';
+
     /**
      * Get list user with conditions
      *
@@ -61,14 +65,15 @@ class UserService
     /**
      * Update User
      *
-     * @param User  $user   User
-     * @param array $inputs Inoputs
+     * @param Request $request Request
+     * @param User    $user    User
+     * @param array   $inputs  Inoputs
      *
      * @return mixed
      * @throws ValidationException
      * @throws \Exception
      */
-    public function update(User $user, array $inputs)
+    public function update(Request $request, User $user, array &$inputs)
     {
         $validator = Validator::make($inputs, [
             'phone_nums'       => 'required|string|unique:users,phone_nums,' . $inputs['id'],
@@ -79,6 +84,10 @@ class UserService
             'hi_card_num'      => 'required|numeric|unique:users,hi_card_num,' . $inputs['id'],
             'birthday'         => 'nullable|date_format:Y-m-d',
             'sex'              => 'nullable|numeric',
+            'front_img'        => 'nullable|max:5120|mimes:jpeg,jpg,png,gif',
+            'back_img'         => 'nullable|max:5120|mimes:jpeg,jpg,png,gif',
+            'portrait_img'     => 'nullable|max:5120|mimes:jpeg,jpg,png,gif',
+
         ]);
 
         if ($validator->fails()) {
@@ -86,6 +95,24 @@ class UserService
         }
 
         try {
+            if ($request->hasFile('front_img')) {
+                $inputs['id_card_image_front'] = $this->handleFile($user->id_card_image_front, $inputs['front_img']);
+            } else {
+                $inputs['id_card_image_front'] = $user->id_card_image_front;
+            }
+
+            if ($request->hasFile('back_img')) {
+                $inputs['id_card_image_back'] = $this->handleFile($user->id_card_image_back, $inputs['back_img']);
+            } else {
+                $inputs['id_card_image_back'] = $user->id_card_image_back;
+            }
+
+            if ($request->hasFile('portrait_img')) {
+                $inputs['portrait_image'] = $this->handleFile($user->portrait_image, $inputs['portrait_img']);
+            } else {
+                $inputs['portrait_image'] = $user->portrait_image;
+            }
+
             return $user->update($inputs);
         } catch (\Exception $exception) {
             throw new \Exception($exception);
@@ -103,5 +130,22 @@ class UserService
     public function delete(User $user)
     {
         return $user->delete();
+    }
+
+    /**
+     * Handle file image
+     *
+     * @param string $oldFile Old File
+     * @param string $newFile New File
+     *
+     * @return mixed
+    */
+    protected function handleFile($oldFile, $newFile)
+    {
+        $arr_file_name = explode('/', $oldFile);
+        $file_name = end($arr_file_name);
+        UploadService::deleteFile($this->folderUpload, $file_name);
+        $new_file_name = UploadService::upload($this->folderUpload, $newFile);
+        return $this->folderUpload . '/' . $new_file_name;
     }
 }

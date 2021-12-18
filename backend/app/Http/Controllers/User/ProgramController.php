@@ -24,9 +24,7 @@ class ProgramController extends Controller
 
     public function getRegisterProgram(Request $request, $id)
     {
-        $program_id = Crypt::decrypt($id); //1
-        // dd(Crypt::encrypt($request->id));
-        //eyJpdiI6IkMvUlVBeWlXN2hYeWZiQTFQSFJQbGc9PSIsInZhbHVlIjoiQXVWdEVaMUJZa1g5Rkl2U3FaYXV6Zz09IiwibWFjIjoiYTgzY2U2NGU1YTE1ZTZkZGQwOTZkYzJlYmEyZTBmODhlNWM0YWM1NTUzMzJkMjE3YjkyOWZlYTI1ZDRmM2VkZiIsInRhZyI6IiJ9
+        $program_id = Crypt::decrypt($id);
         $params = [
             'id' => $program_id,
         ];
@@ -60,10 +58,10 @@ class ProgramController extends Controller
         }
 
         // save db get id, save id in session to process next step
-        $front_img_file_name = UploadService::upload($this->folderUpload, $params['id_card_image_front']);
-        $back_img_file_name = UploadService::upload($this->folderUpload, $params['id_card_image_back']);
+        $front_img_file_name = $this->folderUpload . '/' . UploadService::upload($this->folderUpload, $params['id_card_image_front']);
+        $back_img_file_name = $this->folderUpload . '/' . UploadService::upload($this->folderUpload, $params['id_card_image_back']);
         // user have login
-        if (Auth::guard('user')->user()->id) {
+        if (Auth::guard('user')->user()) {
             $user = User::find(Auth::guard('user')->user()->id);
             $user->update([
                 'id_card_image_front' =>  $front_img_file_name,
@@ -99,7 +97,7 @@ class ProgramController extends Controller
             return redirect()->route('home');
         }
 
-        if ($request->session()->get('user_id') || (Auth::guard('user')->user()->id)) {
+        if ($request->session()->get('user_id') || (Auth::guard('user')->user())) {
             return view('components.register-program-step-one', ['program_id' =>$id]);
         } else {
             return redirect()->route('home');
@@ -123,16 +121,16 @@ class ProgramController extends Controller
             return Redirect::back()->withErrors($validator);
         }
         // user have login
-        if (Auth::guard('user')->user()->id) {
+        if (Auth::guard('user')->user()) {
             $user = User::find(Auth::guard('user')->user()->id);
-            $portrait_image_file_name = UploadService::upload($this->folderUpload, $params['portrait_image']);
+            $portrait_image_file_name = $this->folderUpload . '/' . UploadService::upload($this->folderUpload, $params['portrait_image']);
             $user->update(['portrait_image' =>  $portrait_image_file_name]);
             return redirect()->route('register-program-step-two', $id);
         } else {
             if ($request->session()->get('user_id')) {
                 //
                 $user = User::find($request->session()->get('user_id'));
-                $portrait_image_file_name = UploadService::upload($this->folderUpload, $params['portrait_image']);
+                $portrait_image_file_name = $this->folderUpload . '/' . UploadService::upload($this->folderUpload, $params['portrait_image']);
                 $user->update(['portrait_image' =>  $portrait_image_file_name]);
                 return redirect()->route('register-program-step-two', $id);
             } else {
@@ -153,8 +151,7 @@ class ProgramController extends Controller
             return redirect()->route('home');
         }
 
-        if (($request->session()->get('user_id') && $request->id) || (Auth::guard('user')->user()->id && $request->id)) {
-            // return redirect()->route('register-program-step-two', $id);
+        if (($request->session()->get('user_id') && $request->id) || (Auth::guard('user')->user() && $request->id)) {
             return view('components.register-program-step-two', ['program_id' =>$id]);
         } else {
             return redirect()->route('home');
@@ -163,7 +160,6 @@ class ProgramController extends Controller
 
     public function postRegisterStep2(Request $request, $id)
     {
-        // dd($request->all());
         $program_id = Crypt::decrypt($id);
         $files_data = [];
         $files_data = $request->file('file_data');
@@ -181,7 +177,7 @@ class ProgramController extends Controller
         $validator = Validator::make($params, [
             'program_id' => 'required|exists:programs,id',
             'user_name' => 'required',
-            'phone_nums' => 'required|numeric',
+            'phone_nums' => 'required|string',
             'email' => 'nullable',
             'birthday' => 'required',
             'id_card_num' => 'required',
@@ -208,7 +204,7 @@ class ProgramController extends Controller
         }
 
         $user_id = '';
-        if (Auth::guard('user')->user()->id) {
+        if (Auth::guard('user')->user()) {
             $user_id = Auth::guard('user')->user()->id;
         } elseif ($request->session()->get('user_id')) {
             $user_id = $request->session()->get('user_id');
@@ -228,10 +224,10 @@ class ProgramController extends Controller
                         }
                     }
                 }
+
                 //create User program register
                 $userProgramRes = UserProgramRegister::where(['user_id'=> $user_id, 'program_id' => $program_id])->first();
-                if ($userProgramRes) {
-                } else {
+                if (! $userProgramRes) {
                     UserProgramRegister::create(
                         [
                             'user_id' => $user_id,
@@ -240,15 +236,15 @@ class ProgramController extends Controller
                         ]
                     );
                 }
+
                 // create wallet for user
                 $wallet = Wallet::where('user_id', $user_id)->first();
-                if ($wallet) {
-                } else {
+                if (! $wallet) {
                     Wallet::create([
-                        'user_id' => $user_id
+                        'user_id' => $user_id,
                     ]);
                 }
-                return redirect()->route('my-program');
+                return redirect()->route('register-program-step-two')->with('response', true);
             }
         } catch (\Exception $e) {
             Log::error($e->getMessage());

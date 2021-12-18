@@ -4,6 +4,7 @@ namespace App\Services;
 
 use App\Models\Banner;
 use App\Services\Upload\UploadService;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
@@ -72,29 +73,35 @@ class BannerService
     /**
      * Update banner service
      *
-     * @param Banner $banner     BannerB
-     * @param array  $attributes Attributes
+     * @param Request $request    Request
+     * @param Banner  $banner     BannerB
+     * @param array   $attributes Attributes
      *
      * @return mixed
      * @throws ValidationException
      */
-    public function updateBanner(Banner $banner, array &$attributes)
+    public function updateBanner(Request $request, Banner $banner, array &$attributes)
     {
         $validator = Validator::make($attributes, [
             'title'        => 'required|string|min:10|max:255',
             'content'      => 'required|string|min:10|max:255',
-            'file_image'   => 'required|max:5120|mimes:jpeg,jpg,png,gif',
+            'file_image'   => 'nullable|max:5120|mimes:jpeg,jpg,png,gif',
         ]);
 
         if ($validator->fails()) {
             throw new ValidationException($validator);
         }
 
-        $arr_file_name = explode('/', $banner->file_image);
-        $file_name = end($arr_file_name);
-        UploadService::deleteFile($this->folderUpload, $file_name);
-        $new_file_name = UploadService::upload($this->folderUpload, $attributes['file_image']);
-        $attributes['file_image'] = $this->folderUpload . '/' . $new_file_name;
+        if ($request->hasFile('file_image')) {
+            $arr_file_name = explode('/', $banner->file_image);
+            $file_name = end($arr_file_name);
+            UploadService::deleteFile($this->folderUpload, $file_name);
+            $new_file_name = UploadService::upload($this->folderUpload, $attributes['file_image']);
+            $attributes['file_image'] = $this->folderUpload . '/' . $new_file_name;
+        } else {
+            $attributes['file_image'] = $banner->file_image;
+        }
+
 
         return $banner->update($attributes);
     }

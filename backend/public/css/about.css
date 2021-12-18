@@ -162,14 +162,14 @@ li {
   z-index: 999;
 }
 .social-media-item img {
+  top: 85%;
   position: fixed;
 }
 .social-media-item img.meseager {
-  top: 85%;
   left: 1%;
 }
 .social-media-item img.calling_phone {
-  top: 92%;
+  margin-top: 80px;
   left: 1%;
 }
 .social-media-item img.charge_money {
@@ -799,14 +799,14 @@ li {
   z-index: 999;
 }
 .social-media-item img {
+  top: 85%;
   position: fixed;
 }
 .social-media-item img.meseager {
-  top: 85%;
   left: 1%;
 }
 .social-media-item img.calling_phone {
-  top: 92%;
+  margin-top: 80px;
   left: 1%;
 }
 .social-media-item img.charge_money {
@@ -1069,7 +1069,7 @@ li {
 .main-explanation-content_item-box {
   padding: 39px 60px 25px 60px;
   width: 480px;
-  height: 305px;
+  height: auto;
   background-color: #f2f4f8;
 }
 .main-explanation-content_item-box h3 {
@@ -1097,8 +1097,7 @@ li {
 }
 .main-explanation-content-process p {
   text-align: start;
-  height: 402px;
-  margin-top: 66px;
+  margin-top: 20px;
 }
 .main-explanation-content-QA_item {
   max-width: 968px;

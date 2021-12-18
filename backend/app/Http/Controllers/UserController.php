@@ -78,11 +78,14 @@ class UserController extends Controller
             'id_card_num',
             'hi_card_num',
             'birthday',
+            'front_img',
+            'back_img',
+            'portrait_img',
             'phone_num_parent',
             'sex',
         ]);
 
-        $results = $this->userService->update($user, $inputs);
+        $results = $this->userService->update($request, $user, $inputs);
 
         return $this->response('', $results);
     }

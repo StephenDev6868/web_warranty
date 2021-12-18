@@ -169,18 +169,17 @@ li {
     position: relative;
     z-index: 999;
     &-item {
-
         img {
+            top: 85%;
             position: fixed;
         }
 
         img.meseager {
-            top: 85%;
             left: 1%;
         }
 
         img.calling_phone {
-            top: 92%;
+            margin-top: 80px;
             left: 1%;
         }
 
