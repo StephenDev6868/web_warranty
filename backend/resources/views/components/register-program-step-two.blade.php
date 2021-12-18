@@ -72,9 +72,33 @@ $name = 'wrapper';
                         <button class="btn-step-1" type="submit" id="sub_btn" disabled>Đăng ký chương trình</button>
                     </a>
                 </div>
-{{--                @if(session('response'))--}}
-{{--                    <h1>DK THANH CONG</h1>--}}
-{{--                @endif--}}
+                @if(session()->has('response'))
+                    <div class="popup2 modal fade" id="resultRegister">
+                        <div class="popup2-dialog modal-dialog">
+                            <div class="popup2-dialog-content modal-content">
+                                <!-- Modal Header -->
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">
+                                        <img src="{{ asset('icons/close.svg') }}" alt="">
+                                    </button>
+                                </div>
+
+                                <div class="modal-body">
+                                    <img src="{{ asset('images/result_charge.svg') }}" alt="">
+                                    <div class="popup2-dialog-content-confirm">
+                                        <p class="hd hd-5 hd-intro">
+                                            Cảm ơn bạn đã đăng ký chương trình hỗ trợ .<br>
+                                            Bạn vừa đăng ký thành công vui lòng đăng nhập để xem chi tiết .
+                                        </p>
+                                    </div>
+                                    <button class="btn btnc btnc-secondary" style="height: 40px; width: 200px" data-toggle="modal" data-target="#signIn">
+                                        Đăng nhập
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                @endif
             </form>
         </div>
     </div>

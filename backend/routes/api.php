@@ -33,7 +33,10 @@ Route::group(['middleware' => 'auth:api'], function () {
     Route::group(['prefix' => 'admins'], function () {
         Route::get('', [\App\Http\Controllers\AdminController::class, 'index']);
         Route::get('profile', [\App\Http\Controllers\AdminController::class, 'getDetail']);
+        Route::post('update-info', [\App\Http\Controllers\AdminController::class, 'updateInfo']);
+        Route::post('update-password', [\App\Http\Controllers\AdminController::class, 'updatePassword']);
     });
+
     Route::group(['prefix' => 'users'], function () {
         Route::get('', [\App\Http\Controllers\UserController::class, 'index']);
         Route::delete('/{user}', [\App\Http\Controllers\UserController::class, 'destroy']);

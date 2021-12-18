@@ -32,7 +32,7 @@ $name = 'warpper';
                                         <tbody>
                                         <tr>
                                             <td class="hd hd-intro hd-5-bold">30 - 39 tuổi</td>
-                                            <td class="hd hd-intro hd-5-bold">300.000.000đ</td>
+                                            <td class="hd hd-intro hd-5-bold">500.000.000đ</td>
                                         </tr>
                                         <tr>
                                             <td class="hd hd-intro hd-5-bold">40 - 59 tuổi</td>
@@ -44,7 +44,7 @@ $name = 'warpper';
                                 <div class="main-assurances-content-program-plan-box_item">
                                     <h1 class="hd hd-1 hd-intro text-left" style="word-break: break-word;">{{ $program->title }}</h1>
                                     <p class="hd hd-5 hd-intro text-left">
-                                        {{ $program->content  }}
+                                        {!! nl2br($program->content) !!}
                                     </p>
                                 </div>
                             </div>
@@ -71,56 +71,70 @@ $name = 'warpper';
                                 <div class="main-assurances-content-program-QA_item">
                                     <div class="title">
                                         <a data-toggle="collapse" data-parent="#accordion" href="#collapse2" class="title-link hd hd-4 hd-intro" aria-expanded="true">
-                                            Yêu cầu về sức khoẻ
+                                            Trường hợp không được nhận hỗ trợ
                                             <img src="{{ asset('icons/arrow_qa.svg') }}" alt="">
                                         </a>
 
                                     </div>
                                     <div id="collapse2" class="body collapse show">
                                         <div class="body-content hd hd-5 hd-intro">
-                                            {{ $program->requirement  }}
+                                            {!! nl2br($program->requirement) !!}
                                         </div>
                                     </div>
                                 </div>
                                 <div class="main-assurances-content-program-QA_item">
                                     <div class="title">
                                         <a data-toggle="collapse" data-parent="#accordion" href="#collapse3" class="title-link hd hd-4 hd-intro" aria-expanded="true">
-                                            Phạm vi bảo vệ
+                                            Phạm vi hỗ trợ
                                             <img src="{{ asset('icons/arrow_qa.svg') }}" alt="">
                                         </a>
 
                                     </div>
                                     <div id="collapse3" class="body collapse show">
                                         <div class="body-content hd hd-5 hd-intro">
-                                            {{ $program->protection_range  }}
+                                            {!! nl2br($program->protection_range) !!}
                                         </div>
                                     </div>
                                 </div>
                                 <div class="main-assurances-content-program-QA_item">
                                     <div class="title">
                                         <a data-toggle="collapse" data-parent="#accordion" href="#collapse4" class="title-link hd hd-4 hd-intro" aria-expanded="true">
-                                            Quy tác dành cho khách hàng
+                                            Nguyên tắc phân chia tiền hỗ trợ trong mỗi kỳ
                                             <img src="{{ asset('icons/arrow_qa.svg') }}" alt="">
                                         </a>
 
                                     </div>
                                     <div id="collapse4" class="body collapse show">
                                         <div class="body-content hd hd-5 hd-intro">
-                                            {{ $program->customer_rule  }}
+                                            {!! nl2br($program->customer_rule) !!}
                                         </div>
                                     </div>
                                 </div>
                                 <div class="main-assurances-content-program-QA_item">
                                     <div class="title">
                                         <a data-toggle="collapse" data-parent="#accordion" href="#collapse5" class="title-link hd hd-4 hd-intro" aria-expanded="true">
-                                            Uỷ nhiệm chi
+                                            Thời gian chờ
                                             <img src="{{ asset('icons/arrow_qa.svg') }}" alt="">
                                         </a>
 
                                     </div>
                                     <div id="collapse5" class="body collapse show">
                                         <div class="body-content hd hd-5 hd-intro">
-                                            {{ $program->auth_rule  }}
+                                            {!! nl2br($program->time_waiting) !!}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="main-assurances-content-program-QA_item">
+                                    <div class="title">
+                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse5" class="title-link hd hd-4 hd-intro" aria-expanded="true">
+                                            Phí tham gia chương trình
+                                            <img src="{{ asset('icons/arrow_qa.svg') }}" alt="">
+                                        </a>
+
+                                    </div>
+                                    <div id="collapse5" class="body collapse show">
+                                        <div class="body-content hd hd-5 hd-intro">
+                                            {!! nl2br($program->fee) !!}
                                         </div>
                                     </div>
                                 </div>
@@ -131,20 +145,21 @@ $name = 'warpper';
                     <div class="main-assurances-content-program-doc">
                         <div class="container-custom">
                             <h3 class="hd hd-info hd-4 text-left">Tài liệu tham khảo</h3>
-
                             <div class="doc-show">
-                                <a href="" class="doc-show_item">
-                                    <img src ="{{ asset('icons/doc_1.svg') }}" alt="">
-                                    <p class="hd hd-5 hd-intro">Quy tắc bảo hiểm</p>
-                                </a>
-                                <a href="" class="doc-show_item">
-                                    <img src="{{ asset('icons/doc_2.svg') }}" alt="">
-                                    <p class="hd hd-5 hd-intro">Quy tắc bảo hiểm</p>
-                                </a>
-                                <a href="" class="doc-show_item">
-                                    <img src="{{ asset('icons/doc_3.svg') }}" alt="">
-                                    <p class="hd hd-5 hd-intro">Quy tắc bảo hiểm</p>
-                                </a>
+                                @foreach($program->docs as $doc)
+                                    <a href="{{ $doc['file_name'] }}" class="doc-show_item" target="_blank">
+                                        <img src ="{{ asset('icons/doc_1.svg') }}" alt="">
+                                        <p class="hd hd-5 hd-intro">{{ $doc['name'] ? $doc['name'] : 'Quy tắc bảo hiểm'  }}</p>
+                                    </a>
+                                @endforeach
+{{--                                <a href="" class="doc-show_item">--}}
+{{--                                    <img src="{{ asset('icons/doc_2.svg') }}" alt="">--}}
+{{--                                    <p class="hd hd-5 hd-intro">Quy tắc bảo hiểm</p>--}}
+{{--                                </a>--}}
+{{--                                <a href="" class="doc-show_item">--}}
+{{--                                    <img src="{{ asset('icons/doc_3.svg') }}" alt="">--}}
+{{--                                    <p class="hd hd-5 hd-intro">Quy tắc bảo hiểm</p>--}}
+{{--                                </a>--}}
                             </div>
                         </div>
                     </div>
@@ -180,7 +195,7 @@ $name = 'warpper';
                                                     <h2 class="hd hd-info hd-3">50.000.000đ</h2>
                                                 </div>
                                             </div>
-                                            <a href="./public-divided-detail.html">
+                                            <a href="{{ route('public-divided-detail') }}">
                                                 <button class="btn btnc btnc-large btnc-secondary">Xem chi tiết</button>
                                             </a>
                                         </div>
@@ -204,7 +219,7 @@ $name = 'warpper';
                                                     <h2 class="hd hd-info hd-3">50.000.000đ</h2>
                                                 </div>
                                             </div>
-                                            <a href="./public-divided-detail.html">
+                                            <a href="{{ route('public-divided-detail') }}">
                                                 <button class="btn btnc btnc-large btnc-secondary">Xem chi tiết</button>
                                             </a>
                                         </div>
@@ -228,7 +243,7 @@ $name = 'warpper';
                                                     <h2 class="hd hd-info hd-3">50.000.000đ</h2>
                                                 </div>
                                             </div>
-                                            <a href="./public-divided-detail.html">
+                                            <a href="{{ route('public-divided-detail') }}">
                                                 <button class="btn btnc btnc-large btnc-secondary">Xem chi tiết</button>
                                             </a>
                                         </div>

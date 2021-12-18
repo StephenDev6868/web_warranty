@@ -244,7 +244,7 @@ class ProgramController extends Controller
                         'user_id' => $user_id,
                     ]);
                 }
-                return redirect()->route('register-program-step-two')->with('response', true);
+                return redirect()->back()->with('response', true);
             }
         } catch (\Exception $e) {
             Log::error($e->getMessage());
