@@ -166,9 +166,6 @@ $name = 'wrapper';
         </div>
     </div>
     @if(session()->has('isSuccess'))
-        <div class="alert alert-success">
-            {{ session()->get('isSuccess') }}
-        </div>
         <button hidden class="btn btnc btnc-secondary" data-toggle="modal" data-target="#alertChargeSuccess" id="chargeBtn">Click me</button>
         <div class="popup1 modal fade" id="alertChargeSuccess">
             <div class="popup1-dialog modal-dialog modal-lg">
