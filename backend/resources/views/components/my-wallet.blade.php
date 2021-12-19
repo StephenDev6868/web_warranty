@@ -84,34 +84,6 @@ $name = 'wrapper';
             <h3 class="title">Nạp tiền vào tài khoản</h3>
             <form class="account-charge-form" method="POST" action="{{route('post-my-wallet')}}">
                 @csrf
-                @if(session()->has('message'))
-                    <div class="popup2 modal fade" id="resultCharge">
-                        <div class="popup2-dialog modal-dialog">
-                            <div class="popup2-dialog-content modal-content">
-                                <!-- Modal Header -->
-                                <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal">
-                                        <img src="{{ asset('icons/close.svg') }}" alt="">
-                                    </button>
-                                </div>
-
-                                <div class="modal-body">
-                                    <img src="{{ asset('images/result_charge.svg') }}" alt="">
-                                    <div class="popup2-dialog-content-confirm">
-                                        <p class="hd hd-5 hd-intro">
-                                            Cảm ơn bạn đã tin tưởng và nạp tiền tại ... <br>
-                                            Chúng tôi đang xử lý giao dịch của bạn, vui lòng chờ
-                                        </p>
-                                    </div>
-                                    <button class="btn btnc btnc-secondary" style="height: 40px; width: 200px">
-                                        <a class="text-white text-bold" href="{{ route('home') }}">Về trang chủ</a>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                @endif
-
                 <div class="form-section">
                     <p class="label">
                         <label for="">Gửi tiền từ ngân hàng</label>
@@ -192,7 +164,7 @@ $name = 'wrapper';
                             <img src="{{ asset('icons/close.svg') }}" alt="">
                         </button>
                     </div>
-        
+
                     <div class="modal-body">
                         <div class="img-alert-charge">
                             <img class="w-100" src="{{ asset('images/alert-success-charge.png') }}" alt="">
@@ -200,7 +172,7 @@ $name = 'wrapper';
                         <div class="content-alert">
                             <p class="text text-center mb-5">
                                 Cảm ơn bạn đã tin tưởng và nạp tiền<br>
-                                Chúng tôi đang xử lý giao dịch của bạn, vui lòng chờ 
+                                Chúng tôi đang xử lý giao dịch của bạn, vui lòng chờ
                             </p>
                             <p class="tbn-cnt mt-3 btn-home-cnt">
                                 <a href="{{route('home')}}" class="btn btnc-secondary">Về trang chủ</a>
