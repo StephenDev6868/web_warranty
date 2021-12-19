@@ -177,7 +177,7 @@ class ProgramController extends Controller
         $validator = Validator::make($params, [
             'program_id' => 'required|exists:programs,id',
             'user_name' => 'required',
-            'phone_nums' => 'required|string',
+            'phone_nums' => 'required|string|size:10',
             'email' => 'nullable',
             'birthday' => 'required',
             'id_card_num' => 'required',
@@ -186,6 +186,7 @@ class ProgramController extends Controller
         ], [
             'user_name.required' => 'Yêu cầu nhập họ tên',
             'phone_nums.required' => 'Yêu cầu nhập số điện thoại',
+            'phone_nums.size' => 'Số điện thoại gồm 10 chữ số',
             'birthday.required' => 'Yêu cầu nhập ngày sinh',
             'id_card_num.required' => 'Yêu cầu nhập số CCCD/CMND',
         ]);
@@ -248,7 +249,7 @@ class ProgramController extends Controller
             }
         } catch (\Exception $e) {
             Log::error($e->getMessage());
-            return Redirect::back();
+            return Redirect::back()->withErrors('Đã xảy ra lỗi khi đăng ký!');
         }
     }
 
