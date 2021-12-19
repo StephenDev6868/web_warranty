@@ -69,4 +69,21 @@ class Program extends Model
         );
     }
 
+    /**
+     * User belongsToMany Uno
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function users()
+    {
+        return $this->belongsToMany(
+            User::class,
+            'user_program_registers',
+            'program_id',
+            'user_id',
+            'id',
+            'id'
+        );
+    }
+
 }

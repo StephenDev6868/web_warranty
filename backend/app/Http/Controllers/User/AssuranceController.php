@@ -27,7 +27,7 @@ class AssuranceController extends Controller
                 ];
             }, $documents);
         }
-        //dd($programs);
+
         return view('components.assurance', [
             'programs' => $programs,
         ]);
