@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'failed' => 'login_id hoặc mật khẩu không chính xác',
+    'failed' => 'Your login_id or password is incorrect.',
     'unauthorized' => 'Unauthorized',
     'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
     'login' => [

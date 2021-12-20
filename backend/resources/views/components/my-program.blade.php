@@ -137,7 +137,7 @@ $name = 'wrapper';
                         </span>
                     </dt>
                     <dd class="no-border">
-                        {{$program_detail->time_waiting}}
+                        {{$program_detail->auth_rule}}
                     </dd>
                 </dl>
             </div>

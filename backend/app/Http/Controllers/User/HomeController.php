@@ -46,13 +46,11 @@ class HomeController extends Controller
             ->limit(4)
             ->orderBy('created_at', 'desc')
             ->get(['title', 'content']);
-
         $programs = array_map(function ($program) {
-            $program['content'] = str_replace("\r\n", '\n', $program['content']);
             return [
                 'title'   => $program['title'],
                 'content' => strlen($program['content']) >= 200
-                    ? mb_substr($program['content'], 0, 200, 'UTF-8') . '...'
+                    ? substr($program['content'], 1, 200) . '...'
                     : $program['content'],
             ];
         }, $programs->toArray());

@@ -84,6 +84,18 @@ $name = 'wrapper';
             <h3 class="title">Nạp tiền vào tài khoản</h3>
             <form class="account-charge-form" method="POST" action="{{route('post-my-wallet')}}">
                 @csrf
+                {{-- @foreach ($errors->all() as $error)
+                <div class="alert alert-danger" role="alert">
+                    {{ $error }}
+                </div>
+                @endforeach --}}
+
+                @if(session()->has('message'))
+                <div class="alert alert-success">
+                    {{ session()->get('message') }}
+                </div>
+                @endif
+
                 <div class="form-section">
                     <p class="label">
                         <label for="">Gửi tiền từ ngân hàng</label>
@@ -154,6 +166,9 @@ $name = 'wrapper';
         </div>
     </div>
     @if(session()->has('isSuccess'))
+        <div class="alert alert-success">
+            {{ session()->get('isSuccess') }}
+        </div>
         <button hidden class="btn btnc btnc-secondary" data-toggle="modal" data-target="#alertChargeSuccess" id="chargeBtn">Click me</button>
         <div class="popup1 modal fade" id="alertChargeSuccess">
             <div class="popup1-dialog modal-dialog modal-lg">
@@ -164,7 +179,7 @@ $name = 'wrapper';
                             <img src="{{ asset('icons/close.svg') }}" alt="">
                         </button>
                     </div>
-
+        
                     <div class="modal-body">
                         <div class="img-alert-charge">
                             <img class="w-100" src="{{ asset('images/alert-success-charge.png') }}" alt="">
@@ -172,7 +187,7 @@ $name = 'wrapper';
                         <div class="content-alert">
                             <p class="text text-center mb-5">
                                 Cảm ơn bạn đã tin tưởng và nạp tiền<br>
-                                Chúng tôi đang xử lý giao dịch của bạn, vui lòng chờ
+                                Chúng tôi đang xử lý giao dịch của bạn, vui lòng chờ 
                             </p>
                             <p class="tbn-cnt mt-3 btn-home-cnt">
                                 <a href="{{route('home')}}" class="btn btnc-secondary">Về trang chủ</a>
@@ -196,8 +211,6 @@ $name = 'wrapper';
 
 <script>
     $(document).ready(function() {
-        jQuery('#resultCharge').modal('show');
-
         $('.copy-ctn').click(function($event) {
             const content = $(this).prev()[0].textContent;
             console.log(content);
