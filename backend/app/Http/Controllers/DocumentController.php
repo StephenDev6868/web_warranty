@@ -26,7 +26,6 @@ class DocumentController extends Controller
         // dd($request->program_id);
         $result =  $this->documentService->search($request);
         return $this->response('', $result);
-        throw new InternalErrorException();
     }
 
     /**
@@ -39,7 +38,6 @@ class DocumentController extends Controller
         //
         $result =  $this->documentService->create($request);
         return $this->response('', $result);
-        throw new InternalErrorException();
     }
 
     /**
@@ -53,7 +51,6 @@ class DocumentController extends Controller
         //
         $result =  $this->documentService->show($id, $program_id);
         return $this->response('', $result);
-        throw new InternalErrorException();
     }
 
     /**
@@ -81,7 +78,6 @@ class DocumentController extends Controller
         //
         $result =  $this->documentService->delete($id, $program_id);
         return $this->response('', $result);
-        throw new InternalErrorException();
     }
 
     public function download($id)

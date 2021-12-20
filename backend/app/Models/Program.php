@@ -25,7 +25,8 @@ class Program extends Model
         'requirement',
         'protection_range',
         'customer_rule',
-        'auth_rule',
+        'time_waiting',
+        'fee',
         'status',
         'started_at',
         'end_at',
@@ -50,4 +51,39 @@ class Program extends Model
         'started_at' => 'datetime:Y-m-d',
         'end_at'     => 'datetime:Y-m-d',
     ];
+
+    /**
+     * User belongsToMany Uno
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function docs()
+    {
+        return $this->belongsToMany(
+            Document::class,
+            'program_docs',
+            'program_id',
+            'document_id',
+            'id',
+            'id'
+        );
+    }
+
+    /**
+     * User belongsToMany Uno
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function users()
+    {
+        return $this->belongsToMany(
+            User::class,
+            'user_program_registers',
+            'program_id',
+            'user_id',
+            'id',
+            'id'
+        );
+    }
+
 }

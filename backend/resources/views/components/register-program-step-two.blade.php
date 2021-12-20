@@ -21,21 +21,23 @@ $name = 'wrapper';
             </ul>
         </div>
         <div class="form-register">
-             @if ($errors->any())
-                 @foreach ($errors->all() as $error)
-                     <div class="alert alert-danger" role="alert">
-                         {{ $error }}
-                     </div>
-                 @endforeach
-             @endif
-            <form method="POST" action=""{{route('post-register-program-step-two', $program_id)}} enctype="multipart/form-data">
+            @if ($errors->any())
+                @foreach ($errors->all() as $error)
+                <div class="alert alert-danger" role="alert">
+                    {{ $error }}
+                </div>
+                @endforeach
+            @endif
+            <form method="POST" action="" {{route('post-register-program-step-two', $program_id)}}
+                enctype="multipart/form-data">
                 @csrf
                 <div class="form-wrap">
                     <div class="form-group">
                         <input type="text" class="form-control" placeholder="Họ và tên (*)" name="user_name" required>
                     </div>
                     <div class="form-group d-flex">
-                        <input type="number" class="form-control mr-2" placeholder="Số điện thoại (*)" name="phone_nums" required>
+                        <input type="number" class="form-control mr-2" placeholder="Số điện thoại (*)" name="phone_nums"
+                            required>
                         <input type="text" class="form-control" placeholder="Nhập email" name="email">
                     </div>
                     <div class="form-group d-flex">
@@ -47,18 +49,23 @@ $name = 'wrapper';
                         <input type="date" class="form-control" name="birthday" placeholder="Ngày sinh" required>
                     </div>
                     <div class="form-group d-flex">
-                        <input type="number" class="form-control mr-2" placeholder="Số CMND/ CCCD (*)" name="id_card_num" required>
+                        <input type="number" class="form-control mr-2" placeholder="Số CMND/ CCCD (*)"
+                            name="id_card_num" required>
                         <input type="text" class="form-control" placeholder="Số bảo hiểm y tế" name="hi_card_num">
                     </div>
                     <div class="form-group">
-                        <input type="number" class="form-control" placeholder="Số điện thoại của bố/ mẹ  ( dành cho trẻ em dưới 14 tuổi)" name="phone_num_parent">
+                        <input type="number" class="form-control"
+                            placeholder="Số điện thoại của bố/ mẹ  ( dành cho trẻ em dưới 14 tuổi)"
+                            name="phone_num_parent">
                     </div>
                     <div class="form-group policy-checkbox">
                         <input type="checkbox" name="policy" id="policy" class="mr-2" required>
-                        <label for="policy">Tôi đồng ý với <a href="#">thoả thuận điều kiện</a> tham gia chương trình của Vicscorp</label>
+                        <label for="policy">Tôi đồng ý với <a href="#">thoả thuận điều kiện</a> tham gia chương trình
+                            của Vicscorp</label>
                     </div>
                     <div class="form-group">
-                        <input type="file" id="file" multiple name="file_data[]" accept=".jpeg,.jpg,.png,.xlsx,.pdf,.docx" hidden>
+                        <input type="file" id="file" multiple name="file_data[]"
+                            accept=".jpeg,.jpg,.png,.xlsx,.pdf,.docx" hidden>
                         <label for="file" class="d-flex justify-content-center align-items-center">
                             <img src="{{ asset('images/upload_file2.svg') }}" alt="" class="mr-2">
                             <span>Tải hồ sơ khám chữa bệnh</span>
@@ -72,9 +79,44 @@ $name = 'wrapper';
                         <button class="btn-step-1" type="submit" id="sub_btn" disabled>Đăng ký chương trình</button>
                     </a>
                 </div>
-{{--                @if(session('response'))--}}
-{{--                    <h1>DK THANH CONG</h1>--}}
-{{--                @endif--}}
+
+                @if(session()->has('response'))
+                <button hidden class="btn btnc btnc-secondary" data-toggle="modal" data-target="#resultRegister"
+                    id="btnSuccess">Click me</button>
+                <div class="popup2 modal fade" id="resultRegister">
+                    <div class="popup2-dialog modal-dialog">
+                        <div class="popup2-dialog-content modal-content">
+                            <!-- Modal Header -->
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">
+                                    <img src="{{ asset('icons/close.svg') }}" alt="">
+                                </button>
+                            </div>
+
+                            <div class="modal-body">
+                                <img src="{{ asset('images/result_charge.svg') }}" alt="">
+                                <div class="popup2-dialog-content-confirm">
+                                    <p class="hd hd-5 hd-intro">
+                                        Cảm ơn bạn đã đăng ký chương trình hỗ trợ .<br>
+                                        Bạn vừa đăng ký thành công vui lòng đăng nhập để xem chi tiết .
+                                    </p>
+                                </div>
+                                <button class="btn btnc btnc-secondary" style="height: 40px; width: 200px"
+                                    data-toggle="modal" data-dismiss="modal" data-target="#signIn">
+                                    Đăng nhập
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <script>
+                    $(document).ready(function() {
+                            setTimeout(() => {
+                            $('#btnSuccess').click();
+                            }, 1000);
+                        });
+                </script>
+                @endif
             </form>
         </div>
     </div>
@@ -110,7 +152,7 @@ $name = 'wrapper';
 </script>
 
 <style>
-    button:disabled{
+    button:disabled {
         opacity: 0.6;
         cursor: not-allowed
     }

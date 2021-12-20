@@ -27,5 +27,6 @@ class Admin extends Authenticatable
         'role',
         'is_privilege',
         'token',
+        'name',
     ];
 }
