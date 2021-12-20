@@ -30,6 +30,7 @@ class User extends Authenticatable
         'id_card_image_back',
         'portrait_image',
         'token',
+        'birthday',
     ];
 
     /**

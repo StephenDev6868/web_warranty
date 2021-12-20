@@ -31,7 +31,7 @@ class TransactionService
     public function list(array $inputs)
     {
         $validator = Validator::make($inputs, [
-           'user_id' => 'nullable|numeric',
+           'user_id' => 'nullable|numeric|exists:users,id',
            'monthly' => 'nullable|date_format:m-Y',
            'page'    => 'nullable|numeric',
         ]);
@@ -83,6 +83,7 @@ class TransactionService
 
             if ($totalMoney) {
                 (int) $totalMoney->vnd_nums += (int) $transaction->amount;
+                (float) $totalMoney->coin += (float) ($transaction->amount / 100000);
                 $totalMoney->save();
             }
         }

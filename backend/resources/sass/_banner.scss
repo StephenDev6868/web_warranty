@@ -19,7 +19,7 @@
             &__inner {
                 img {
                     height: 500px;
-                    object-fit: fill;
+                    object-fit: cover;
                 }
                 &__item {
                     position: relative;
@@ -69,10 +69,10 @@
                 }
                 // ul.carousel-indicators > li {
                 // }
-    
+
                 // ul.carousel-indicators > li.active {
                 // }
-    
+
                 &__inner {
                     img {
                         height: 250px;

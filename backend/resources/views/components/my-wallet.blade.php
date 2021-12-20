@@ -40,7 +40,7 @@ $name = 'wrapper';
             <div class="info-section">
                 <p class="label">Nội dung chuyển khoản</p>
                 <p class="content">
-                    VICS1100NP9
+                    <span class="content-copy">VICS1100NP9</span>
                     <label class="copy-ctn">
                         <img src="{{ asset('images/copy-icon.png') }}" alt="">
                         <span class="copy">Sao chép</span>
@@ -50,7 +50,7 @@ $name = 'wrapper';
             <div class="info-section">
                 <p class="label">Tên tài khoản</p>
                 <p class="content">
-                    CTY CPTM VA DAU TU VICSCORP
+                    <span>CTCP TV DICH VU BAO HIEM VIET NAM</span>
                     <label class="copy-ctn">
                         <img src="{{ asset('images/copy-icon.png') }}" alt="">
                         <span class="copy">Sao chép</span>
@@ -60,7 +60,7 @@ $name = 'wrapper';
             <div class="info-section">
                 <p class="label">Số tài khoản</p>
                 <p class="content">
-                    19030001111888999
+                    <span>035255366666</span>
                     <label class="copy-ctn">
                         <img src="{{ asset('images/copy-icon.png') }}" alt="">
                         <span class="copy">Sao chép</span>
@@ -70,7 +70,7 @@ $name = 'wrapper';
             <div class="info-section">
                 <p class="label">Ngân hàng</p>
                 <p class="content">
-                    Techcombank
+                    <span>MB Bank</span>
                     <label class="copy-ctn">
                         <img src="{{ asset('images/copy-icon.png') }}" alt="">
                         <span class="copy">Sao chép</span>
@@ -146,10 +146,10 @@ $name = 'wrapper';
                         @case(1)
                         <span class="processing">Đang xử lý</span>
                         @break
-                        @case(2)
+                        @case(3)
                         <span class="canceled">Đã huỷ</span>
                         @break
-                        @case(3)
+                        @case(2)
                         <span class="successed">Thành công</span>
                         @break
                         @endswitch
@@ -165,4 +165,60 @@ $name = 'wrapper';
             @endif
         </div>
     </div>
+    @if(session()->has('isSuccess'))
+        <div class="alert alert-success">
+            {{ session()->get('isSuccess') }}
+        </div>
+        <button hidden class="btn btnc btnc-secondary" data-toggle="modal" data-target="#alertChargeSuccess" id="chargeBtn">Click me</button>
+        <div class="popup1 modal fade" id="alertChargeSuccess">
+            <div class="popup1-dialog modal-dialog modal-lg">
+                <div class="modal-content text-center">
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">
+                            <img src="{{ asset('icons/close.svg') }}" alt="">
+                        </button>
+                    </div>
+        
+                    <div class="modal-body">
+                        <div class="img-alert-charge">
+                            <img class="w-100" src="{{ asset('images/alert-success-charge.png') }}" alt="">
+                        </div>
+                        <div class="content-alert">
+                            <p class="text text-center mb-5">
+                                Cảm ơn bạn đã tin tưởng và nạp tiền<br>
+                                Chúng tôi đang xử lý giao dịch của bạn, vui lòng chờ 
+                            </p>
+                            <p class="tbn-cnt mt-3 btn-home-cnt">
+                                <a href="{{route('home')}}" class="btn btnc-secondary">Về trang chủ</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            $(document).ready(function() {
+                setTimeout(() => {
+                $('#chargeBtn').click();
+                }, 2000);
+            });
+        </script>
+    @endif
+
+
 </x-PrimaryLayout>
+
+<script>
+    $(document).ready(function() {
+        $('.copy-ctn').click(function($event) {
+            const content = $(this).prev()[0].textContent;
+            console.log(content);
+            navigator.clipboard.writeText(content).then(function() {
+              alert('Đã copy');
+            }, function(err) {
+            });
+        });
+    });
+
+</script>

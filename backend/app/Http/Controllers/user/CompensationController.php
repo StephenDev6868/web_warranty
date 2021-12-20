@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Crypt;
+use Illuminate\Support\Facades\Auth;
 
 class CompensationController extends Controller
 {
@@ -91,7 +92,7 @@ class CompensationController extends Controller
         ->join('users', 'history_compensations.user_id', '=', 'users.id')
         ->select(['history_compensations.*', 'users.user_name', 'users.phone_nums'])
         ->whereNull('compensations.deleted_at')
-        ->where('history_compensations.user_id', 24)->get();
+        ->where('history_compensations.user_id', Auth::guard('user')->user()->id)->get();
 
         return view('components.history-compensation-zero', ['history_compensations' => $history_compensations]);
     }

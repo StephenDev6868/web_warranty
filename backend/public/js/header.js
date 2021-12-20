@@ -19,7 +19,7 @@ $(document).ready(function () {
   } else if (pathName.indexOf('about') > 0) {
     $('#about_page').addClass('active');
     $('#about_pageR').addClass('active');
-  } else if (pathName.indexOf('assurance') > 0) {
+  } else if (pathName.indexOf('assurance') > 0 || pathName.indexOf('register-program') > 0) {
     $('#assurance_page').addClass('active');
     $('#assurance_pageR').addClass('active');
   } else if (pathName.indexOf('support') > 0) {
@@ -29,18 +29,17 @@ $(document).ready(function () {
     $('#divided_page').addClass('active');
     $('#divided_pageR').addClass('active');
   } // Set info user if sign in
-
-
-  if (localStorage.getItem('login_success') === 'true') {
-    var userInfo = JSON.parse(localStorage.getItem('user_info'));
-    $('#user_name_web').html(userInfo.user_name);
-    $('#coin').html(userInfo.wallet ? userInfo.wallet.coin : 0);
-    $('.header__content__action').addClass('d-none');
-    $('.header__content__user').removeClass('d-none');
-  } else {
-    $('.header__content__action').removeClass('d-none');
-    $('.header__content__user').addClass('d-none');
-  } // Sign out
+  // if (localStorage.getItem('login_success') === 'true') {
+  //     var userInfo = JSON.parse(localStorage.getItem('user_info'))
+  //     $('#user_name_web').html(userInfo.user_name);
+  //     $('#coin').html(userInfo.wallet ? userInfo.wallet.coin : 0);
+  //     /$('.header__content__action').addClass('d-none');
+  //     $('.header__content__user').removeClass('d-none');
+  // } else {
+  //     $('.header__content__action').removeClass('d-none');
+  //     $('.header__content__user').addClass('d-none');
+  // }
+  // Sign out
 
 
   $('#signOut').click(function () {

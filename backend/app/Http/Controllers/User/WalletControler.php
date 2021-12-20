@@ -7,6 +7,7 @@ use App\Models\Bank;
 use App\Models\Transaction;
 use App\Models\Wallet;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
@@ -18,8 +19,9 @@ class WalletControler extends Controller
     public function getMyWallet()
     {
         $banks = Bank::orderBy('name', 'asc')->get();
-        $histories = Transaction::where('user_id', 1)->orderBy('created_at', 'desc')->get();
-        $total = Wallet::where('user_id', 1)->first();
+        // dd(Auth::guard('user')->user());
+        $histories = Transaction::where('user_id', Auth::guard('user')->user()->id)->orderBy('created_at', 'desc')->get();
+        $total = Wallet::where('user_id', Auth::guard('user')->user()->id)->first();
         return view('components.my-wallet', ['banks'=> $banks, 'histories'=> $histories, 'total' => $total]);
     }
 
@@ -29,7 +31,7 @@ class WalletControler extends Controller
             'bank_id' => $request->bank_id,
             'amount' => $request->amount,
             'code_transaction_bank' => $request->code_transaction_bank,
-            'user_id'=> 1,
+            'user_id'=> Auth::guard('user')->user()->id,
             'done_at' => now(),
             'status' => 1,
             'code_reference' => strtoupper(Str::random(10))
@@ -47,6 +49,6 @@ class WalletControler extends Controller
         // $params['coin'] = $params['vnd_nums'] / 100000;
         // dd($params);
         Transaction::create($params);
-        return redirect()->back()->with('message', 'Đang xử lý yêu cầu');
+        return redirect()->back()->with('isSuccess', true);
     }
 }
