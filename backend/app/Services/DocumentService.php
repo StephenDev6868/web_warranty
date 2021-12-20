@@ -42,7 +42,7 @@ class DocumentService
         ->join('programs', 'programs.id', '=', 'program_docs.program_id')
         ->select([
             'documents.id', 'file_name', 'documents.created_at',
-            'program_id', 'title', 'status', 'programs.name',
+            'program_id', 'title', 'status'
             ])
         ->whereNull('documents.deleted_at');
         if (!empty($request->program_id)) {
@@ -61,7 +61,6 @@ class DocumentService
         $program_ids = [];
         $program_ids = $request->program_id;
         $files_data = [];
-        $name = $request->name_doc;
         $files_data = $request->file_data;
         foreach ($program_ids as $key => $value) {
             $validator1 = Validator::make(['program_id' => $value], [
@@ -85,18 +84,12 @@ class DocumentService
          * */
         // dd($files_data);
         foreach ($files_data as $key => $value) {
-            $file_name = $this->folderUpload . '/' . UploadService::upload($this->folderUpload, $value);
+            $file_name = UploadService::upload($this->folderUpload, $value);
             DB::beginTransaction();
             try {
-                $doc = Document::create([
-                    'name' => $name,
-                    'file_name' => $file_name,
-                ]);
+                $doc = Document::create(['file_name' => $file_name]);
                 foreach ($program_ids as $key2 => $value2) {
-                    ProgramDoc::create([
-                        'name' => $name,
-                        'program_id' => $value2, 'document_id' => $doc->id
-                    ]);
+                    ProgramDoc::create(['program_id' => $value2, 'document_id' => $doc->id]);
                 }
                 DB::commit();
             } catch (\Exception $e) {
@@ -125,7 +118,7 @@ class DocumentService
         ->join('programs', 'programs.id', '=', 'program_docs.program_id')
         ->select([
             'documents.id', 'file_name', 'documents.created_at',
-            'program_id', 'title', 'status', 'programs.name'
+            'program_id', 'title', 'status'
             ])
             ->where(['documents.id' => $id, 'program_docs.program_id' => $program_id])
         ->whereNull('documents.deleted_at')->first();
@@ -148,7 +141,7 @@ class DocumentService
         if ($validator->fails()) {
             throw new ValidationException($validator);
         }
-
+        
 
         try {
             $doc = Document::find($id);
@@ -162,7 +155,7 @@ class DocumentService
                 if ($size_programdoc == 1) {
                     UploadService::deleteFile($this->folderUpload, $doc->file_name);
                 }
-                $file_name = $this->folderUpload . '/' . UploadService::upload($this->folderUpload, $request->file_data);
+                $file_name = UploadService::upload($this->folderUpload, $request->file_data);
                 $doc->file_name = $file_name;
                 $doc->save();
             }

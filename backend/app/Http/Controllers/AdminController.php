@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Admin;
 use Illuminate\Auth\AuthenticationException;
 use Illuminate\Http\Request;
 use App\Services\AdminService;
@@ -89,43 +88,5 @@ class AdminController extends Controller
         }
 
         return $this->response('', $admin);
-    }
-
-    /**
-     * Update Info admin
-     *
-     * @param Request $request Request
-     *
-     * @return mixed
-     * @throws \Illuminate\Validation\ValidationException
-     */
-    public function updateInfo(Request $request)
-    {
-        $attributes = $request->only([
-            'name',
-            'login_id',
-            'email',
-        ]);
-
-        return $this->adminService->updateInfoAdmin(Auth::user(), $attributes);
-    }
-
-    /**
-     * Update Info admin
-     *
-     * @param Request $request Request
-     *
-     * @return mixed
-     * @throws \Illuminate\Validation\ValidationException
-     */
-    public function updatePassword(Request $request)
-    {
-        $attributes = $request->only([
-            'current_password',
-            'new_password',
-            'confirm_new_password',
-        ]);
-
-        return $this->adminService->updatePassword(Auth::user(), $attributes);
     }
 }

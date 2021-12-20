@@ -15,7 +15,6 @@ class Document extends Model
     protected $table = 'documents';
 
     public $fillable = [
-        'file_name',
-        'name'
+        'file_name'
     ];
 }

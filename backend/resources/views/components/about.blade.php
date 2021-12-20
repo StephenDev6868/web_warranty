@@ -113,7 +113,7 @@ $name = 'warpper';
                             </div>
                             <div id="collapse{{ $loop->index }}" class="body collapse show">
                                 <div class="body-content hd hd-5 hd-intro">
-                                    {!! nl2br($qa->answer) !!}
+                                    {{ $qa->answer }}
                                 </div>
                             </div>
                         </div>
